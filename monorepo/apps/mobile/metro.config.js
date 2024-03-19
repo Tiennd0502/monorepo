@@ -14,6 +14,7 @@ const customConfig = {
   transformer: {
     babelTransformerPath: require.resolve('react-native-svg-transformer'),
   },
+  // unstable_enableSymlinks: true,
   resolver: {
     assetExts: assetExts.filter((ext) => ext !== 'svg'),
     sourceExts: [...sourceExts, 'cjs', 'mjs', 'svg'],

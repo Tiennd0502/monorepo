@@ -5,5 +5,26 @@
   "projectType": "application",
   "tags": [],
   "// targets": "to see all targets run: nx show project mobile --web",
-  "targets": {}
+  "targets": {
+    "run-android": {
+      "executor": "@nx/react-native:run-android",
+      "options": { "mode": "release"}
+    },
+    "build-android": {
+      "executor": "@nx/react-native:build-android",
+      "outputs": [
+        "{projectRoot}/build/outputs/bundle",
+        "{projectRoot}/build/outputs/apk"
+      ],
+      "options": {}
+    },
+    "sync-deps": {
+      "executor": "@nx/react-native:sync-deps",
+      "options": {}
+    },
+    "ensure-symlink": {
+      "executor": "@nx/react-native:ensure-symlink",
+      "options": {}
+    }
+  }
 }

@@ -6,9 +6,11 @@ export const border = {
 
 export const borderRadius = {
   small: '4px',
-  medium: '5px',
-  large: '8px',
-  extraLarge: '16px',
+  medium: '6px',
+  extraMedium: '8px',
+  large: '10px',
+  extraLarge: '12px',
+  huge: '40px',
   circle: '50%',
 };
 
@@ -18,6 +20,7 @@ export const spacingTamagui = {
   '0.5': 2,
   '1': 4,
   '1.5': 6,
+  '1.75': 7,
   '2': 8,
   '2.5': 10,
   '3': 12,
@@ -28,6 +31,9 @@ export const spacingTamagui = {
   '6': 24,
   '7.5': 30,
   '9': 36,
+  '12.5': 50,
+  '13.5': 54,
+  '15': 60,
 };
 
 export const sizeMapping = {

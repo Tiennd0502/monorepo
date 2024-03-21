@@ -16,7 +16,7 @@ const textColors = {
   textSecondary: colors.secondary,
   textDefault: '#999',
   textTertiary: '#909090',
-  textBold: '#000000',
+  textBold: '#303030',
   textLink: colors.primary,
 } as const;
 

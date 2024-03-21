@@ -7,6 +7,7 @@ const backgroundColors = {
   backgroundPrimary: colors.primary,
   backgroundSecondary: colors.secondary,
   backgroundDisabled: '#909090',
+  backgroundInputDisabled: '#f5f5f5',
   backgroundIcon: '#fff',
   backgroundIconDisabled: '#e6e6e6',
 } as const;
@@ -18,6 +19,8 @@ const textColors = {
   textTertiary: '#909090',
   textBold: '#303030',
   textLink: colors.primary,
+  textLabel: '#808080',
+  textPlaceholder: '#b3b3b3',
 } as const;
 
 const buttonColors = {
@@ -33,7 +36,7 @@ const statusColors = {
 } as const;
 
 const borderColor = {
-  borderPrimary: '#dbdbdb',
+  borderPrimary: colors.primary,
   borderSecondary: '#bdbdbd',
   boderTertiary: '#8a959e33',
 } as const;

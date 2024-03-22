@@ -16,7 +16,12 @@
     "@tamagui/config": "*",
     "react-dom": "*",
     "@nx/webpack": "*",
-    "@nx/react": "*"
+    "@nx/react": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/native-stack": "*",
+    "react-native-screens": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-safe-area-context": "*"
   },
   "devDependencies": {}
 }

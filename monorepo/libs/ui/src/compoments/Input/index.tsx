@@ -7,7 +7,8 @@ import {
 } from 'tamagui';
 import { memo, useMemo } from 'react';
 
-import { Text, IconButton } from '..';
+import Text from '../Text';
+import IconButton from '../IconButton';
 
 const StyledInput = styled(TInput, {
   flex: 1,

@@ -3,13 +3,11 @@ import {
   InputProps as TInputProps,
   Input as TInput,
   XStack,
-  Button,
+  ButtonProps,
 } from 'tamagui';
-import { memo, useCallback, useMemo, useState } from 'react';
+import { memo, useMemo } from 'react';
 
-import { Text } from '..';
-
-import { HiddenIcon, ShowIcon } from '../icons';
+import { Text, IconButton } from '..';
 
 const StyledInput = styled(TInput, {
   flex: 1,
@@ -114,51 +112,11 @@ const StyledErrorMessage = styled(Text, {
   } as const,
 });
 
-const IconInput = styled(Button, {
-  position: 'absolute',
-  zIndex: '$2',
-  right: '$4',
-  color: '$textLabel',
-
-  hoverStyle: {
-    backgroundColor: 'transparent',
-    opacity: 0.7,
-  },
-
-  focusStyle: {
-    backgroundColor: 'transparent',
-    borderColor: 'transparent',
-    outlineColor: 'transparent',
-  },
-
-  variants: {
-    chromeless: {
-      true: {
-        backgroundColor: 'transparent',
-      },
-    },
-
-    size: {
-      sm: {
-        top: '$2',
-      },
-
-      md: {
-        top: '$4',
-      },
-    },
-  } as const,
-
-  defaultVariants: {
-    size: 'md',
-  },
-});
-
 interface InputProps extends Omit<TInputProps, 'variant' | 'size'> {
   label?: string;
   variant?: 'outlined' | 'solid' | 'flushed' | 'disabled';
   size?: 'sm' | 'md';
-  isPassword?: boolean;
+  rightElement?: ButtonProps;
   errorMessage?: string;
 }
 
@@ -168,8 +126,8 @@ const Input = StyledInput.styleable<InputProps>(
       size = 'md',
       variant = 'solid',
       label = '',
-      isPassword = false,
       errorMessage = '',
+      rightElement,
       ...rest
     },
     ref
@@ -179,32 +137,25 @@ const Input = StyledInput.styleable<InputProps>(
       [variant]
     );
 
-    const [show, setShow] = useState<boolean>(false);
-
-    const handleToggle = useCallback(() => {
-      console.log('Change', show);
-      setShow((prev) => !prev);
-    }, [show]);
-
-    const Icon = useMemo(() => (show ? HiddenIcon : ShowIcon), [show]);
-
     return (
-      <XStack position="relative" zIndex={1}>
+      <XStack position="relative" zIndex={1} alignItems="center">
         {label && <StyledLabel>{label}</StyledLabel>}
-        <StyledInput
-          ref={ref}
-          secureTextEntry={isPassword && !show}
-          size={size}
-          {...(isPassword && {
-            paddingRight: '$12',
-          })}
-          {...variantObject}
-          {...rest}
-        />
-        {isPassword && (
-          <IconInput chromeless>
-            <Icon onPress={handleToggle} />
-          </IconInput>
+        <StyledInput ref={ref} size={size} {...variantObject} {...rest} />
+        {rightElement && (
+          <IconButton
+            aria-label="Icon"
+            backgroundColor="transparent"
+            padding={0}
+            right="$4"
+            hoverStyle={{
+              backgroundColor: 'transparent',
+            }}
+            pressStyle={{
+              backgroundColor: 'transparent',
+            }}
+            position="absolute"
+            {...rightElement}
+          />
         )}
         {errorMessage && (
           <StyledErrorMessage error>{errorMessage}</StyledErrorMessage>

@@ -7,7 +7,6 @@ import {
 } from 'tamagui';
 
 const ButtonFrame = styled(TButton, {
-  backgroundColor: '$primary',
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'row',
@@ -18,12 +17,20 @@ const ButtonFrame = styled(TButton, {
   },
 
   variants: {
+    solid: {
+      true: {
+        backgroundColor: '$primary',
+        color: '$secondary',
+      },
+    },
+
     reversal: {
       true: {
         backgroundColor: '$tertiary',
         borderColor: '$tertiary',
       },
     },
+
     outlined: {
       true: {
         backgroundColor: '$secondary',
@@ -31,12 +38,21 @@ const ButtonFrame = styled(TButton, {
         borderWidth: 1,
       },
     },
+
     disabled: {
       true: {
         backgroundColor: '$backgroundDisabled',
         pointerEvents: 'none',
       },
     },
+
+    chromeless: {
+      true: {
+        backgroundColor: 'transparent',
+        color: '$primary',
+      },
+    },
+
     size: {
       sm: {
         paddingVertical: '$1.75',
@@ -64,6 +80,7 @@ const ButtonFrame = styled(TButton, {
   } as const,
 
   defaultVariants: {
+    solid: true,
     size: 'md',
   },
 });
@@ -75,6 +92,12 @@ const ButtonText = styled(TButton.Text, {
   color: '$secondary',
 
   variants: {
+    solid: {
+      true: {
+        color: '$secondary',
+      },
+    },
+
     reversal: {
       true: {
         color: '$secondary',
@@ -82,6 +105,12 @@ const ButtonText = styled(TButton.Text, {
     },
 
     outlined: {
+      true: {
+        color: '$primary',
+      },
+    },
+
+    chromeless: {
       true: {
         color: '$primary',
       },
@@ -120,7 +149,7 @@ const ButtonText = styled(TButton.Text, {
 
 interface ButtonProps extends Omit<TButtonProps, 'variant'> {
   isLoading?: boolean;
-  variant?: 'outlined' | 'disabled' | 'reversal';
+  variant?: 'outlined' | 'disabled' | 'reversal' | 'solid' | 'chromeless';
   size?: 'sm' | 'md' | 'lg' | 'xl';
 }
 

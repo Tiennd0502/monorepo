@@ -18,6 +18,11 @@ export interface SignUpForm extends User {
   confirmPassword: string;
 }
 
+export interface LoginForm {
+  email: string;
+  password: string;
+}
+
 export interface Verify {
   verify_id: string;
   code?: string;

@@ -5,23 +5,24 @@ import { SCREENS, StackParamList } from '../types';
 
 import MainStack from './MainStack';
 import AuthStack from './AuthStack';
+import { userStore } from '@monorepo/stores';
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
 const AppNavigator = () => {
-  // TODO: Update it when create hooks auth
-  const hasToken = false;
+  const [user] = userStore((state) => [state.user]);
+  const { id = '' } = user || {};
 
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={hasToken ? SCREENS.MAIN_STACK : SCREENS.AUTH_STACK}
+        initialRouteName={id ? SCREENS.MAIN_STACK : SCREENS.AUTH_STACK}
         screenOptions={{
           headerShown: false,
           animation: 'slide_from_right',
         }}
       >
-        {hasToken ? (
+        {id ? (
           <Stack.Screen name={SCREENS.MAIN_STACK} component={MainStack} />
         ) : (
           <Stack.Screen name={SCREENS.AUTH_STACK} component={AuthStack} />

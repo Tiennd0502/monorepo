@@ -159,7 +159,6 @@ const SignUp = () => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{ flex: 1 }}
     >
       {isPending && <Loading />}
       <ScrollView>
@@ -194,6 +193,7 @@ const SignUp = () => {
             backgroundColor="$secondary"
             overflow="hidden"
             paddingLeft="$2"
+            paddingTop="$4"
           >
             {inputs.map(
               ({ name, label, rules, rightElement, secureTextEntry }) => (
@@ -229,17 +229,30 @@ const SignUp = () => {
                 </>
               )
             )}
-            <Stack paddingVertical={40} rowGap={30} paddingRight={30}>
+            <Stack
+              paddingVertical={40}
+              rowGap={30}
+              paddingRight="$7.5"
+              paddingLeft="$5"
+            >
               <Button
                 disabled={!isValid || isPending}
                 onPress={handleSubmit(handleSignUp)}
               >
-                SIGN UP"
+                SIGN UP
               </Button>
-              <Text>
-                Already have account?&nbsp;
-                <Text onPress={handleSignIn}>SIGN IN</Text>
-              </Text>
+              <Stack>
+                <Text textAlign="center">
+                  Already have account?&nbsp;
+                  <Text
+                    onPress={handleSignIn}
+                    color="$primary"
+                    fontWeight="bold"
+                  >
+                    SIGN IN
+                  </Text>
+                </Text>
+              </Stack>
             </Stack>
           </Stack>
         </Stack>

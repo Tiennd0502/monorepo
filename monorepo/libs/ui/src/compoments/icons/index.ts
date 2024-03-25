@@ -1,6 +1,7 @@
 export * from './ShowIcon';
 export * from './LogoIcon';
 export * from './HomeIcon';
+export * from './StarIcon';
 export * from './CheckIcon';
 export * from './HiddenIcon';
 export * from './ProfileIcon';

@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator<StackParamList>();
 
 const AppNavigator = () => {
   // TODO: Update it when create hooks auth
-  const hasToken = true;
+  const hasToken = false;
 
   return (
     <NavigationContainer>

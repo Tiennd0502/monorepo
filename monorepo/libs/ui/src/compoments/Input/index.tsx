@@ -101,7 +101,7 @@ const StyledErrorMessage = styled(Text, {
   position: 'absolute',
   zIndex: '$2',
   bottom: 0,
-  left: 0,
+  left: '$4',
   marginBottom: -20,
 
   variants: {

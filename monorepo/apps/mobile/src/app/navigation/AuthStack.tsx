@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator<StackParamList>();
 const AuthStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName={SCREENS.LANDING}
+      initialRouteName={SCREENS.SIGN_UP}
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name={SCREENS.LANDING} component={LandingScreen} />

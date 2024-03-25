@@ -18,6 +18,7 @@
       "@monorepo/constants": ["libs/constants/src/index.ts"],
       "@monorepo/hooks": ["libs/hooks/src/index.ts"],
       "@monorepo/provider": ["libs/provider/src/index.ts"],
+      "@monorepo/stores": ["libs/stores/src/index.ts"],
       "@monorepo/types": ["libs/types/src/index.ts"],
       "@monorepo/ui": ["libs/ui/src/index.ts"],
       "@monorepo/utils": ["libs/utils/src/index.ts"]

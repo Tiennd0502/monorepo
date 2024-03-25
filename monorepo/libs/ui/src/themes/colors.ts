@@ -10,6 +10,7 @@ const backgroundColors = {
   backgroundInputDisabled: '#f5f5f5',
   backgroundIcon: '#fff',
   backgroundIconDisabled: '#e6e6e6',
+  backgroundWarning: '#f2c94c',
 } as const;
 
 const textColors = {

@@ -7,3 +7,5 @@ export { default as Checkbox } from './Checkbox';
 export { default as Input } from './Input';
 export { default as Divider } from './Divider';
 export { default as Loading } from './Loading';
+export { default as CategoryItem } from './CategoryItem';
+export { default as CategoryList } from './CategoryList';

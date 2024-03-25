@@ -6,3 +6,8 @@ export interface IconProps {
   isActive?: boolean;
   onPress?: () => void;
 }
+
+export interface APIResponse<T> {
+  status: boolean;
+  data: T;
+}

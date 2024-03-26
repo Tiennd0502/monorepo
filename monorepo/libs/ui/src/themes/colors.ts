@@ -18,6 +18,7 @@ const textColors = {
   textSecondary: colors.secondary,
   textDefault: '#999',
   textTertiary: '#909090',
+  textQuaternary: '#606060',
   textBold: '#303030',
   textLink: colors.primary,
   textLabel: '#808080',

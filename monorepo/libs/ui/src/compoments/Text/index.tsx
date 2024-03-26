@@ -41,13 +41,13 @@ const Text = styled(TextBase, {
         lineHeight: 20,
       },
 
-      large: {
+      extraMedium: {
         fontSize: '$4',
         lineHeight: 20,
       },
 
-      extraMedium: {
-        fontSize: '$5',
+      large: {
+        fontSize: '$4.5',
         lineHeight: 20,
       },
 

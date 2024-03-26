@@ -16,8 +16,8 @@ const instanceAxios = axios.create(defaultOptions);
 
 export const GET = async <T>(url: string, config?: AxiosRequestConfig) => {
   try {
-    console.log('defaultOptions', defaultOptions);
     const { data } = await instanceAxios.get<T>(url, config);
+
     return data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -35,6 +35,7 @@ export const POST = async <T, P>(
 ) => {
   try {
     const { data } = await instanceAxios.post<T>(url, payload, config);
+
     return data;
   } catch (error: unknown) {
     if (axios.isAxiosError(error)) {

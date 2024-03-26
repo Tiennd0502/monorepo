@@ -32,14 +32,14 @@ export const StarIcon = ({
         <Stop
           offset="50%"
           stopColor={getTokenValueByKey(
-            TOKEN_KEYS.SPACE,
+            TOKEN_KEYS.COLOR,
             isActive ? color.toString() : '$textDefault'
           )}
         />
         <Stop
           offset="50%"
           stopColor={getTokenValueByKey(
-            TOKEN_KEYS.SPACE,
+            TOKEN_KEYS.COLOR,
             isHalfGrad ? '$textDefault' : color.toString()
           )}
         />

@@ -42,6 +42,7 @@ export const spacingTamagui = {
   '15': 60,
   '16.25': 65,
   '16.5': 66,
+  '52.5': 210,
 };
 
 export const sizeMapping = {

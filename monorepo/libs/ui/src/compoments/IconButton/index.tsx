@@ -17,7 +17,7 @@ const IconButton = styled(ButtonBase, {
   },
 
   pressStyle: {
-    backgroundColor: 'transparent',
+    backgroundColor: '$backgroundIcon',
   },
 
   variants: {

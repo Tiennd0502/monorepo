@@ -6,6 +6,7 @@ const colors = {
 const backgroundColors = {
   backgroundPrimary: colors.primary,
   backgroundSecondary: colors.secondary,
+  backgroundTertiary: '#f0f0f0',
   backgroundDisabled: '#909090',
   backgroundInputDisabled: '#f5f5f5',
   backgroundIcon: '#e0e0e0',

@@ -10,4 +10,5 @@ export * from './HiddenIcon';
 export * from './SearchIcon';
 export * from './ProfileIcon';
 export * from './FavoriteIcon';
+export * from './ChevronLeftIcon';
 export * from './NotificationIcon';

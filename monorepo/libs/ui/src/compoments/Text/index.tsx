@@ -58,7 +58,8 @@ const Text = styled(TextBase, {
 
       huge: {
         fontSize: '$7.5',
-        lineHeight: '30',
+        lineHeight: 41,
+        fontWeight: 'bold',
       },
     },
   } as const,

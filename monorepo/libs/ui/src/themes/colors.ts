@@ -8,8 +8,8 @@ const backgroundColors = {
   backgroundSecondary: colors.secondary,
   backgroundDisabled: '#909090',
   backgroundInputDisabled: '#f5f5f5',
-  backgroundIcon: '#fff',
-  backgroundIconDisabled: '#e6e6e6',
+  backgroundIcon: '#e0e0e0',
+  backgroundIconDisabled: '#999',
   backgroundWarning: '#f2c94c',
 } as const;
 

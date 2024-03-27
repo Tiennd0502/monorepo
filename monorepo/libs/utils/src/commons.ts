@@ -1,4 +1,9 @@
-import { Product, ProductResponse } from '@monorepo/types';
+import {
+  CartDetail,
+  OrderDetail,
+  Product,
+  ProductResponse,
+} from '@monorepo/types';
 
 export const getRandomId = () =>
   new Date().getTime().toString() + Math.random().toString(20).slice(3);
@@ -41,3 +46,10 @@ export const formatProducts = (products: ProductResponse[]): Product[] =>
       };
     }
   );
+
+export const formatCartDetails = (data: CartDetail[]): OrderDetail[] =>
+  data.map(({ id, listing, quantity }) => ({
+    id,
+    item: formatProducts([listing])[0],
+    quantity: quantity,
+  }));

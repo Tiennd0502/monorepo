@@ -46,7 +46,7 @@ const borderColor = {
 
 const boxShadowColors = {
   boxShadowPrimary: colors.primary,
-  boxShadowSecondary: 'rgba(52, 52, 52, 0.8)',
+  boxShadowSecondary: 'rgba(52, 52, 52, 0.3)',
   boxShadowTertiary: '#999',
 } as const;
 

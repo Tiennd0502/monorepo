@@ -10,13 +10,13 @@ export const shadows = {
     elevation: 5,
   },
   input: {
-    shadowColor: '$boxShadowTertiary',
+    shadowColor: '$backgroundTertiary',
     shadowOffset: {
       width: 0,
       height: 1,
     },
     shadowOpacity: 0,
     shadowRadius: 1,
-    elevation: 0.5,
+    elevation: 50,
   },
 };

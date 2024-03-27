@@ -1,6 +1,6 @@
 export const shadows = {
   default: {
-    shadowColor: '$boxShadowprimary',
+    shadowColor: '$boxShadowPrimary',
     shadowOffset: {
       width: 0,
       height: 12,
@@ -8,5 +8,15 @@ export const shadows = {
     shadowOpacity: 0,
     shadowRadius: 4,
     elevation: 5,
+  },
+  input: {
+    shadowColor: '$boxShadowTertiary',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0,
+    shadowRadius: 1,
+    elevation: 0.5,
   },
 };

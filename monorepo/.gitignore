@@ -112,5 +112,6 @@ yarn-error.log
 # testing
 /coverage
 
-
 apps/mobile-e2e/artifacts
+
+storybook-static

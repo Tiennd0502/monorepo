@@ -13,6 +13,7 @@ export { default as Checkbox } from './Checkbox';
 export { default as Quantity } from './Quantity';
 export { default as OrderCard } from './OrderCard';
 export { default as IconButton } from './IconButton';
+export { default as PaymentCard } from './PaymentCard';
 export { default as ProductCard } from './ProductCard';
 export { default as ProfileCard } from './ProfileCard';
 export { default as CategoryItem } from './CategoryItem';

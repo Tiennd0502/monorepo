@@ -48,6 +48,7 @@ const boxShadowColors = {
   boxShadowPrimary: colors.primary,
   boxShadowSecondary: 'rgba(52, 52, 52, 0.3)',
   boxShadowTertiary: '#999',
+  boxShadowQuaternary: '#fefefe',
 } as const;
 
 const iconColors = {

@@ -11,6 +11,7 @@ import { CURRENCY_UNIT } from '@monorepo/constants';
 import Text from '../Text';
 import Button from '../Button';
 import Divider from '../Divider';
+import { shadows } from '../../themes';
 
 interface OrderCardProps {
   item: Order;
@@ -37,13 +38,14 @@ const OrderCard = ({
   }, [status]);
 
   return (
-    <Stack borderRadius="$2.5" backgroundColor="$secondary">
+    <Stack backgroundColor="$secondary" borderRadius={10} style={shadows.card}>
       <XStack
         justifyContent="space-between"
         paddingTop="$3.75"
         paddingLeft="$5"
         paddingRight="$3.75"
         paddingBottom="$2.5"
+        overflow="hidden"
       >
         <Text color="$primary" size="extraMedium">{`Order No${id}`}</Text>
         <Text color="$textLabel" size="medium">
@@ -87,7 +89,7 @@ const OrderCard = ({
         >
           Detail
         </Button>
-        <Text color={textColorForStatus}>{ORDER_STATUS[+status]}</Text>
+        <Text color={textColorForStatus}>{status}</Text>
       </XStack>
     </Stack>
   );

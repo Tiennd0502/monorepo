@@ -1,4 +1,5 @@
 export * from './apis';
+export * from './user';
 export * from './blog';
 export * from './orders';
 export * from './message';

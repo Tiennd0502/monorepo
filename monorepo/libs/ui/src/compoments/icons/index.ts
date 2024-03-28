@@ -11,6 +11,7 @@ export * from './MinusIcon';
 export * from './DeleteIcon';
 export * from './HiddenIcon';
 export * from './SearchIcon';
+export * from './LogOutIcon';
 export * from './ProfileIcon';
 export * from './FavoriteIcon';
 export * from './ChevronLeftIcon';

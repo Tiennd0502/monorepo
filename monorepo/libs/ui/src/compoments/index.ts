@@ -10,6 +10,7 @@ export { default as Loading } from './Loading';
 export { default as CartItem } from './CartItem';
 export { default as Checkbox } from './Checkbox';
 export { default as Quantity } from './Quantity';
+export { default as OrderCard } from './OrderCard';
 export { default as IconButton } from './IconButton';
 export { default as ProductCard } from './ProductCard';
 export { default as CategoryItem } from './CategoryItem';

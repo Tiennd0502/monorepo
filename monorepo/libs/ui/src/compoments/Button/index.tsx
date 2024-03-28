@@ -125,7 +125,7 @@ const ButtonText = styled(TButton.Text, {
 
     size: {
       sm: {
-        fontSize: '$textSmall',
+        fontSize: '$textMedium',
         lineHeight: '$2.5',
       },
 

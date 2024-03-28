@@ -42,7 +42,8 @@ const statusColors = {
 const borderColor = {
   borderPrimary: colors.primary,
   borderSecondary: '#bdbdbd',
-  boderTertiary: '#8a959e33',
+  borderTertiary: '#dbdbdb',
+  borderQuaternary: '#8a959e33',
 } as const;
 
 const boxShadowColors = {

@@ -2,6 +2,7 @@ export { default as CartScreen } from './Cart';
 export { default as HomeScreen } from './Home';
 export { default as OrderScreen } from './Order';
 export { default as LoginScreen } from './Login';
+export { default as ReviewScreen } from './Review';
 export { default as SignUpScreen } from './SignUp';
 export { default as ProfileScreen } from './Profile';
 export { default as LandingScreen } from './Landing';

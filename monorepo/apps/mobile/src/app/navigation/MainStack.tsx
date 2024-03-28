@@ -1,13 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { SCREENS, StackParamList } from '../types';
-import {
-  AddPaymentScreen,
-  CartScreen,
-  CheckOutScreen,
-  ProductDetailScreen,
-  PaymentMethodScreen,
-} from '../screens';
+import { CartScreen, CheckOutScreen, ProductDetailScreen } from '../screens';
 
 import MainTabNavigator from './MainTab';
 
@@ -25,11 +19,6 @@ const MainStackNavigator = () => {
       />
       <Stack.Screen name={SCREENS.CART} component={CartScreen} />
       <Stack.Screen name={SCREENS.CHECK_OUT} component={CheckOutScreen} />
-      <Stack.Screen
-        name={SCREENS.PAYMENT_METHOD}
-        component={PaymentMethodScreen}
-      />
-      <Stack.Screen name={SCREENS.ADD_PAYMENT} component={AddPaymentScreen} />
       <Stack.Screen name={SCREENS.MAIN_TAB} component={MainTabNavigator} />
     </Stack.Navigator>
   );

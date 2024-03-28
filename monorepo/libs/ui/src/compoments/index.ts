@@ -8,6 +8,7 @@ export { default as Rating } from './Rating';
 export { default as Heading } from './Heading';
 export { default as Divider } from './Divider';
 export { default as Loading } from './Loading';
+export { default as BlogCard } from './BlogCard';
 export { default as CartItem } from './CartItem';
 export { default as Checkbox } from './Checkbox';
 export { default as Quantity } from './Quantity';

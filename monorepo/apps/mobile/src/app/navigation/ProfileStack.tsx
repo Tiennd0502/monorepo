@@ -2,7 +2,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { SCREENS, StackParamList } from '../types';
 
-import { OrderScreen, ProfileScreen } from '../screens';
+import {
+  OrderScreen,
+  ReviewScreen,
+  ProfileScreen,
+  AddPaymentScreen,
+  PaymentMethodScreen,
+} from '../screens';
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
@@ -17,6 +23,12 @@ const ProfileStack = () => {
     >
       <Stack.Screen name={SCREENS.PROFILE} component={ProfileScreen} />
       <Stack.Screen name={SCREENS.ORDER} component={OrderScreen} />
+      <Stack.Screen
+        name={SCREENS.PAYMENT_METHOD}
+        component={PaymentMethodScreen}
+      />
+      <Stack.Screen name={SCREENS.ADD_PAYMENT} component={AddPaymentScreen} />
+      <Stack.Screen name={SCREENS.REVIEW} component={ReviewScreen} />
     </Stack.Navigator>
   );
 };

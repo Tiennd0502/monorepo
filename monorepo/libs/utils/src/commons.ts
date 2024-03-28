@@ -8,6 +8,7 @@ import {
   ORDER_STATUS,
   BasicLayer,
   Card,
+  Blog,
 } from '@monorepo/types';
 
 export const getRandomId = () =>
@@ -46,11 +47,44 @@ export const formatProducts = (products: ProductResponse[]): Product[] =>
         description,
         categoryId: category_id[0] || '',
         image: images[0] || '',
-        rating: rating_average,
+        rating: +rating_average,
         createdAt: formateDate(created_at),
       };
     }
   );
+
+export const formatReviews = (products: ProductResponse[]): Blog[] => {
+  const result = [];
+
+  products.forEach(
+    ({
+      id,
+      title,
+      list_price,
+      description,
+      category_id = [],
+      images = [],
+      rating_data,
+      created_at,
+    }) => {
+      const { rating_average = 0 } = rating_data || {};
+      const { formatted = '' } = list_price || {};
+
+      rating_average > 0 &&
+        result.push({
+          id,
+          image: images[0] || '',
+          title,
+          evaluate: +rating_average,
+          price: formatted,
+          description,
+          createdAt: formateDate(created_at),
+        });
+    }
+  );
+
+  return result;
+};
 
 export const formatCartDetails = (data: CartDetail[]): OrderDetail[] =>
   data.map(({ id, listing, quantity }) => ({

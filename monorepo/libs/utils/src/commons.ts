@@ -6,6 +6,8 @@ import {
   OrderItem,
   Order,
   ORDER_STATUS,
+  BasicLayer,
+  Card,
 } from '@monorepo/types';
 
 export const getRandomId = () =>
@@ -81,3 +83,18 @@ export const formatOrders = (data: OrderItem[]): Order[] =>
       createdAt: created_at ? formateDate(+created_at) : '',
     };
   });
+
+export const formatPayment = (
+  data: BasicLayer[],
+  isVisa = false,
+  isMasterCard = false
+): Card[] =>
+  data?.map(({ title, content = '', slug = '', summary = '' }) => ({
+    id: '* * * *  * * * *  * * * * ' + content?.slice(-4),
+    number: content,
+    name: title,
+    expiryDate: summary,
+    isVisa,
+    isMasterCard,
+    cvv: +slug,
+  }));

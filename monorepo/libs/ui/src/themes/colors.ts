@@ -12,6 +12,7 @@ const backgroundColors = {
   backgroundIcon: '#e0e0e0',
   backgroundIconDisabled: '#999',
   backgroundWarning: '#f2c94c',
+  backgroundLayer: 'rgba(153, 153, 153, 0.6)',
 } as const;
 
 const textColors = {

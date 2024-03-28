@@ -30,3 +30,28 @@ export enum ORDER_STATUS {
   'Canceled by admin',
   'Completed',
 }
+
+export interface Card {
+  id: string;
+  number: string;
+  name: string;
+  expiryDate: string;
+  isVisa?: boolean;
+  isMasterCard?: boolean;
+  cvv: number;
+}
+
+export interface BasicLayer {
+  title: string;
+  content: string;
+  type: LAYER_TYPE;
+  tags?: string[];
+  slug?: string;
+  cover_image_path?: string;
+  summary?: string;
+  account_id?: string;
+}
+
+export interface Layer {
+  layer: BasicLayer;
+}

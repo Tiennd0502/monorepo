@@ -19,4 +19,14 @@ export const shadows = {
     shadowRadius: 1,
     elevation: 50,
   },
+  card: {
+    shadowColor: '$boxShadowSecondary',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0,
+    shadowRadius: 4,
+    elevation: 16,
+  },
 };

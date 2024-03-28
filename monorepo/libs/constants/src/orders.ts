@@ -1,5 +1,11 @@
 import { ORDER_STATUS, Order } from '@monorepo/types';
 
+export const ORDER_TABS = {
+  Delivered: ORDER_STATUS.Delivered.toString(),
+  Processing: ORDER_STATUS.Processing.toString(),
+  Cancelled: `${ORDER_STATUS['Canceled by admin']},${ORDER_STATUS['Canceled by customer']}`,
+};
+
 export const CHECK_OUT = {
   payment_method_id: '3056',
   shipping_method_id: '5396',

@@ -3,6 +3,9 @@ import {
   OrderDetail,
   Product,
   ProductResponse,
+  OrderItem,
+  Order,
+  ORDER_STATUS,
 } from '@monorepo/types';
 
 export const getRandomId = () =>
@@ -53,3 +56,28 @@ export const formatCartDetails = (data: CartDetail[]): OrderDetail[] =>
     item: formatProducts([listing])[0],
     quantity: quantity,
   }));
+
+export const getTextOfOrderStatus = (value: string) => {
+  if (
+    value === ORDER_STATUS['Canceled by admin'].toString() ||
+    value === ORDER_STATUS['Canceled by customer'].toString()
+  ) {
+    return 'Cancelled';
+  } else {
+    return ORDER_STATUS[value as keyof typeof ORDER_STATUS].toString();
+  }
+};
+
+export const formatOrders = (data: OrderItem[]): Order[] =>
+  data.map(({ id, order_status, created_at, grand_total, order_details }) => {
+    const { amount = 0 } = grand_total || {};
+    const { quantity = 1 } = order_details?.[0] || {};
+
+    return {
+      id,
+      quantity,
+      status: order_status ? getTextOfOrderStatus(order_status) : '',
+      totalAmount: amount,
+      createdAt: created_at ? formateDate(+created_at) : '',
+    };
+  });

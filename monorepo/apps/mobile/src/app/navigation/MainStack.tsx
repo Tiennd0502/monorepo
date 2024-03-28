@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { SCREENS, StackParamList } from '../types';
 import {
+  AddPaymentScreen,
   CartScreen,
   CheckOutScreen,
   ProductDetailScreen,
@@ -28,6 +29,7 @@ const MainStackNavigator = () => {
         name={SCREENS.PAYMENT_METHOD}
         component={PaymentMethodScreen}
       />
+      <Stack.Screen name={SCREENS.ADD_PAYMENT} component={AddPaymentScreen} />
       <Stack.Screen name={SCREENS.MAIN_TAB} component={MainTabNavigator} />
     </Stack.Navigator>
   );

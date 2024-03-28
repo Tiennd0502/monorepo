@@ -34,7 +34,7 @@ const StyledInput = styled(TInput, {
     outlined: {
       true: {
         backgroundColor: '$secondary',
-        borderColor: '$borderSecondary',
+        borderColor: '$borderTertiary',
         color: 'textPrimary',
       },
     },

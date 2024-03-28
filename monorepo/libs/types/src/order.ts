@@ -55,3 +55,9 @@ export interface BasicLayer {
 export interface Layer {
   layer: BasicLayer;
 }
+
+export type AddPaymentFrom = Omit<Card, 'isVisa' | 'isMasterCard' | 'id'>;
+
+export enum LAYER_TYPE {
+  BLOG = 'blog',
+}

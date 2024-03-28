@@ -9,4 +9,5 @@ export { default as CheckOutScreen } from './CheckOut';
 export { default as FavoriteScreen } from './Favorite';
 export { default as VerifyOTPScreen } from './VerifyOTP';
 export { default as NotificationScreen } from './Notification';
+export { default as PaymentMethodScreen } from './PaymentMethod';
 export { default as ProductDetailScreen } from './ProductDetail';

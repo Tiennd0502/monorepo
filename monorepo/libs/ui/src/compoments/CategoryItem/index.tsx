@@ -26,13 +26,7 @@ const CategoryItem = ({
       borderRadius="$3"
       backgroundColor={isActive ? '$primary' : '$backgroundDisabled'}
     >
-      <Image
-        source={{ uri: image }}
-        width={20}
-        height={20}
-        alt={label}
-        tintColor="$secondary"
-      />
+      <Image source={{ uri: image }} width={20} height={20} alt={label} />
     </IconButton>
     <Text color={isActive ? '$primary' : '$textDefault'}>{label}</Text>
   </Stack>

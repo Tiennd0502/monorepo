@@ -23,7 +23,14 @@
     "react-native-gesture-handler": "*",
     "react-native-safe-area-context": "*",
     "@react-native-async-storage/async-storage": "*",
-    "react-native-config": "*"
+    "react-native-config": "*",
+    "@tamagui/themes": "*",
+    "@storybook/react": "*",
+    "axios": "*",
+    "@tanstack/react-query": "*",
+    "zustand": "*",
+    "@react-navigation/bottom-tabs": "*",
+    "react-hook-form": "*"
   },
   "devDependencies": {}
 }

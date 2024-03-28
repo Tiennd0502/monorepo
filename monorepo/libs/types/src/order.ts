@@ -18,3 +18,15 @@ export interface OrderPayload {
 export interface OrderReference {
   order_reference: string;
 }
+
+export enum ORDER_STATUS {
+  'None',
+  'Incomplete',
+  'Confirmed',
+  'Processing',
+  'Shipped',
+  'Delivered',
+  'Canceled by customer',
+  'Canceled by admin',
+  'Completed',
+}

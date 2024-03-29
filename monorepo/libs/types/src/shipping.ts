@@ -17,6 +17,15 @@ export interface ShippingAddressResponse {
   formatted_address?: string;
 }
 
-export interface ShippingAddress {
+export interface ShippingAddressPayload {
   address: ShippingAddressResponse;
+}
+
+export interface ShippingAddress {
+  name: string;
+  address: string;
+  zipCode: string;
+  country: string;
+  city: string;
+  district: string;
 }

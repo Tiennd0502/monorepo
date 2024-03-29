@@ -7,7 +7,12 @@ import { API_PATH } from '@monorepo/constants';
 import { GET, POST } from '@monorepo/utils';
 
 // Types
-import { ADDRESS_TYPE, APIResponse, ShippingAddress } from '@monorepo/types';
+import {
+  ADDRESS_TYPE,
+  APIResponse,
+  ShippingAddressPayload,
+  ShippingAddress,
+} from '@monorepo/types';
 
 // Stores
 import { authStore } from '@monorepo/stores';
@@ -42,8 +47,8 @@ export const useShippingAddress = () => {
   };
 
   const add = useMutation({
-    mutationFn: (data: ShippingAddress) =>
-      POST<APIResponse<ShippingAddress>, ShippingAddress>(
+    mutationFn: (data: ShippingAddressPayload) =>
+      POST<APIResponse<ShippingAddress>, ShippingAddressPayload>(
         API_PATH.ADDRESSES,
         data,
         {

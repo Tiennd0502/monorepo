@@ -10,6 +10,7 @@ import {
   AddPaymentScreen,
   ReviewDetailScreen,
   PaymentMethodScreen,
+  ShippingAddressScreen,
 } from '../screens';
 
 const Stack = createNativeStackNavigator<StackParamList>();
@@ -36,6 +37,10 @@ const ProfileStack = () => {
         component={ReviewDetailScreen}
       />
       <Stack.Screen name={SCREENS.SETTING} component={SettingScreen} />
+      <Stack.Screen
+        name={SCREENS.SHIPPING_ADDRESS}
+        component={ShippingAddressScreen}
+      />
     </Stack.Navigator>
   );
 };

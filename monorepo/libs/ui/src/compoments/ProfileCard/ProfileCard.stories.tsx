@@ -1,10 +1,18 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { Stack } from 'tamagui';
 
 import ProfileCard from '.';
 
 const meta: Meta<typeof ProfileCard> = {
   title: 'Components/ProfileCard',
   component: ProfileCard,
+  decorators: [
+    (Story) => (
+      <Stack width={500}>
+        <Story />
+      </Stack>
+    ),
+  ],
 };
 
 export default meta;

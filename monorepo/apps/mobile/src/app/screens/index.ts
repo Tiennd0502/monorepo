@@ -15,3 +15,4 @@ export { default as NotificationScreen } from './Notification';
 export { default as ReviewDetailScreen } from './ReviewDetail';
 export { default as PaymentMethodScreen } from './PaymentMethod';
 export { default as ProductDetailScreen } from './ProductDetail';
+export { default as ShippingAddressScreen } from './ShippingAddress';

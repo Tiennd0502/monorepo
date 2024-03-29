@@ -67,11 +67,11 @@ const StyledLabel = styled(Label, {
 
 interface CheckboxProps extends Omit<TCheckboxProps, 'size'> {
   label?: string;
-  size: 'md';
+  size?: 'md';
 }
 
 const Checkbox = ({
-  size,
+  size = 'md',
   label = '',
   checked = false,
   ...rest

@@ -1,4 +1,5 @@
 import { User } from './user';
+import { RatingData } from './product';
 
 export enum REVIEW_TYPES {
   ACCOUNTS = 'accounts',
@@ -18,13 +19,6 @@ export interface BasicReview {
 
 export interface Review {
   review: BasicReview;
-}
-
-export interface RatingData {
-  rating_average?: number;
-  rating_count?: number;
-  rating_count_data?: number;
-  review_count?: number;
 }
 
 export interface ReviewResponse {

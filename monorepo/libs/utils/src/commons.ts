@@ -3,9 +3,11 @@ import {
   OrderDetail,
   Product,
   ProductResponse,
+  ShippingAddressResponse,
   OrderItem,
   Order,
   ORDER_STATUS,
+  Shipping,
   BasicLayer,
   BasicReview,
   Card,
@@ -147,4 +149,15 @@ export const formatPayment = (
     isVisa,
     isMasterCard,
     cvv: +slug,
+  }));
+
+export const formatShippingAddress = (
+  data: ShippingAddressResponse[],
+  isChangeAddress = false
+): Shipping[] =>
+  data?.map(({ id = '', name, formatted_address = '' }) => ({
+    id,
+    name,
+    address: formatted_address,
+    isChangeAddress,
   }));

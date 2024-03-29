@@ -1,6 +1,7 @@
 export * from './AddIcon';
 export * from './BagIcon';
 export * from './CartIcon';
+export * from './EditIcon';
 export * from './ShowIcon';
 export * from './LogoIcon';
 export * from './HomeIcon';

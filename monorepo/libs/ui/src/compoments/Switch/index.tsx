@@ -29,7 +29,7 @@ const Frame = styled(Stack, {
 
     disabled: {
       true: {
-        opacity: 0.6,
+        opacity: 0.2,
       },
     },
   } as const,
@@ -47,10 +47,11 @@ const Thumb = styled(Stack, {
 
   variants: {
     checked: {
-      true: {},
-      false: {
-        opacity: 0.8,
+      indeterminate: {
+        backgroundColor: '$secondary',
       },
+      true: {},
+      false: {},
     },
   } as const,
 });
@@ -68,7 +69,7 @@ const Switch = ({ label, ...props }: SwitchProps) => {
   const id = useId();
 
   return (
-    <YStack width={200} alignItems="center" gap="$3">
+    <YStack alignItems="center" gap="$3">
       <XStack gap="$2" alignItems="center">
         {label && (
           <Label htmlFor={id} color="$textDefault">

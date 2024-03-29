@@ -1,11 +1,11 @@
 import { memo } from 'react';
-import { Stack, XStack } from 'tamagui';
+import { Stack, XStack, StackProps } from 'tamagui';
 
 import Text from '../Text';
 import { shadows } from '../../themes';
 import { ChevronRightIcon } from '../icons';
 
-interface ProfileCardProps extends CSSProps {
+interface ProfileCardProps extends StackProps {
   title: string;
   description?: string;
   onPress: () => void;
@@ -15,6 +15,7 @@ const ProfileCard = ({
   title,
   description = '',
   onPress,
+  style,
   ...props
 }: ProfileCardProps) => (
   <XStack
@@ -24,8 +25,9 @@ const ProfileCard = ({
     backgroundColor="$secondary"
     alignItems="center"
     justifyContent="space-between"
-    style={shadows.card}
+    style={[shadows.card, style]}
     onPress={onPress}
+    {...props}
   >
     <Stack gap="$1.5">
       <Text bold color="$primary" size="large">

@@ -17,3 +17,5 @@ export const API_PATH = {
 };
 
 export const AUTH_STORE_KEY = 'auth-storage';
+
+export const USER_STORE_KEY = 'user-storage';

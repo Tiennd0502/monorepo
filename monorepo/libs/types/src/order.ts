@@ -1,3 +1,5 @@
+import { Price } from './product';
+
 export interface Order {
   id: string;
   quantity: number;
@@ -60,4 +62,16 @@ export type AddPaymentFrom = Omit<Card, 'isVisa' | 'isMasterCard' | 'id'>;
 
 export enum LAYER_TYPE {
   BLOG = 'blog',
+}
+
+export interface OrderItem {
+  id: string;
+  order_status: string;
+  created_at: string;
+  grand_total: Price;
+  order_details: [
+    {
+      quantity: number;
+    }
+  ];
 }

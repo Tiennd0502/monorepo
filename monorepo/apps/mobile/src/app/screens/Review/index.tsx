@@ -2,6 +2,7 @@ import { memo, useMemo, useCallback } from 'react';
 import { Stack, ScrollView } from 'tamagui';
 
 // Types
+import { SCREENS } from '../../types';
 import { ProductResponse } from '@monorepo/types';
 
 // Constants
@@ -22,7 +23,7 @@ import {
   SearchIcon,
 } from '@monorepo/ui';
 
-const Review = () => {
+const Review = ({ navigation }) => {
   const { useFetchProducts } = useProducts();
   const { data, isPending } = useFetchProducts(INIT_PAGE);
   const pages = useMemo(() => data?.pages || [], [data?.pages]);
@@ -38,7 +39,12 @@ const Review = () => {
     [products]
   );
 
-  const handleGoBack = useCallback(() => navigation.goBack(), []);
+  const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
+
+  const handleViewDetail = useCallback(
+    (item) => navigation.navigate(SCREENS.REVIEW_DETAIL, { item }),
+    [navigation]
+  );
 
   return (
     <Stack flex={1} backgroundColor="$secondary">
@@ -53,7 +59,11 @@ const Review = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Stack padding="$5" gap="$8">
           {reviewsFormat.map((item) => (
-            <BlogCard key={item.id} item={item} />
+            <BlogCard
+              key={item.id}
+              item={item}
+              onPress={() => handleViewDetail(item)}
+            />
           ))}
         </Stack>
       </ScrollView>

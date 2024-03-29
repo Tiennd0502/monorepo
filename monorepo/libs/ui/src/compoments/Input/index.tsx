@@ -25,9 +25,12 @@ const StyledInput = styled(TInput, {
   variants: {
     solid: {
       true: {
-        backgroundColor: '$primary',
-        color: '$textSecondary',
-        borderColor: '$primary',
+        backgroundColor: '$secondary',
+        color: '$textPrimary',
+        borderColor: 'transparent',
+        focusStyle: {
+          borderColor: '$borderTertiary',
+        },
       },
     },
 

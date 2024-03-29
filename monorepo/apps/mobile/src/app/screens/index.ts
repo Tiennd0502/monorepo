@@ -5,6 +5,7 @@ export { default as LoginScreen } from './Login';
 export { default as ReviewScreen } from './Review';
 export { default as SignUpScreen } from './SignUp';
 export { default as ProfileScreen } from './Profile';
+export { default as SettingScreen } from './Setting';
 export { default as LandingScreen } from './Landing';
 export { default as CheckOutScreen } from './CheckOut';
 export { default as FavoriteScreen } from './Favorite';

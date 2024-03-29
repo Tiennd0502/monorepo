@@ -5,6 +5,7 @@ export { default as Avatar } from './Avatar';
 export { default as Button } from './Button';
 export { default as Header } from './Header';
 export { default as Rating } from './Rating';
+export { default as Switch } from './Switch';
 export { default as Heading } from './Heading';
 export { default as Divider } from './Divider';
 export { default as Loading } from './Loading';

@@ -5,6 +5,7 @@ import { SCREENS, StackParamList } from '../types';
 import {
   OrderScreen,
   ReviewScreen,
+  SettingScreen,
   ProfileScreen,
   AddPaymentScreen,
   ReviewDetailScreen,
@@ -34,6 +35,7 @@ const ProfileStack = () => {
         name={SCREENS.REVIEW_DETAIL}
         component={ReviewDetailScreen}
       />
+      <Stack.Screen name={SCREENS.SETTING} component={SettingScreen} />
     </Stack.Navigator>
   );
 };

@@ -7,6 +7,7 @@ import {
   ReviewScreen,
   ProfileScreen,
   AddPaymentScreen,
+  ReviewDetailScreen,
   PaymentMethodScreen,
 } from '../screens';
 
@@ -29,6 +30,10 @@ const ProfileStack = () => {
       />
       <Stack.Screen name={SCREENS.ADD_PAYMENT} component={AddPaymentScreen} />
       <Stack.Screen name={SCREENS.REVIEW} component={ReviewScreen} />
+      <Stack.Screen
+        name={SCREENS.REVIEW_DETAIL}
+        component={ReviewDetailScreen}
+      />
     </Stack.Navigator>
   );
 };

@@ -7,6 +7,7 @@ import {
   Order,
   ORDER_STATUS,
   BasicLayer,
+  BasicReview,
   Card,
   Blog,
 } from '@monorepo/types';
@@ -54,7 +55,7 @@ export const formatProducts = (products: ProductResponse[]): Product[] =>
   );
 
 export const formatReviews = (products: ProductResponse[]): Blog[] => {
-  const result = [];
+  const result: Blog[] = [];
 
   products.forEach(
     ({
@@ -85,6 +86,21 @@ export const formatReviews = (products: ProductResponse[]): Blog[] => {
 
   return result;
 };
+
+export const formatUserReviews = (data: BasicReview[]): Blog[] =>
+  data?.map((item) => {
+    const { id, user, content = '', created_at = '', rating = 0 } = item;
+    const { first_name = '', last_name = '', profile_pic = '' } = user || {};
+
+    return {
+      id,
+      title: first_name + ' ' + last_name,
+      image: profile_pic,
+      evaluate: rating,
+      createdAt: created_at ? formateDate(+created_at) : '',
+      description: content,
+    };
+  });
 
 export const formatCartDetails = (data: CartDetail[]): OrderDetail[] =>
   data.map(({ id, listing, quantity }) => ({

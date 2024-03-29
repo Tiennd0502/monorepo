@@ -75,3 +75,10 @@ export interface OrderItem {
     }
   ];
 }
+
+export interface Shipping {
+  id: string;
+  name: string;
+  address: string;
+  isChangeAddress?: boolean;
+}

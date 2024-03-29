@@ -1,18 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import Switch from '.';
-import { Stack } from 'tamagui';
 
 const meta: Meta<typeof Switch> = {
   title: 'Components/Switch',
   component: Switch,
-  decorators: [
-    (Story) => (
-      <Stack width={450}>
-        <Story />
-      </Stack>
-    ),
-  ],
 };
 
 export default meta;

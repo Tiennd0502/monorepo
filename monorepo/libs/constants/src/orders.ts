@@ -1,4 +1,4 @@
-import { ORDER_STATUS, Order, Card } from '@monorepo/types';
+import { ORDER_STATUS, Order, Card, Shipping } from '@monorepo/types';
 
 export const ORDER_TABS = {
   Delivered: ORDER_STATUS.Delivered.toString(),
@@ -121,5 +121,26 @@ export const PAYMENT_CARDS: Card[] = [
     expiryDate: '05/23',
     isVisa: true,
     cvv: 123,
+  },
+];
+
+export const SHIPPING_ADDRESS: Shipping[] = [
+  {
+    id: '123123',
+    name: 'Bruno Fernandes',
+    address: '25 rue Robert Latouche, Nice, 06200, Côte D’azur, France',
+    isChangeAddress: true,
+  },
+  {
+    id: '6789',
+    name: 'Bruno Fernandes',
+    address: '25 rue Robert Latouche, Nice, 06200, Côte D’azur, France',
+    isChangeAddress: false,
+  },
+  {
+    id: '111',
+    name: 'Bruno Fernandes',
+    address: '25 rue Robert Latouche, Nice, 06200, Côte D’azur, France',
+    isChangeAddress: false,
   },
 ];

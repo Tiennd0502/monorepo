@@ -1,3 +1,4 @@
+import { Cart } from './cart';
 import { Price } from './product';
 
 export interface Order {
@@ -33,6 +34,23 @@ export enum ORDER_STATUS {
   'Completed',
 }
 
+export interface PaymentInfo {
+  carts?: Cart[];
+  payment_total?: string;
+}
+
+export interface ConfirmOrder {
+  order: {
+    payment_info?: PaymentInfo;
+  };
+}
+
+export interface ConfirmOrderPayload extends ConfirmOrder {
+  id: string;
+  order: {
+    payment_info?: PaymentInfo;
+  };
+}
 export interface Card {
   id: string;
   number: string;

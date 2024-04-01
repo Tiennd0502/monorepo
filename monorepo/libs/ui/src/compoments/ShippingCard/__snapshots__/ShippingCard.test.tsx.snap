@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShippingCard should render ShippingCard component 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "elevation": 16,
+      "shadowColor": "$boxShadowSecondary",
+      "shadowOffset": {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0,
+      "shadowRadius": 4,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingBottom": 15,
+        "paddingLeft": 20,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#242424",
+          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Bruno Fernandes
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "backgroundColor": "#f0f0f0",
+        "height": 2,
+        "width": "100%",
+      }
+    }
+  />
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#808080",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "lineHeight": 20,
+        "paddingBottom": 18,
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "paddingTop": 12,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    25 rue Robert Latouche, Nice, 06200, Côte D’azur, France
+  </Text>
+</View>
+`;
+
+exports[`ShippingCard should render ShippingCard component with onEdit props 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "elevation": 16,
+      "shadowColor": "$boxShadowSecondary",
+      "shadowOffset": {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0,
+      "shadowRadius": 4,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingBottom": 15,
+        "paddingLeft": 20,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#242424",
+          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Bruno Fernandes
+    </Text>
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="24"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height={24}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      onPress={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      responsible={true}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      testID="edit-icon"
+      vbHeight={24}
+      vbWidth={24}
+      width={24}
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          clipRule={0}
+          d="M4.293 17.686a1.003 1.003 0 01-.29-.799l.38-4.17c.042-.457.244-.888.57-1.213l8.995-8.996c.702-.705 1.976-.67 2.716.069l2.738 2.738h.002c.765.767.796 1.985.067 2.715l-8.996 8.996a1.975 1.975 0 01-1.214.57l-4.17.378a1.003 1.003 0 01-.798-.289zm11.726-9.03l-2.695-2.694 1.947-1.95 2.694 2.695-1.947 1.95zm-6.94 6.946l-2.976.271.264-2.955L11.983 7.3l2.697 2.697-5.6 5.604zM19 21.977c.55 0 1-.45 1-1 0-.549-.45-1-1-1H5c-.548 0-1 .451-1 1 0 .55.452 1 1 1h14z"
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          fillRule={0}
+          propList={
+            [
+              "fill",
+              "fillRule",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+  <View
+    style={
+      {
+        "backgroundColor": "#f0f0f0",
+        "height": 1,
+        "width": "100%",
+      }
+    }
+  />
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#808080",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "lineHeight": 20,
+        "paddingBottom": 18,
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "paddingTop": 12,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    25 rue Robert Latouche, Nice, 06200, Côte D’azur, France
+  </Text>
+</View>
+`;

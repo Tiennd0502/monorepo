@@ -1,0 +1,868 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentCard should render PaymentCard component 1`] = `
+<View
+  style={
+    {
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "minHeight": 180,
+      "overflow": "hidden",
+      "paddingBottom": 24,
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 24,
+      "position": "relative",
+      "width": "100%",
+      "zIndex": 100,
+    }
+  }
+>
+  <Image
+    resizeMode="stretch"
+    source={
+      {
+        "uri": "https://i.ibb.co/NTwMB09/bg-card.png",
+      }
+    }
+    style={
+      {
+        "bottom": 0,
+        "left": 0,
+        "minHeight": "100%",
+        "minWidth": "100%",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 200,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "zIndex": 300,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 10,
+          "paddingBottom": 26,
+        }
+      }
+    >
+      <Image
+        source={
+          {
+            "uri": "https://i.ibb.co/S0tfTB1/master-card.png",
+          }
+        }
+        style={
+          {
+            "height": 24,
+            "width": 32,
+          }
+        }
+      />
+      <Image
+        source={
+          {
+            "uri": "https://i.ibb.co/4gV41yh/visa.png",
+          }
+        }
+        style={
+          {
+            "height": 16,
+            "width": 50,
+          }
+        }
+      />
+    </View>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#fff",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 20,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      * * * *  * * * *  * * * *  1237
+    </Text>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingTop": 34,
+        }
+      }
+    >
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#999",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Card Holder Name
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#fff",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Jennyfer Doe
+        </Text>
+      </View>
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#999",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Expiry Date
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#fff",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          05/23
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`PaymentCard should render PaymentCard component disabled 1`] = `
+<View
+  style={
+    {
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "minHeight": 180,
+      "overflow": "hidden",
+      "paddingBottom": 24,
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 24,
+      "position": "relative",
+      "width": "100%",
+      "zIndex": 100,
+    }
+  }
+>
+  <Image
+    resizeMode="stretch"
+    source={
+      {
+        "uri": "https://i.ibb.co/NTwMB09/bg-card.png",
+      }
+    }
+    style={
+      {
+        "bottom": 0,
+        "left": 0,
+        "minHeight": "100%",
+        "minWidth": "100%",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 200,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "zIndex": 300,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 10,
+          "paddingBottom": 26,
+        }
+      }
+    >
+      <Image
+        source={
+          {
+            "uri": "https://i.ibb.co/S0tfTB1/master-card.png",
+          }
+        }
+        style={
+          {
+            "height": 24,
+            "width": 32,
+          }
+        }
+      />
+      <Image
+        source={
+          {
+            "uri": "https://i.ibb.co/4gV41yh/visa.png",
+          }
+        }
+        style={
+          {
+            "height": 16,
+            "width": 50,
+          }
+        }
+      />
+    </View>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#fff",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 20,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      * * * *  * * * *  * * * *  1237
+    </Text>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingTop": 34,
+        }
+      }
+    >
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#999",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Card Holder Name
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#fff",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Jennyfer Doe
+        </Text>
+      </View>
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#999",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Expiry Date
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#fff",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          05/23
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "backgroundColor": "rgba(153, 153, 153, 0.6)",
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 400,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`PaymentCard should render PaymentCard component has special character 1`] = `
+<View
+  style={
+    {
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "minHeight": 180,
+      "overflow": "hidden",
+      "paddingBottom": 24,
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 24,
+      "position": "relative",
+      "width": "100%",
+      "zIndex": 100,
+    }
+  }
+>
+  <Image
+    resizeMode="stretch"
+    source={
+      {
+        "uri": "https://i.ibb.co/NTwMB09/bg-card.png",
+      }
+    }
+    style={
+      {
+        "bottom": 0,
+        "left": 0,
+        "minHeight": "100%",
+        "minWidth": "100%",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 200,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "zIndex": 300,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 10,
+          "paddingBottom": 26,
+        }
+      }
+    >
+      <Image
+        source={
+          {
+            "uri": "https://i.ibb.co/S0tfTB1/master-card.png",
+          }
+        }
+        style={
+          {
+            "height": 24,
+            "width": 32,
+          }
+        }
+      />
+      <Image
+        source={
+          {
+            "uri": "https://i.ibb.co/4gV41yh/visa.png",
+          }
+        }
+        style={
+          {
+            "height": 16,
+            "width": 50,
+          }
+        }
+      />
+    </View>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#fff",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 20,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      * * * *  * * * *  * * * *  1237
+    </Text>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingTop": 34,
+        }
+      }
+    >
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#999",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Card Holder Name
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#fff",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          XXXXXX
+        </Text>
+      </View>
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#999",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Expiry Date
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#fff",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          XX/XX
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`PaymentCard should render PaymentCard component with isMasterCard 1`] = `
+<View
+  style={
+    {
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "minHeight": 180,
+      "overflow": "hidden",
+      "paddingBottom": 24,
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 24,
+      "position": "relative",
+      "width": "100%",
+      "zIndex": 100,
+    }
+  }
+>
+  <Image
+    resizeMode="stretch"
+    source={
+      {
+        "uri": "https://i.ibb.co/NTwMB09/bg-card.png",
+      }
+    }
+    style={
+      {
+        "bottom": 0,
+        "left": 0,
+        "minHeight": "100%",
+        "minWidth": "100%",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 200,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "zIndex": 300,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 10,
+          "paddingBottom": 26,
+        }
+      }
+    >
+      <Image
+        source={
+          {
+            "uri": "https://i.ibb.co/S0tfTB1/master-card.png",
+          }
+        }
+        style={
+          {
+            "height": 24,
+            "width": 32,
+          }
+        }
+      />
+    </View>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#fff",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 20,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      * * * *  * * * *  * * * *  1235
+    </Text>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingTop": 34,
+        }
+      }
+    >
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#999",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Card Holder Name
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#fff",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Jennyfer Doe
+        </Text>
+      </View>
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#999",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Expiry Date
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#fff",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          05/23
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`PaymentCard should render PaymentCard component with isVisaCard 1`] = `
+<View
+  style={
+    {
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "minHeight": 180,
+      "overflow": "hidden",
+      "paddingBottom": 24,
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 24,
+      "position": "relative",
+      "width": "100%",
+      "zIndex": 100,
+    }
+  }
+>
+  <Image
+    resizeMode="stretch"
+    source={
+      {
+        "uri": "https://i.ibb.co/NTwMB09/bg-card.png",
+      }
+    }
+    style={
+      {
+        "bottom": 0,
+        "left": 0,
+        "minHeight": "100%",
+        "minWidth": "100%",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 200,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "zIndex": 300,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 10,
+          "paddingBottom": 26,
+        }
+      }
+    >
+      <Image
+        source={
+          {
+            "uri": "https://i.ibb.co/4gV41yh/visa.png",
+          }
+        }
+        style={
+          {
+            "height": 16,
+            "width": 50,
+          }
+        }
+      />
+    </View>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#fff",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 20,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      * * * *  * * * *  * * * *  1236
+    </Text>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingTop": 34,
+        }
+      }
+    >
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#999",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Card Holder Name
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#fff",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Jennyfer Doe
+        </Text>
+      </View>
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#999",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          Expiry Date
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            {
+              "color": "#fff",
+              "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "lineHeight": 20,
+            }
+          }
+          suppressHighlighting={true}
+        >
+          05/23
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

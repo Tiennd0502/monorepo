@@ -37,6 +37,7 @@ const DiscountCode = ({ value = '', onSubmit }: DiscountCodeProps) => {
   return (
     <Stack position="relative" zIndex="$2">
       <Input
+        testID='input'
         position="absolute"
         top={0}
         width="100%"
@@ -51,6 +52,7 @@ const DiscountCode = ({ value = '', onSubmit }: DiscountCodeProps) => {
         onChangeText={handleChangeText}
       />
       <IconButton
+        testID='icon'
         solid
         position="absolute"
         top={0}

@@ -38,7 +38,7 @@ const ShippingCard = ({
         <Text color="$textPrimary" size="large" bold>
           {name}
         </Text>
-        {onEdit && <EditIcon onPress={handleEditClick} />}
+        {onEdit && <EditIcon testID='edit-icon' onPress={handleEditClick} />}
       </XStack>
       <Divider height={onEdit ? '$px' : '$0.5'} color="$backgroundTertiary" />
       <Text

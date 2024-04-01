@@ -76,7 +76,7 @@ const Switch = ({ label, ...props }: SwitchProps) => {
             {label}
           </Label>
         )}
-        <SwitchBase id={id} {...props}>
+        <SwitchBase testID='switch' id={id} {...props}>
           <SwitchBase.Thumb animation="quick" />
         </SwitchBase>
       </XStack>

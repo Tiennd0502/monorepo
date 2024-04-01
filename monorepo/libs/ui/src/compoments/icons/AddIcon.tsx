@@ -10,6 +10,7 @@ export const AddIcon = ({
   ...props
 }: SvgProps) => (
   <Svg
+    testID='add-icon'
     fill="none"
     viewBox="0 0 24 25"
     width={getTokenValueByKey(TOKEN_KEYS.SPACE, width.toString())}

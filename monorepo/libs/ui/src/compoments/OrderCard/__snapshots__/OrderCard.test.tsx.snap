@@ -1,0 +1,709 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderCard should render OrderCard component 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "borderBottomLeftRadius": 10,
+      "borderBottomRightRadius": 10,
+      "borderTopLeftRadius": 10,
+      "borderTopRightRadius": 10,
+      "elevation": 16,
+      "shadowColor": "$boxShadowSecondary",
+      "shadowOffset": {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0,
+      "shadowRadius": 4,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "overflow": "hidden",
+        "paddingBottom": 10,
+        "paddingLeft": 20,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#242424",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Order No01
+    </Text>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#808080",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      20/03/2020
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "backgroundColor": "#f0f0f0",
+        "height": 2,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingBottom": 10,
+        "paddingLeft": 20,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#808080",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Quantity: 
+      </Text>
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#242424",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        1
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#808080",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Total Amount: 
+      </Text>
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#242424",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        $100
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingBottom": 20,
+        "paddingRight": 15,
+        "paddingTop": 20,
+      }
+    }
+  >
+    <View
+      accessibilityRole="button"
+      focusable={true}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#242424",
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 4,
+          "borderBottomWidth": 0,
+          "borderLeftWidth": 0,
+          "borderRightWidth": 0,
+          "borderStyle": "solid",
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 4,
+          "borderTopWidth": 0,
+          "color": "#fff",
+          "flexDirection": "row",
+          "height": 36,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 7,
+          "paddingTop": 7,
+          "width": 100,
+        }
+      }
+      testID="view-detail"
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#fff",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "600",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Detail
+      </Text>
+    </View>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#27ae60",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      5
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`OrderCard should render OrderCard component with order status canceled 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "borderBottomLeftRadius": 10,
+      "borderBottomRightRadius": 10,
+      "borderTopLeftRadius": 10,
+      "borderTopRightRadius": 10,
+      "elevation": 16,
+      "shadowColor": "$boxShadowSecondary",
+      "shadowOffset": {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0,
+      "shadowRadius": 4,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "overflow": "hidden",
+        "paddingBottom": 10,
+        "paddingLeft": 20,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#242424",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Order No08
+    </Text>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#808080",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      21/03/2024
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "backgroundColor": "#f0f0f0",
+        "height": 2,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingBottom": 10,
+        "paddingLeft": 20,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#808080",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Quantity: 
+      </Text>
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#242424",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        2
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#808080",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Total Amount: 
+      </Text>
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#242424",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        $900
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingBottom": 20,
+        "paddingRight": 15,
+        "paddingTop": 20,
+      }
+    }
+  >
+    <View
+      accessibilityRole="button"
+      focusable={true}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#242424",
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 4,
+          "borderBottomWidth": 0,
+          "borderLeftWidth": 0,
+          "borderRightWidth": 0,
+          "borderStyle": "solid",
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 4,
+          "borderTopWidth": 0,
+          "color": "#fff",
+          "flexDirection": "row",
+          "height": 36,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 7,
+          "paddingTop": 7,
+          "width": 100,
+        }
+      }
+      testID="view-detail"
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#fff",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "600",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Detail
+      </Text>
+    </View>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#eb5757",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      6
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`OrderCard should render OrderCard component with order status processing 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "borderBottomLeftRadius": 10,
+      "borderBottomRightRadius": 10,
+      "borderTopLeftRadius": 10,
+      "borderTopRightRadius": 10,
+      "elevation": 16,
+      "shadowColor": "$boxShadowSecondary",
+      "shadowOffset": {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0,
+      "shadowRadius": 4,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "overflow": "hidden",
+        "paddingBottom": 10,
+        "paddingLeft": 20,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#242424",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Order No05
+    </Text>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#808080",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      21/03/2024
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "backgroundColor": "#f0f0f0",
+        "height": 2,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingBottom": 10,
+        "paddingLeft": 20,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#808080",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Quantity: 
+      </Text>
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#242424",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        1
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#808080",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Total Amount: 
+      </Text>
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#242424",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        $600
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingBottom": 20,
+        "paddingRight": 15,
+        "paddingTop": 20,
+      }
+    }
+  >
+    <View
+      accessibilityRole="button"
+      focusable={true}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#242424",
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 4,
+          "borderBottomWidth": 0,
+          "borderLeftWidth": 0,
+          "borderRightWidth": 0,
+          "borderStyle": "solid",
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 4,
+          "borderTopWidth": 0,
+          "color": "#fff",
+          "flexDirection": "row",
+          "height": 36,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 7,
+          "paddingTop": 7,
+          "width": 100,
+        }
+      }
+      testID="view-detail"
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#fff",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "600",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Detail
+      </Text>
+    </View>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#f2c94c",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      3
+    </Text>
+  </View>
+</View>
+`;

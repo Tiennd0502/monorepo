@@ -22,6 +22,7 @@ const Notification = ({
 
   return (
     <XStack
+      testID='notification'
       onPress={handleClick}
       padding="$5"
       columnGap="$3"

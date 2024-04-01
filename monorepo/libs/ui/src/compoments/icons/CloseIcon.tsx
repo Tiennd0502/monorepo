@@ -10,6 +10,7 @@ export const CloseIcon = ({
   ...props
 }: SvgProps) => (
   <Svg
+    testID='close-icon'
     fill="none"
     viewBox="0 0 24 24"
     width={getTokenValueByKey(TOKEN_KEYS.SPACE, width.toString())}

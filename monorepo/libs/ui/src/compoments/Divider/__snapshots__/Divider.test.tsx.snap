@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider should render Avatar component with default props 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#909090",
+      "height": 1,
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`Divider should render Avatar component with props 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "red",
+      "height": "2",
+      "width": "100%",
+    }
+  }
+/>
+`;

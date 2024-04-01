@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render Input component with default props 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "position": "relative",
+      "zIndex": 1,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#808080",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "left": 16,
+        "position": "absolute",
+        "top": 8,
+        "zIndex": 200,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    Name
+  </Text>
+  <TextInput
+    allowFontScaling={false}
+    focusVisibleStyle={{}}
+    focusable={true}
+    onChangeText={[Function]}
+    placeholder="Enter value"
+    placeholderTextColor="#999"
+    style={
+      {
+        "backgroundColor": "#fff",
+        "borderBottomColor": "transparent",
+        "borderBottomLeftRadius": 5,
+        "borderBottomRightRadius": 5,
+        "borderBottomWidth": 1,
+        "borderLeftColor": "transparent",
+        "borderLeftWidth": 1,
+        "borderRightColor": "transparent",
+        "borderRightWidth": 1,
+        "borderStyle": "solid",
+        "borderTopColor": "transparent",
+        "borderTopLeftRadius": 5,
+        "borderTopRightRadius": 5,
+        "borderTopWidth": 1,
+        "color": "#242424",
+        "flex": 1,
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 16,
+        "height": 66,
+        "minWidth": 0,
+        "paddingBottom": 14,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 26,
+      }
+    }
+    testID="input"
+  />
+</View>
+`;
+
+exports[`Input should render Input component with error message 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "position": "relative",
+      "zIndex": 1,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#808080",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "left": 16,
+        "position": "absolute",
+        "top": 8,
+        "zIndex": 200,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    Name
+  </Text>
+  <TextInput
+    allowFontScaling={false}
+    focusVisibleStyle={{}}
+    focusable={true}
+    onChangeText={[Function]}
+    placeholder="Enter value"
+    placeholderTextColor="#999"
+    style={
+      {
+        "backgroundColor": "#fff",
+        "borderBottomColor": "transparent",
+        "borderBottomLeftRadius": 5,
+        "borderBottomRightRadius": 5,
+        "borderBottomWidth": 1,
+        "borderLeftColor": "transparent",
+        "borderLeftWidth": 1,
+        "borderRightColor": "transparent",
+        "borderRightWidth": 1,
+        "borderStyle": "solid",
+        "borderTopColor": "transparent",
+        "borderTopLeftRadius": 5,
+        "borderTopRightRadius": 5,
+        "borderTopWidth": 1,
+        "color": "#242424",
+        "flex": 1,
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 16,
+        "height": 66,
+        "minWidth": 0,
+        "paddingBottom": 14,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 26,
+      }
+    }
+    testID="input"
+  />
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "bottom": 0,
+        "color": "#eb5757",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "left": 16,
+        "lineHeight": 20,
+        "marginBottom": -20,
+        "position": "absolute",
+        "zIndex": 200,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    Name is required
+  </Text>
+</View>
+`;
+
+exports[`Input should render Input component with variant disabled 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "position": "relative",
+      "zIndex": 1,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#808080",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "left": 16,
+        "position": "absolute",
+        "top": 8,
+        "zIndex": 200,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    Name
+  </Text>
+  <TextInput
+    allowFontScaling={false}
+    focusVisibleStyle={{}}
+    focusable={true}
+    onChangeText={[Function]}
+    placeholder="Enter value"
+    placeholderTextColor="#999"
+    readOnly={true}
+    style={
+      {
+        "backgroundColor": "#f5f5f5",
+        "borderBottomColor": "#f5f5f5",
+        "borderBottomLeftRadius": 5,
+        "borderBottomRightRadius": 5,
+        "borderBottomWidth": 1,
+        "borderLeftColor": "#f5f5f5",
+        "borderLeftWidth": 1,
+        "borderRightColor": "#f5f5f5",
+        "borderRightWidth": 1,
+        "borderStyle": "solid",
+        "borderTopColor": "#f5f5f5",
+        "borderTopLeftRadius": 5,
+        "borderTopRightRadius": 5,
+        "borderTopWidth": 1,
+        "color": "textPlaceholder",
+        "flex": 1,
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 16,
+        "height": 66,
+        "minWidth": 0,
+        "paddingBottom": 14,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 26,
+      }
+    }
+    testID="input"
+  />
+</View>
+`;
+
+exports[`Input should render Input component with variant flushed 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "position": "relative",
+      "zIndex": 1,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#808080",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "left": 16,
+        "position": "absolute",
+        "top": 8,
+        "zIndex": 200,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    Name
+  </Text>
+  <TextInput
+    allowFontScaling={false}
+    focusVisibleStyle={{}}
+    focusable={true}
+    onChangeText={[Function]}
+    placeholder="Enter value"
+    placeholderTextColor="#999"
+    style={
+      {
+        "backgroundColor": "transparent",
+        "borderBottomColor": "transparent",
+        "borderBottomLeftRadius": 5,
+        "borderBottomRightRadius": 5,
+        "borderBottomWidth": 1,
+        "borderLeftColor": "transparent",
+        "borderLeftWidth": 1,
+        "borderRightColor": "transparent",
+        "borderRightWidth": 1,
+        "borderStyle": "solid",
+        "borderTopColor": "transparent",
+        "borderTopLeftRadius": 5,
+        "borderTopRightRadius": 5,
+        "borderTopWidth": 1,
+        "color": "textPrimary",
+        "flex": 1,
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 16,
+        "height": 66,
+        "minWidth": 0,
+        "paddingBottom": 14,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 26,
+      }
+    }
+    testID="input"
+  />
+</View>
+`;
+
+exports[`Input should render Input component with variant outlined 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "position": "relative",
+      "zIndex": 1,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#808080",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "left": 16,
+        "position": "absolute",
+        "top": 8,
+        "zIndex": 200,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    Name
+  </Text>
+  <TextInput
+    allowFontScaling={false}
+    focusVisibleStyle={{}}
+    focusable={true}
+    onChangeText={[Function]}
+    placeholder="Enter value"
+    placeholderTextColor="#999"
+    style={
+      {
+        "backgroundColor": "#fff",
+        "borderBottomColor": "#dbdbdb",
+        "borderBottomLeftRadius": 5,
+        "borderBottomRightRadius": 5,
+        "borderBottomWidth": 1,
+        "borderLeftColor": "#dbdbdb",
+        "borderLeftWidth": 1,
+        "borderRightColor": "#dbdbdb",
+        "borderRightWidth": 1,
+        "borderStyle": "solid",
+        "borderTopColor": "#dbdbdb",
+        "borderTopLeftRadius": 5,
+        "borderTopRightRadius": 5,
+        "borderTopWidth": 1,
+        "color": "textPrimary",
+        "flex": 1,
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 16,
+        "height": 66,
+        "minWidth": 0,
+        "paddingBottom": 14,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 26,
+      }
+    }
+    testID="input"
+  />
+</View>
+`;

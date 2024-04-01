@@ -1,0 +1,714 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartItem should render CartItem component has quantity prop 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+      "flexDirection": "row",
+      "gap": 10,
+      "paddingBottom": 12,
+      "paddingTop": 12,
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "uri": "https://i.ibb.co/MDpMXMG/jonny-caspari-wsv-CC6-Uy-Kjs-unsplash-1.png",
+      }
+    }
+    style={
+      {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "gap": 4,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        numberOfLines={2}
+        style={
+          {
+            "color": "#606060",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Black Simple Lamp
+      </Text>
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#242424",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        $ 12.00
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "gap": 12,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#e0e0e0",
+            "borderBottomLeftRadius": 8,
+            "borderBottomRightRadius": 8,
+            "borderTopLeftRadius": 8,
+            "borderTopRightRadius": 8,
+            "flexDirection": "column",
+            "height": 30,
+            "justifyContent": "center",
+            "width": 30,
+          }
+        }
+        testID="increment"
+      >
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight="25"
+          bbWidth="24"
+          fill="none"
+          focusable={false}
+          height="25"
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
+          style={
+            [
+              {
+                "backgroundColor": "transparent",
+                "borderWidth": 0,
+              },
+              {
+                "flex": 0,
+                "height": 25,
+                "width": 24,
+              },
+            ]
+          }
+          testID="add-icon"
+          vbHeight={25}
+          vbWidth={24}
+          width="24"
+        >
+          <RNSVGGroup
+            fill={null}
+            propList={
+              [
+                "fill",
+              ]
+            }
+          >
+            <RNSVGPath
+              d="M19 11.5h-6v-6a1 1 0 10-2 0v6H5a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2z"
+              fill={
+                {
+                  "payload": 4280558628,
+                  "type": 0,
+                }
+              }
+              propList={
+                [
+                  "fill",
+                ]
+              }
+            />
+            <RNSVGMask
+              fill={
+                {
+                  "payload": 4278190080,
+                  "type": 0,
+                }
+              }
+              height="17"
+              maskContentUnits={1}
+              maskUnits={1}
+              width="16"
+              x="4"
+              y="4"
+            >
+              <RNSVGPath
+                d="M19 11.5h-6v-6a1 1 0 10-2 0v6H5a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2z"
+                fill={
+                  {
+                    "payload": 4294967295,
+                    "type": 0,
+                  }
+                }
+                propList={
+                  [
+                    "fill",
+                  ]
+                }
+              />
+            </RNSVGMask>
+          </RNSVGGroup>
+        </RNSVGSvgView>
+      </View>
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#242424",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 18,
+            "fontWeight": "600",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        0
+        2
+      </Text>
+      <View
+        disabled={false}
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#e0e0e0",
+            "borderBottomLeftRadius": 8,
+            "borderBottomRightRadius": 8,
+            "borderTopLeftRadius": 8,
+            "borderTopRightRadius": 8,
+            "flexDirection": "column",
+            "height": 30,
+            "justifyContent": "center",
+            "width": 30,
+          }
+        }
+        testID="decrement"
+      >
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight="24"
+          bbWidth="24"
+          fill="none"
+          focusable={false}
+          height="24"
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
+          style={
+            [
+              {
+                "backgroundColor": "transparent",
+                "borderWidth": 0,
+              },
+              {
+                "flex": 0,
+                "height": 24,
+                "width": 24,
+              },
+            ]
+          }
+          testID="minus-icon"
+          vbHeight={24}
+          vbWidth={24}
+          width="24"
+        >
+          <RNSVGGroup
+            fill={null}
+            propList={
+              [
+                "fill",
+              ]
+            }
+          >
+            <RNSVGRect
+              fill={
+                {
+                  "payload": 4280558628,
+                  "type": 0,
+                }
+              }
+              height="1.6"
+              propList={
+                [
+                  "fill",
+                ]
+              }
+              rx="1"
+              width="16"
+              x="4"
+              y="11"
+            />
+          </RNSVGGroup>
+        </RNSVGSvgView>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "justifyContent": "space-between",
+        "marginLeft": "auto",
+        "marginRight": 0,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="24"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="24"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      onPress={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      responsible={true}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      testID="close-icon"
+      vbHeight={24}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          clipRule={0}
+          d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Zm-.256-11.088 2.533-2.533a.77.77 0 1 1 1.087 1.088L12.831 12l2.534 2.533a.77.77 0 0 1-1.088 1.088l-2.533-2.533L9.21 15.62a.77.77 0 1 1-1.088-1.088L10.656 12 8.123 9.467A.77.77 0 0 1 9.21 8.379l2.533 2.533ZM3.538 12a8.461 8.461 0 1 0 16.923 0 8.461 8.461 0 0 0-16.923 0Z"
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          fillRule={0}
+          propList={
+            [
+              "fill",
+              "fillRule",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`CartItem should render CartItem component with default props 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+      "flexDirection": "row",
+      "gap": 10,
+      "paddingBottom": 12,
+      "paddingTop": 12,
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "uri": "https://i.ibb.co/MDpMXMG/jonny-caspari-wsv-CC6-Uy-Kjs-unsplash-1.png",
+      }
+    }
+    style={
+      {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "gap": 4,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        numberOfLines={2}
+        style={
+          {
+            "color": "#606060",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Black Simple Lamp
+      </Text>
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#242424",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        $ 12.00
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "justifyContent": "space-between",
+        "marginLeft": "auto",
+        "marginRight": 0,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="24"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="24"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      onPress={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      responsible={true}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      testID="close-icon"
+      vbHeight={24}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          clipRule={0}
+          d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Zm-.256-11.088 2.533-2.533a.77.77 0 1 1 1.087 1.088L12.831 12l2.534 2.533a.77.77 0 0 1-1.088 1.088l-2.533-2.533L9.21 15.62a.77.77 0 1 1-1.088-1.088L10.656 12 8.123 9.467A.77.77 0 0 1 9.21 8.379l2.533 2.533ZM3.538 12a8.461 8.461 0 1 0 16.923 0 8.461 8.461 0 0 0-16.923 0Z"
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          fillRule={0}
+          propList={
+            [
+              "fill",
+              "fillRule",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`CartItem should render CartItem component with isFavorites true 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+      "flexDirection": "row",
+      "gap": 10,
+      "paddingBottom": 12,
+      "paddingTop": 12,
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "uri": "https://i.ibb.co/MDpMXMG/jonny-caspari-wsv-CC6-Uy-Kjs-unsplash-1.png",
+      }
+    }
+    style={
+      {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "gap": 4,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        numberOfLines={2}
+        style={
+          {
+            "color": "#606060",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        Black Simple Lamp
+      </Text>
+      <Text
+        allowFontScaling={false}
+        style={
+          {
+            "color": "#242424",
+            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "lineHeight": 20,
+          }
+        }
+        suppressHighlighting={true}
+      >
+        $ 12.00
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "justifyContent": "space-between",
+        "marginLeft": "auto",
+        "marginRight": 0,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="24"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="24"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      onPress={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      responsible={true}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      testID="close-icon"
+      vbHeight={24}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          clipRule={0}
+          d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Zm-.256-11.088 2.533-2.533a.77.77 0 1 1 1.087 1.088L12.831 12l2.534 2.533a.77.77 0 0 1-1.088 1.088l-2.533-2.533L9.21 15.62a.77.77 0 1 1-1.088-1.088L10.656 12 8.123 9.467A.77.77 0 0 1 9.21 8.379l2.533 2.533ZM3.538 12a8.461 8.461 0 1 0 16.923 0 8.461 8.461 0 0 0-16.923 0Z"
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          fillRule={0}
+          propList={
+            [
+              "fill",
+              "fillRule",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="20"
+      bbWidth="20"
+      fill="none"
+      focusable={false}
+      height="20"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 20,
+            "width": 20,
+          },
+        ]
+      }
+      vbHeight={20}
+      vbWidth={20}
+      width="20"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          d="M17.969 16.31L16.667 4.06c0-.77-.597-1.393-1.334-1.393H4.667c-.737 0-1.334.623-1.334 1.394L2.031 16.31c-.019.095-.031.193-.031.295C2 17.376 2.597 18 3.333 18h13.334c.736 0 1.333-.624 1.333-1.394 0-.102-.012-.2-.031-.295zM13.333 6.088v.762c0 1.921-1.495 3.484-3.333 3.484S6.667 8.77 6.667 6.85v-.762A1.04 1.04 0 016 5.107c0-.578.448-1.046 1-1.046s1 .468 1 1.045V6.85c0 1.152.897 2.09 2 2.09s2-.938 2-2.09V5.106c0-.577.448-1.045 1-1.045s1 .468 1 1.045c0 .455-.28.838-.667.981z"
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          propList={
+            [
+              "fill",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;

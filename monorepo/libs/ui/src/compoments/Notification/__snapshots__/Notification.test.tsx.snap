@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification should render Notification component 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "transparent",
+      "columnGap": 12,
+      "flexDirection": "row",
+      "paddingBottom": 20,
+      "paddingLeft": 20,
+      "paddingRight": 20,
+      "paddingTop": 20,
+      "position": "relative",
+    }
+  }
+  testID="notification"
+>
+  <Image
+    source={
+      {
+        "uri": "https://i.ibb.co/KwRDcc4/3968901-1.png",
+      }
+    }
+    style={
+      {
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "height": 70,
+        "width": 70,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "flex": 1,
+        "rowGap": 5,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      numberOfLines={1}
+      style={
+        {
+          "color": "#242424",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 12,
+          "fontWeight": "bold",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Your order #123456789 has been shipped successfully
+    </Text>
+    <Text
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      numberOfLines={3}
+      style={
+        {
+          "color": "#808080",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 10,
+          "fontWeight": "normal",
+          "lineHeight": 15,
+          "textAlign": "justify",
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis possimus quod explicabo maiores repudiandae laudantium quam provident consectetur in dolores.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Notification should render Notification component status new 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#f0f0f0",
+      "columnGap": 12,
+      "flexDirection": "row",
+      "paddingBottom": 20,
+      "paddingLeft": 20,
+      "paddingRight": 20,
+      "paddingTop": 20,
+      "position": "relative",
+    }
+  }
+  testID="notification"
+>
+  <Image
+    source={
+      {
+        "uri": "https://i.ibb.co/m8nVWx2/sarah-dorweiler-fr0-J5-GIVyg-unsplash-1.png",
+      }
+    }
+    style={
+      {
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "height": 70,
+        "width": 70,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "flex": 1,
+        "rowGap": 5,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      numberOfLines={1}
+      style={
+        {
+          "color": "#242424",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 12,
+          "fontWeight": "bold",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Your order #123456789 has been confirmed
+    </Text>
+    <Text
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      numberOfLines={3}
+      style={
+        {
+          "color": "#808080",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 10,
+          "fontWeight": "normal",
+          "lineHeight": 15,
+          "textAlign": "justify",
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis possimus quod explicabo maiores repudiandae laudantium quam provident consectetur in dolores.
+    </Text>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "bottom": -12,
+          "color": "#27ae60",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "lineHeight": 20,
+          "position": "absolute",
+          "right": 0,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      New
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Notification should render Notification component with status hot 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#f0f0f0",
+      "columnGap": 12,
+      "flexDirection": "row",
+      "paddingBottom": 20,
+      "paddingLeft": 20,
+      "paddingRight": 20,
+      "paddingTop": 20,
+      "position": "relative",
+    }
+  }
+  testID="notification"
+>
+  <View
+    style={
+      {
+        "flex": 1,
+        "rowGap": 5,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      numberOfLines={1}
+      style={
+        {
+          "color": "#242424",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Discover hot sale furnitures this week.
+    </Text>
+    <Text
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      numberOfLines={3}
+      style={
+        {
+          "color": "#808080",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 10,
+          "fontWeight": "normal",
+          "lineHeight": 15,
+          "textAlign": "justify",
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis possimus quod explicabo maiores repudiandae laudantium quam provident consectetur in dolores.
+    </Text>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "bottom": -12,
+          "color": "#eb5757",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "lineHeight": 20,
+          "position": "absolute",
+          "right": 0,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      HOT!
+    </Text>
+  </View>
+</View>
+`;

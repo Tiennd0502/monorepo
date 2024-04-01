@@ -165,6 +165,7 @@ const Button = ({
 
   return (
     <ButtonFrame
+      testID='button'
       unstyled
       size={size}
       {...variantObject}

@@ -7,8 +7,8 @@ const IconButton = styled(ButtonBase, {
   height: 'fit-content',
 
   hoverStyle: {
-    backgroundColor: 'transparent',
-    opacity: 0.7,
+    backgroundColor: '$backgroundIcon',
+    opacity: 0.8,
   },
 
   focusStyle: {
@@ -25,6 +25,14 @@ const IconButton = styled(ButtonBase, {
       true: {
         pressStyle: {
           backgroundColor: 'transparent',
+        },
+      },
+    },
+
+    solid: {
+      true: {
+        hoverStyle: {
+          backgroundColor: '$backgroundDisabled',
         },
       },
     },

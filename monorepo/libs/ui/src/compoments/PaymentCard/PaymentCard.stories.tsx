@@ -37,3 +37,10 @@ export const VisaCard: Story = {
     item: PAYMENT_CARDS[2],
   },
 };
+
+export const Hidden: Story = {
+  args: {
+    specialCharacter: 'X',
+    item: PAYMENT_CARDS[2],
+  },
+};

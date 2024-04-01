@@ -4,6 +4,7 @@ import { Stack } from 'tamagui';
 // Themes | Components
 import Input from '../Input';
 import IconButton from '../IconButton';
+
 import { shadows } from '../../themes';
 import { ChevronRightIcon, DeleteIcon } from '../icons';
 
@@ -45,17 +46,19 @@ const DiscountCode = ({ value = '', onSubmit }: DiscountCodeProps) => {
         paddingVertical={10}
         backgroundColor="$secondary"
         placeholder="Enter your promo code"
+        borderRadius="$2"
         style={shadows.input}
         onChangeText={handleChangeText}
       />
       <IconButton
+        solid
         position="absolute"
         top={0}
         zIndex={2}
         right={0}
         height="$11"
         width="$11"
-        borderRadius="$2.5"
+        borderRadius="$2"
         backgroundColor="$primary"
         onPress={isDeleteIcon ? handleResetValue : handleSubmit}
       >

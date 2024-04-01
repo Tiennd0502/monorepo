@@ -22,6 +22,10 @@ const StyledInput = styled(TInput, {
   placeholderTextColor: '$textDefault',
   allowFontScaling: false,
 
+  hoverStyle: {
+    borderColor: 'none',
+  },
+
   variants: {
     solid: {
       true: {
@@ -48,7 +52,7 @@ const StyledInput = styled(TInput, {
         color: 'textPrimary',
         borderColor: 'transparent',
         focusStyle: {
-          borderColor: 'transparent',
+          borderColor: 'borderTertiary',
         },
       },
     },

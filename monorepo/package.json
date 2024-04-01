@@ -10,7 +10,9 @@
     "build:ios": "nx build-ios mobile",
     "prepare": "cd .. && husky install monorepo/.husky",
     "storybook:web": "nx storybook web",
-    "build-storybook:web": "nx build-storybook web"
+    "build-storybook:web": "nx build-storybook web",
+    "test:app": "nx test mobile --passWithNoTests",
+    "test:coverage": "nx test mobile --collectCoverage --coverageDirectory=\"./coverage\""
   },
   "private": true,
   "dependencies": {
@@ -45,7 +47,7 @@
     "@nx/detox": "18.1.2",
     "@nx/eslint": "18.1.2",
     "@nx/eslint-plugin": "18.1.2",
-    "@nx/jest": "18.1.2",
+    "@nx/jest": "^18.1.2",
     "@nx/js": "18.1.2",
     "@nx/react": "18.1.2",
     "@nx/react-native": "18.1.2",
@@ -97,7 +99,7 @@
     "react-native-svg": "14.1.0",
     "react-native-svg-transformer": "1.2.0",
     "react-native-web": "^0.19.9",
-    "react-test-renderer": "18.2.0",
+    "react-test-renderer": "^18.2.0",
     "storybook": "7.6.17",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",

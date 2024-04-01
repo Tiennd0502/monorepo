@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render button component with default props 1`] = `
+<View
+  accessibilityRole="button"
+  focusable={true}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#242424",
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderBottomWidth": 0,
+      "borderLeftWidth": 0,
+      "borderRightWidth": 0,
+      "borderStyle": "solid",
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "borderTopWidth": 0,
+      "color": "#fff",
+      "flexDirection": "row",
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingBottom": 12,
+      "paddingTop": 12,
+    }
+  }
+  testID="button"
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#fff",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 16,
+        "fontWeight": "600",
+        "lineHeight": 20,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    Click me
+  </Text>
+</View>
+`;
+
+exports[`Button should render button component with disabled 1`] = `
+<View
+  accessibilityRole="button"
+  focusVisibleStyle={
+    {
+      "borderColor": "$background",
+    }
+  }
+  pointerEvents="none"
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#909090",
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderBottomWidth": 0,
+      "borderLeftWidth": 0,
+      "borderRightWidth": 0,
+      "borderStyle": "solid",
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "borderTopWidth": 0,
+      "color": "#fff",
+      "flexDirection": "row",
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingBottom": 12,
+      "paddingTop": 12,
+    }
+  }
+  testID="button"
+>
+  <Text
+    allowFontScaling={false}
+    pointerEvents="none"
+    style={
+      {
+        "color": "#fff",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 16,
+        "fontWeight": "600",
+        "lineHeight": 20,
+        "opacity": 0.7,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    Click me
+  </Text>
+</View>
+`;
+
+exports[`Button should render button component with props isLoading 1`] = `
+<View
+  accessibilityRole="button"
+  focusVisibleStyle={
+    {
+      "borderColor": "$background",
+    }
+  }
+  pointerEvents="none"
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#909090",
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderBottomWidth": 0,
+      "borderLeftWidth": 0,
+      "borderRightWidth": 0,
+      "borderStyle": "solid",
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "borderTopWidth": 0,
+      "color": "#fff",
+      "flexDirection": "row",
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingBottom": 12,
+      "paddingTop": 12,
+    }
+  }
+  testID="button"
+>
+  <View
+    style={
+      {
+        "flexDirection": "column",
+        "paddingBottom": 4,
+        "paddingTop": 4,
+      }
+    }
+  >
+    <ActivityIndicator
+      color=""
+      size="small"
+    />
+  </View>
+</View>
+`;
+
+exports[`Button should render button component with variant outlined 1`] = `
+<View
+  accessibilityRole="button"
+  focusable={true}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "borderBottomColor": "#242424",
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderBottomWidth": 1,
+      "borderLeftColor": "#242424",
+      "borderLeftWidth": 1,
+      "borderRightColor": "#242424",
+      "borderRightWidth": 1,
+      "borderStyle": "solid",
+      "borderTopColor": "#242424",
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "borderTopWidth": 1,
+      "color": "#fff",
+      "flexDirection": "row",
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingBottom": 12,
+      "paddingTop": 12,
+    }
+  }
+  testID="button"
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#242424",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 16,
+        "fontWeight": "600",
+        "lineHeight": 20,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    Click me
+  </Text>
+</View>
+`;

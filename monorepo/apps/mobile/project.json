@@ -25,6 +25,18 @@
     "ensure-symlink": {
       "executor": "@nx/react-native:ensure-symlink",
       "options": {}
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "libs/ui/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true
+        }
+      }
     }
   }
 }

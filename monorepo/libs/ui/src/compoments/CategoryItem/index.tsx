@@ -19,7 +19,7 @@ const CategoryItem = ({
   isActive = false,
   onPress,
 }: CategoryItemProps) => (
-  <Stack alignContent="center" alignItems="center" gap="$2" onPress={onPress}>
+  <Stack testID='category' alignContent="center" alignItems="center" gap="$2" onPress={onPress}>
     <IconButton
       onPress={onPress}
       padding="$2"

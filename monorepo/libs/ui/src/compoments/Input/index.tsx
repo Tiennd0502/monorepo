@@ -148,7 +148,7 @@ const Input = StyledInput.styleable<InputProps>(
     return (
       <XStack position="relative" zIndex={1} alignItems="center">
         {label && <StyledLabel>{label}</StyledLabel>}
-        <StyledInput ref={ref} size={size} {...variantObject} {...rest} />
+        <StyledInput testID='input' ref={ref} size={size} {...variantObject} {...rest} />
         {rightElement && (
           <IconButton
             aria-label="Icon"

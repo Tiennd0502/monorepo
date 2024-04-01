@@ -29,6 +29,7 @@ const Quantity = ({ defaultValue = 0, onChangeValue }: QuantityProps) => {
   return (
     <XStack gap="$3" alignItems="center">
       <YStack
+        testID='increment'
         alignItems="center"
         justifyContent="center"
         width="$7.5"
@@ -44,6 +45,7 @@ const Quantity = ({ defaultValue = 0, onChangeValue }: QuantityProps) => {
         {number}
       </Text>
       <YStack
+        testID='decrement'
         alignItems="center"
         justifyContent="center"
         disabled={isDisabled}

@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch should render Switch component 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "column",
+      "gap": 12,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "gap": 8,
+      }
+    }
+  >
+    <Text
+      htmlFor=":r0:"
+      id=":r1:"
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "color": "#999",
+          "display": "flex",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 16,
+          "lineHeight": 50,
+        }
+      }
+      suppressHighlighting={true}
+      userSelect="none"
+    >
+      Label
+    </Text>
+    <View
+      accessibilityRole="switch"
+      accessibilityState={
+        {
+          "checked": false,
+        }
+      }
+      id=":r0:"
+      size="$true"
+      style={
+        {
+          "backgroundColor": "#909090",
+          "borderBottomLeftRadius": 15,
+          "borderBottomRightRadius": 15,
+          "borderBottomWidth": 0,
+          "borderLeftWidth": 0,
+          "borderRightWidth": 0,
+          "borderStyle": "solid",
+          "borderTopLeftRadius": 15,
+          "borderTopRightRadius": 15,
+          "borderTopWidth": 0,
+          "height": 24,
+          "paddingBottom": 2,
+          "paddingLeft": 2,
+          "paddingRight": 2,
+          "paddingTop": 2,
+          "width": 40,
+        }
+      }
+      testID="switch"
+      unstyled={false}
+    >
+      <View
+        onLayout={[Function]}
+        style={
+          {
+            "alignSelf": "stretch",
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          onLayout={[Function]}
+          size="$true"
+          style={
+            {
+              "alignSelf": "flex-start",
+              "backgroundColor": "rgba(255, 255, 255, 1)",
+              "borderBottomLeftRadius": 20,
+              "borderBottomRightRadius": 20,
+              "borderTopLeftRadius": 20,
+              "borderTopRightRadius": 20,
+              "height": 20,
+              "transform": [
+                {
+                  "translateX": 0,
+                },
+              ],
+              "width": 20,
+            }
+          }
+          unstyled={false}
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Switch should render Switch with checked true 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "column",
+      "gap": 12,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "gap": 8,
+      }
+    }
+  >
+    <Text
+      htmlFor=":r2:"
+      id=":r3:"
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "color": "#999",
+          "display": "flex",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 16,
+          "lineHeight": 50,
+        }
+      }
+      suppressHighlighting={true}
+      userSelect="none"
+    >
+      Label
+    </Text>
+    <View
+      accessibilityRole="switch"
+      accessibilityState={
+        {
+          "checked": true,
+        }
+      }
+      id=":r2:"
+      size="$true"
+      style={
+        {
+          "backgroundColor": "#27ae60",
+          "borderBottomLeftRadius": 15,
+          "borderBottomRightRadius": 15,
+          "borderBottomWidth": 0,
+          "borderLeftWidth": 0,
+          "borderRightWidth": 0,
+          "borderStyle": "solid",
+          "borderTopLeftRadius": 15,
+          "borderTopRightRadius": 15,
+          "borderTopWidth": 0,
+          "height": 24,
+          "paddingBottom": 2,
+          "paddingLeft": 2,
+          "paddingRight": 2,
+          "paddingTop": 2,
+          "width": 40,
+        }
+      }
+      testID="switch"
+      unstyled={false}
+    >
+      <View
+        onLayout={[Function]}
+        style={
+          {
+            "alignSelf": "stretch",
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          onLayout={[Function]}
+          size="$true"
+          style={
+            {
+              "alignSelf": "flex-end",
+              "backgroundColor": "rgba(255, 255, 255, 1)",
+              "borderBottomLeftRadius": 20,
+              "borderBottomRightRadius": 20,
+              "borderTopLeftRadius": 20,
+              "borderTopRightRadius": 20,
+              "height": 20,
+              "transform": [
+                {
+                  "translateX": 0,
+                },
+              ],
+              "width": 20,
+            }
+          }
+          unstyled={false}
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading should render loading indicator component 1`] = `
+<View
+  style={
+    {
+      "alignSelf": "center",
+      "height": "100%",
+      "justifyContent": "center",
+      "position": "absolute",
+      "width": "100%",
+      "zIndex": 500,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "column",
+      }
+    }
+  >
+    <ActivityIndicator
+      color="#242424"
+      size="large"
+    />
+  </View>
+</View>
+`;

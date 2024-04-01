@@ -14,6 +14,7 @@ const setup = (moreProps = {}) => {
     ...baseProps,
     ...moreProps,
   };
+  
   return render(
     <TamaguiProvider>
       <Button {...props} />
@@ -53,12 +54,9 @@ describe('Button', () => {
 
     waitFor(() => {
       const button = getByTestId('button');
-  
       fireEvent.press(button);
   
       expect(onPress).toHaveBeenCalled();
-
     })
-    
   });
 });

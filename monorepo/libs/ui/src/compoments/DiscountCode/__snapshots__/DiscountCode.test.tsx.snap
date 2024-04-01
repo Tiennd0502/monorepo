@@ -1,0 +1,365 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DiscountCode should render DiscountCode component 1`] = `
+<View
+  style={
+    {
+      "position": "relative",
+      "zIndex": 200,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "position": "relative",
+        "zIndex": 1,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={false}
+      focusVisibleStyle={{}}
+      focusable={true}
+      onChangeText={[Function]}
+      placeholder="Enter your promo code"
+      placeholderTextColor="#999"
+      style={
+        {
+          "backgroundColor": "#fff",
+          "borderBottomColor": "transparent",
+          "borderBottomLeftRadius": 8,
+          "borderBottomRightRadius": 8,
+          "borderBottomWidth": 1,
+          "borderLeftColor": "transparent",
+          "borderLeftWidth": 1,
+          "borderRightColor": "transparent",
+          "borderRightWidth": 1,
+          "borderStyle": "solid",
+          "borderTopColor": "transparent",
+          "borderTopLeftRadius": 8,
+          "borderTopRightRadius": 8,
+          "borderTopWidth": 1,
+          "color": "textPrimary",
+          "elevation": 50,
+          "flex": 1,
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 16,
+          "height": 44,
+          "minWidth": 0,
+          "paddingBottom": 10,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 10,
+          "position": "absolute",
+          "shadowColor": "$backgroundTertiary",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0,
+          "shadowRadius": 1,
+          "top": 0,
+          "width": "100%",
+        }
+      }
+      testID="input"
+      value=""
+    />
+  </View>
+  <View
+    accessibilityRole="button"
+    focusVisibleStyle={{}}
+    focusable={true}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#242424",
+        "borderBottomColor": "transparent",
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderBottomWidth": 0,
+        "borderLeftColor": "transparent",
+        "borderLeftWidth": 0,
+        "borderRightColor": "transparent",
+        "borderRightWidth": 0,
+        "borderStyle": "solid",
+        "borderTopColor": "transparent",
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "borderTopWidth": 0,
+        "flexDirection": "row",
+        "flexWrap": "nowrap",
+        "height": 44,
+        "justifyContent": "center",
+        "opacity": 1,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "position": "absolute",
+        "right": 0,
+        "shadowColor": "rgb(0,0,0)",
+        "shadowOffset": {
+          "height": 0,
+          "width": 0,
+        },
+        "shadowOpacity": 0,
+        "shadowRadius": 0,
+        "top": 0,
+        "width": 44,
+        "zIndex": 2,
+      }
+    }
+    testID="icon"
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="24"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="24"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          d="M9 18l6-6-6-6"
+          fill={
+            {
+              "payload": 4278190080,
+              "type": 0,
+            }
+          }
+          propList={
+            [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294967295,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth="1.5"
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`DiscountCode should render DiscountCode component has value 1`] = `
+<View
+  style={
+    {
+      "position": "relative",
+      "zIndex": 200,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "position": "relative",
+        "zIndex": 1,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={false}
+      focusVisibleStyle={{}}
+      focusable={true}
+      onChangeText={[Function]}
+      placeholder="Enter your promo code"
+      placeholderTextColor="#999"
+      style={
+        {
+          "backgroundColor": "#fff",
+          "borderBottomColor": "transparent",
+          "borderBottomLeftRadius": 8,
+          "borderBottomRightRadius": 8,
+          "borderBottomWidth": 1,
+          "borderLeftColor": "transparent",
+          "borderLeftWidth": 1,
+          "borderRightColor": "transparent",
+          "borderRightWidth": 1,
+          "borderStyle": "solid",
+          "borderTopColor": "transparent",
+          "borderTopLeftRadius": 8,
+          "borderTopRightRadius": 8,
+          "borderTopWidth": 1,
+          "color": "textPrimary",
+          "elevation": 50,
+          "flex": 1,
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 16,
+          "height": 44,
+          "minWidth": 0,
+          "paddingBottom": 10,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 10,
+          "position": "absolute",
+          "shadowColor": "$backgroundTertiary",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0,
+          "shadowRadius": 1,
+          "top": 0,
+          "width": "100%",
+        }
+      }
+      testID="input"
+      value="#123456"
+    />
+  </View>
+  <View
+    accessibilityRole="button"
+    focusVisibleStyle={{}}
+    focusable={true}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#242424",
+        "borderBottomColor": "transparent",
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderBottomWidth": 0,
+        "borderLeftColor": "transparent",
+        "borderLeftWidth": 0,
+        "borderRightColor": "transparent",
+        "borderRightWidth": 0,
+        "borderStyle": "solid",
+        "borderTopColor": "transparent",
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "borderTopWidth": 0,
+        "flexDirection": "row",
+        "flexWrap": "nowrap",
+        "height": 44,
+        "justifyContent": "center",
+        "opacity": 1,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "position": "absolute",
+        "right": 0,
+        "shadowColor": "rgb(0,0,0)",
+        "shadowOffset": {
+          "height": 0,
+          "width": 0,
+        },
+        "shadowOpacity": 0,
+        "shadowRadius": 0,
+        "top": 0,
+        "width": 44,
+        "zIndex": 2,
+      }
+    }
+    testID="icon"
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="24"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="24"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14z"
+          fill={
+            {
+              "payload": 4278190080,
+              "type": 0,
+            }
+          }
+          propList={
+            [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294967295,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth="2"
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;

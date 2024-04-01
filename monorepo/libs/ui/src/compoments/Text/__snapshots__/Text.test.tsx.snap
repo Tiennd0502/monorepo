@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text should render Text component 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    {
+      "color": "#999",
+      "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+      "fontSize": 14,
+      "fontWeight": "normal",
+      "lineHeight": 20,
+    }
+  }
+  suppressHighlighting={true}
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</Text>
+`;
+
+exports[`Text should render Text component with prop error true 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    {
+      "color": "#eb5757",
+      "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+      "fontSize": 14,
+      "fontWeight": "normal",
+      "lineHeight": 20,
+    }
+  }
+  suppressHighlighting={true}
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</Text>
+`;
+
+exports[`Text should render Text component with size large 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    {
+      "color": "#999",
+      "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+      "fontSize": 18,
+      "fontWeight": "normal",
+      "lineHeight": 20,
+    }
+  }
+  suppressHighlighting={true}
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</Text>
+`;

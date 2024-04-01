@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading should render Heading component 1`] = `
+<Text
+  accessibilityRole="header"
+  allowFontScaling={false}
+  selectable={true}
+  style={
+    {
+      "color": "#303030",
+      "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+      "fontSize": 18,
+      "fontWeight": "bold",
+      "lineHeight": 28,
+      "marginBottom": 0,
+      "marginLeft": 0,
+      "marginRight": 0,
+      "marginTop": 0,
+    }
+  }
+  suppressHighlighting={true}
+>
+  Heading text
+</Text>
+`;
+
+exports[`Heading should render Heading component with size large 1`] = `
+<Text
+  accessibilityRole="header"
+  allowFontScaling={false}
+  selectable={true}
+  style={
+    {
+      "color": "#303030",
+      "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "lineHeight": 28,
+      "marginBottom": 0,
+      "marginLeft": 0,
+      "marginRight": 0,
+      "marginTop": 0,
+    }
+  }
+  suppressHighlighting={true}
+>
+  Heading text
+</Text>
+`;

@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should render Checkbox component 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "gap": 8,
+      "width": 300,
+    }
+  }
+>
+  <View
+    accessibilityRole="checkbox"
+    accessibilityState={
+      {
+        "checked": false,
+      }
+    }
+    checked={false}
+    focusVisibleStyle={{}}
+    focusable={true}
+    id=":r0:"
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "borderBottomColor": "#424242",
+        "borderBottomLeftRadius": 6.25,
+        "borderBottomRightRadius": 6.25,
+        "borderBottomWidth": 1,
+        "borderLeftColor": "#424242",
+        "borderLeftWidth": 1,
+        "borderRightColor": "#424242",
+        "borderRightWidth": 1,
+        "borderStyle": "solid",
+        "borderTopColor": "#424242",
+        "borderTopLeftRadius": 6.25,
+        "borderTopRightRadius": 6.25,
+        "borderTopWidth": 1,
+        "flexDirection": "column",
+        "height": 20,
+        "justifyContent": "center",
+        "width": 20,
+      }
+    }
+  />
+  <Text
+    htmlFor=":r0:"
+    id=":r1:"
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "color": "#999",
+        "display": "flex",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 18,
+        "lineHeight": 50,
+      }
+    }
+    suppressHighlighting={true}
+    userSelect="none"
+  >
+    Label
+  </Text>
+</View>
+`;
+
+exports[`Checkbox should render Checkbox with checked true 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "gap": 8,
+      "width": 300,
+    }
+  }
+>
+  <View
+    accessibilityRole="checkbox"
+    accessibilityState={
+      {
+        "checked": false,
+      }
+    }
+    checked={false}
+    focusVisibleStyle={{}}
+    focusable={true}
+    id=":r2:"
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#242424",
+        "borderBottomColor": "#424242",
+        "borderBottomLeftRadius": 6.25,
+        "borderBottomRightRadius": 6.25,
+        "borderBottomWidth": 1,
+        "borderLeftColor": "#424242",
+        "borderLeftWidth": 1,
+        "borderRightColor": "#424242",
+        "borderRightWidth": 1,
+        "borderStyle": "solid",
+        "borderTopColor": "#424242",
+        "borderTopLeftRadius": 6.25,
+        "borderTopRightRadius": 6.25,
+        "borderTopWidth": 1,
+        "flexDirection": "column",
+        "height": 20,
+        "justifyContent": "center",
+        "width": 20,
+      }
+    }
+  />
+  <Text
+    htmlFor=":r2:"
+    id=":r3:"
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "color": "#242424",
+        "display": "flex",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 18,
+        "lineHeight": 50,
+      }
+    }
+    suppressHighlighting={true}
+    userSelect="none"
+  >
+    Label
+  </Text>
+</View>
+`;

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard should render ProductCard component 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+      "gap": 10,
+    }
+  }
+  testID="product"
+>
+  <Image
+    source={
+      {
+        "uri": "https://i.ibb.co/MDpMXMG/jonny-caspari-wsv-CC6-Uy-Kjs-unsplash-1.png",
+      }
+    }
+    style={
+      {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "height": 210,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "paddingRight": 10,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      numberOfLines={1}
+      style={
+        {
+          "color": "#606060",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Black Simple Lamp
+    </Text>
+    <Text
+      allowFontScaling={false}
+      style={
+        {
+          "color": "#303030",
+          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "lineHeight": 20,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      $ 12.00
+    </Text>
+  </View>
+</View>
+`;

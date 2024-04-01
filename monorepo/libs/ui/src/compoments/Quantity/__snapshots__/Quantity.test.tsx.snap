@@ -1,0 +1,609 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quantity should render quantity component 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "gap": 12,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#e0e0e0",
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "flexDirection": "column",
+        "height": 30,
+        "justifyContent": "center",
+        "width": 30,
+      }
+    }
+    testID="increment"
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="25"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="25"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 25,
+            "width": 24,
+          },
+        ]
+      }
+      testID="add-icon"
+      vbHeight={25}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          d="M19 11.5h-6v-6a1 1 0 10-2 0v6H5a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2z"
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          propList={
+            [
+              "fill",
+            ]
+          }
+        />
+        <RNSVGMask
+          fill={
+            {
+              "payload": 4278190080,
+              "type": 0,
+            }
+          }
+          height="17"
+          maskContentUnits={1}
+          maskUnits={1}
+          width="16"
+          x="4"
+          y="4"
+        >
+          <RNSVGPath
+            d="M19 11.5h-6v-6a1 1 0 10-2 0v6H5a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2z"
+            fill={
+              {
+                "payload": 4294967295,
+                "type": 0,
+              }
+            }
+            propList={
+              [
+                "fill",
+              ]
+            }
+          />
+        </RNSVGMask>
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#242424",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 18,
+        "fontWeight": "600",
+        "lineHeight": 20,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    0
+    0
+  </Text>
+  <View
+    disabled={true}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#999",
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "flexDirection": "column",
+        "height": 30,
+        "justifyContent": "center",
+        "width": 30,
+      }
+    }
+    testID="decrement"
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="24"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="24"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      testID="minus-icon"
+      vbHeight={24}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGRect
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          height="1.6"
+          propList={
+            [
+              "fill",
+            ]
+          }
+          rx="1"
+          width="16"
+          x="4"
+          y="11"
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`Quantity should render quantity component with full screen 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "gap": 12,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#e0e0e0",
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "flexDirection": "column",
+        "height": 30,
+        "justifyContent": "center",
+        "width": 30,
+      }
+    }
+    testID="increment"
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="25"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="25"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 25,
+            "width": 24,
+          },
+        ]
+      }
+      testID="add-icon"
+      vbHeight={25}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          d="M19 11.5h-6v-6a1 1 0 10-2 0v6H5a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2z"
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          propList={
+            [
+              "fill",
+            ]
+          }
+        />
+        <RNSVGMask
+          fill={
+            {
+              "payload": 4278190080,
+              "type": 0,
+            }
+          }
+          height="17"
+          maskContentUnits={1}
+          maskUnits={1}
+          width="16"
+          x="4"
+          y="4"
+        >
+          <RNSVGPath
+            d="M19 11.5h-6v-6a1 1 0 10-2 0v6H5a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2z"
+            fill={
+              {
+                "payload": 4294967295,
+                "type": 0,
+              }
+            }
+            propList={
+              [
+                "fill",
+              ]
+            }
+          />
+        </RNSVGMask>
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#242424",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 18,
+        "fontWeight": "600",
+        "lineHeight": 20,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    0
+    0
+  </Text>
+  <View
+    disabled={true}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#999",
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "flexDirection": "column",
+        "height": 30,
+        "justifyContent": "center",
+        "width": 30,
+      }
+    }
+    testID="decrement"
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="24"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="24"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      testID="minus-icon"
+      vbHeight={24}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGRect
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          height="1.6"
+          propList={
+            [
+              "fill",
+            ]
+          }
+          rx="1"
+          width="16"
+          x="4"
+          y="11"
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`Quantity should render quantity component with quantity greater than 9 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "gap": 12,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#e0e0e0",
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "flexDirection": "column",
+        "height": 30,
+        "justifyContent": "center",
+        "width": 30,
+      }
+    }
+    testID="increment"
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="25"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="25"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 25,
+            "width": 24,
+          },
+        ]
+      }
+      testID="add-icon"
+      vbHeight={25}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          d="M19 11.5h-6v-6a1 1 0 10-2 0v6H5a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2z"
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          propList={
+            [
+              "fill",
+            ]
+          }
+        />
+        <RNSVGMask
+          fill={
+            {
+              "payload": 4278190080,
+              "type": 0,
+            }
+          }
+          height="17"
+          maskContentUnits={1}
+          maskUnits={1}
+          width="16"
+          x="4"
+          y="4"
+        >
+          <RNSVGPath
+            d="M19 11.5h-6v-6a1 1 0 10-2 0v6H5a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2z"
+            fill={
+              {
+                "payload": 4294967295,
+                "type": 0,
+              }
+            }
+            propList={
+              [
+                "fill",
+              ]
+            }
+          />
+        </RNSVGMask>
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+  <Text
+    allowFontScaling={false}
+    style={
+      {
+        "color": "#242424",
+        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontSize": 18,
+        "fontWeight": "600",
+        "lineHeight": 20,
+      }
+    }
+    suppressHighlighting={true}
+  >
+    10
+  </Text>
+  <View
+    disabled={false}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#e0e0e0",
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "flexDirection": "column",
+        "height": 30,
+        "justifyContent": "center",
+        "width": 30,
+      }
+    }
+    testID="decrement"
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="24"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="24"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      testID="minus-icon"
+      vbHeight={24}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGRect
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          height="1.6"
+          propList={
+            [
+              "fill",
+            ]
+          }
+          rx="1"
+          width="16"
+          x="4"
+          y="11"
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;

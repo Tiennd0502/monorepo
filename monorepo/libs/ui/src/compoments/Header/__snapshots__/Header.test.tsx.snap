@@ -1,0 +1,373 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render Header component 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "column",
+        "width": 40,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "column",
+      }
+    }
+  >
+    <Text
+      accessibilityRole="header"
+      allowFontScaling={false}
+      selectable={true}
+      style={
+        {
+          "color": "#909090",
+          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontSize": 18,
+          "fontWeight": "600",
+          "lineHeight": 28,
+          "marginBottom": 0,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "marginTop": 0,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      Make home
+    </Text>
+    <Text
+      accessibilityRole="header"
+      allowFontScaling={false}
+      selectable={true}
+      style={
+        {
+          "color": "#242424",
+          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "lineHeight": 28,
+          "marginBottom": 0,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "marginTop": 0,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      BEAUTIFUL
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "flexDirection": "column",
+        "width": 40,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="25"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="25"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 25,
+            "width": 24,
+          },
+        ]
+      }
+      vbHeight={25}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          clipRule={0}
+          d="M2.607 4.643A.643.643 0 013.25 4h1.928a.643.643 0 01.624.487l.52 2.084H21.25a.643.643 0 01.623.799l-1.928 7.714a.643.643 0 01-.624.487H7.75a.643.643 0 01-.624-.487l-2.45-9.798H3.25a.643.643 0 01-.643-.643zm4.037 3.214l1.607 6.429H18.82l1.607-6.429H6.644zm2.392 10.286a1.286 1.286 0 100 2.571 1.286 1.286 0 000-2.571zm-2.572 1.286a2.571 2.571 0 115.143 0 2.571 2.571 0 01-5.143 0zm11.572-1.286a1.286 1.286 0 100 2.571 1.286 1.286 0 000-2.571zm-2.572 1.286a2.571 2.571 0 115.143 0 2.571 2.571 0 01-5.143 0z"
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          fillRule={0}
+          propList={
+            [
+              "fill",
+              "fillRule",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`Header should render Header component with not end icon 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "column",
+        "width": 40,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="20"
+      bbWidth="20"
+      fill="none"
+      focusable={false}
+      height="20"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 20,
+            "width": 20,
+          },
+        ]
+      }
+      vbHeight={20}
+      vbWidth={20}
+      width="20"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          d="M13.25 4l-6.5 6.5 6.5 6.5"
+          fill={
+            {
+              "payload": 4278190080,
+              "type": 0,
+            }
+          }
+          propList={
+            [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth="1.5"
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "column",
+      }
+    }
+  >
+    <Text
+      accessibilityRole="header"
+      allowFontScaling={false}
+      selectable={true}
+      style={
+        {
+          "color": "#242424",
+          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "lineHeight": 28,
+          "marginBottom": 0,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "marginTop": 0,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      BEAUTIFUL
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "flexDirection": "column",
+        "width": 40,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="25"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height="25"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 25,
+            "width": 24,
+          },
+        ]
+      }
+      vbHeight={25}
+      vbWidth={24}
+      width="24"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          clipRule={0}
+          d="M2.607 4.643A.643.643 0 013.25 4h1.928a.643.643 0 01.624.487l.52 2.084H21.25a.643.643 0 01.623.799l-1.928 7.714a.643.643 0 01-.624.487H7.75a.643.643 0 01-.624-.487l-2.45-9.798H3.25a.643.643 0 01-.643-.643zm4.037 3.214l1.607 6.429H18.82l1.607-6.429H6.644zm2.392 10.286a1.286 1.286 0 100 2.571 1.286 1.286 0 000-2.571zm-2.572 1.286a2.571 2.571 0 115.143 0 2.571 2.571 0 01-5.143 0zm11.572-1.286a1.286 1.286 0 100 2.571 1.286 1.286 0 000-2.571zm-2.572 1.286a2.571 2.571 0 115.143 0 2.571 2.571 0 01-5.143 0z"
+          fill={
+            {
+              "payload": 4280558628,
+              "type": 0,
+            }
+          }
+          fillRule={0}
+          propList={
+            [
+              "fill",
+              "fillRule",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`Header should render Header component with only title prop 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "column",
+        "width": 40,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "column",
+      }
+    }
+  >
+    <Text
+      accessibilityRole="header"
+      allowFontScaling={false}
+      selectable={true}
+      style={
+        {
+          "color": "#242424",
+          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "lineHeight": 28,
+          "marginBottom": 0,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "marginTop": 0,
+        }
+      }
+      suppressHighlighting={true}
+    >
+      BEAUTIFUL
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "flexDirection": "column",
+        "width": 40,
+      }
+    }
+  />
+</View>
+`;

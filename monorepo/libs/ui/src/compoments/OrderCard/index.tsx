@@ -2,10 +2,10 @@ import { memo, useCallback, useMemo } from 'react';
 import { Stack, XStack } from 'tamagui';
 
 // Types
-import { ORDER_STATUS, Order } from '@monorepo/types';
+import { Order } from '@monorepo/types';
 
 // Constants
-import { CURRENCY_UNIT } from '@monorepo/constants';
+import { CURRENCY_UNIT, ORDER_STATUS_DETAILS } from '@monorepo/constants';
 
 // Components
 import Text from '../Text';
@@ -26,16 +26,10 @@ const OrderCard = ({
     onViewDetail(id);
   }, [id, onViewDetail]);
 
-  const textColorForStatus = useMemo(() => {
-    switch (status) {
-      case ORDER_STATUS.Delivered.toString():
-        return '$successPrimary';
-      case ORDER_STATUS.Processing.toString():
-        return '$warningPrimary';
-      default:
-        return '$errorPrimary';
-    }
-  }, [status]);
+  const orderStatusDetail = useMemo(
+    () => ORDER_STATUS_DETAILS[status],
+    [status]
+  );
 
   return (
     <Stack backgroundColor="$secondary" borderRadius={10} style={shadows.card}>
@@ -89,7 +83,7 @@ const OrderCard = ({
         >
           Detail
         </Button>
-        <Text color={textColorForStatus}>{status}</Text>
+        <Text color={orderStatusDetail?.color}>{orderStatusDetail?.label}</Text>
       </XStack>
     </Stack>
   );

@@ -4,6 +4,9 @@ import { Stack, XStack, ScrollView } from 'tamagui';
 // Constants
 import { ORDER_TABS } from '@monorepo/constants';
 
+// Types
+import { ORDER_STATUS } from '@monorepo/types';
+
 // Utils
 import { formatOrders } from '@monorepo/utils';
 
@@ -18,13 +21,14 @@ import {
   Loading,
   OrderCard,
   Text,
-  shadows,
 } from '@monorepo/ui';
 
 const Order = ({ navigation }) => {
-  const [tabActive, setTabActive] = useState<string>(ORDER_TABS.Delivered);
+  const [tabActive, setTabActive] = useState<ORDER_STATUS>(
+    ORDER_STATUS.Confirmed
+  );
   const { useFetchOrders } = useOrder();
-  const { data, isPending } = useFetchOrders({ page: 1 });
+  const { data, isPending } = useFetchOrders({ page: 1, status: tabActive });
   const orderList = useMemo(
     () => data?.data?.orders || [],
     [data?.data?.orders]
@@ -35,11 +39,12 @@ const Order = ({ navigation }) => {
     [orderList]
   );
 
-  console.log('orders', orders);
-
   const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
 
-  const handleChangeTab = useCallback((value) => setTabActive(value), []);
+  const handleChangeTab = useCallback(
+    (value: number) => setTabActive(value),
+    []
+  );
 
   return (
     <Stack backgroundColor="$secondary" flex={1}>
@@ -53,9 +58,9 @@ const Order = ({ navigation }) => {
           title="My order"
           startIcon={<ChevronLeftIcon onPress={handleGoBack} />}
         />
-        <XStack justifyContent="space-between">
+        <XStack justifyContent="space-around">
           {Object.entries(ORDER_TABS).map(([key, value]) => {
-            const handleChange = () => handleChangeTab(value);
+            const handleChange = () => handleChangeTab(+key);
 
             return (
               <Stack
@@ -65,12 +70,12 @@ const Order = ({ navigation }) => {
                 onPress={handleChange}
               >
                 <Text
-                  color={tabActive === value ? '$primary' : '$textDefault'}
+                  color={tabActive === +key ? '$primary' : '$textDefault'}
                   size="large"
                 >
-                  {key}
+                  {value}
                 </Text>
-                {tabActive === value && (
+                {tabActive === +key && (
                   <Divider width="$10" height="$1" color="$primary" />
                 )}
               </Stack>

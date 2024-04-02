@@ -56,9 +56,10 @@ const MainTab = () => (
         component={component}
         options={{
           tabBarIcon: ({ focused }) => (
-            <IconButton aria-label={label}>
-              <Icon color={focused ? '$primary' : '$textDefault'} />
-            </IconButton>
+            <Icon
+              aria-label={label}
+              color={focused ? '$primary' : '$textDefault'}
+            />
           ),
         }}
       />

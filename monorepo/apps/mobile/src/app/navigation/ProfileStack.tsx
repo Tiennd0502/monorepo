@@ -1,7 +1,5 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import { SCREENS, StackParamList } from '../types';
-
+import { SCREENS } from '../types';
+import { Stack } from './Stack';
 import {
   OrderScreen,
   ReviewScreen,
@@ -13,8 +11,6 @@ import {
   ShippingAddressScreen,
   AddShippingAddressScreen,
 } from '../screens';
-
-const Stack = createNativeStackNavigator<StackParamList>();
 
 const ProfileStack = () => {
   return (

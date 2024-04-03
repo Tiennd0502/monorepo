@@ -3,7 +3,7 @@ import { FlatList, ListRenderItemInfo, StatusBar } from 'react-native';
 
 // Types
 import { Product, ProductResponse } from '@monorepo/types';
-import { SCREENS } from '../../types';
+import { SCREENS, StackScreenProps } from '../../types';
 
 // Constants
 import { CATEGORIES, INIT_PAGE } from '@monorepo/constants';
@@ -25,7 +25,11 @@ import {
   CartIcon,
 } from '@monorepo/ui';
 
-const Home = ({ navigation }) => {
+interface HomeProps {
+  navigation: StackScreenProps;
+}
+
+const Home = ({ navigation }: HomeProps) => {
   const { useFetchProducts } = useProducts();
   const { data, isPending } = useFetchProducts(INIT_PAGE);
 
@@ -45,7 +49,7 @@ const Home = ({ navigation }) => {
   );
 
   const handleViewCart = useCallback(
-    () => navigation.navigate(SCREENS.CART),
+    () => navigation.navigate(SCREENS.ORDER),
     [navigation]
   );
 

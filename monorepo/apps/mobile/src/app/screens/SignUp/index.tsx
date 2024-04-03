@@ -1,6 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
 import { KeyboardAvoidingView, Platform } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import { Controller, useForm } from 'react-hook-form';
 
 // Types
@@ -10,7 +9,7 @@ import {
   AUTH_TYPES,
   SignUpPayload,
 } from '@monorepo/types';
-import { NavigationProps, SCREENS } from '../../types';
+import { StackScreenProps, SCREENS } from '../../types';
 
 // Constants
 import { SCHEMA } from '@monorepo/constants';
@@ -36,8 +35,11 @@ import {
   Text,
 } from '@monorepo/ui';
 
-const SignUp = () => {
-  const navigation = useNavigation<NavigationProps>();
+interface SignUpProps {
+  navigation: StackScreenProps;
+}
+
+const SignUp = ({ navigation }: SignUpProps) => {
   const [setVerifyId] = authStore((state) => [state.setVerifyId]);
 
   const [disclosures, setDisclosures] = useState({
@@ -84,6 +86,7 @@ const SignUp = () => {
         rightElement: {
           icon: (
             <IconButton
+              chromeless
               onPress={() =>
                 setDisclosures((prev) => ({
                   ...prev,
@@ -104,6 +107,7 @@ const SignUp = () => {
         rightElement: {
           icon: (
             <IconButton
+              chromeless
               onPress={() =>
                 setDisclosures((prev) => ({
                   ...prev,

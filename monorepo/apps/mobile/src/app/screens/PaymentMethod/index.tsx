@@ -1,8 +1,8 @@
-import { memo, useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Stack, ScrollView } from 'tamagui';
 
 // Types
-import { SCREENS } from '../../types';
+import { SCREENS, StackScreenProps } from '../../types';
 import { BasicLayer } from '@monorepo/types';
 
 // Constants
@@ -26,7 +26,11 @@ import {
   shadows,
 } from '@monorepo/ui';
 
-const PaymentMethod = ({ navigation }) => {
+interface PaymentMethodProps {
+  navigation: StackScreenProps;
+}
+
+const PaymentMethod = ({ navigation }: PaymentMethodProps) => {
   const [selectedCard, setSelectedCard] = useState('');
 
   const { useFetchPayments } = usePayment();
@@ -106,4 +110,4 @@ const PaymentMethod = ({ navigation }) => {
   );
 };
 
-export default memo(PaymentMethod);
+export default PaymentMethod;

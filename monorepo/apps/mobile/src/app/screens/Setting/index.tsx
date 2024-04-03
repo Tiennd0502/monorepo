@@ -1,5 +1,8 @@
-import { memo, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { ScrollView, Stack, XStack } from 'tamagui';
+
+// Types
+import { StackScreenProps } from '../../types';
 
 // Stores
 import { userStore } from '@monorepo/stores';
@@ -16,7 +19,11 @@ import {
   shadows,
 } from '@monorepo/ui';
 
-const Setting = ({ navigation }) => {
+interface SettingProps {
+  navigation: StackScreenProps;
+}
+
+const Setting = ({ navigation }: SettingProps) => {
   const [user] = userStore((state) => [state.user]);
 
   const { first_name = '', last_name = '', email = '' } = user || {};
@@ -176,4 +183,4 @@ const Setting = ({ navigation }) => {
   );
 };
 
-export default memo(Setting);
+export default Setting;

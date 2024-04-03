@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { Stack } from 'tamagui';
 
@@ -212,4 +212,4 @@ const AddShippingAddress = ({ navigation }) => {
   );
 };
 
-export default memo(AddShippingAddress);
+export default AddShippingAddress;

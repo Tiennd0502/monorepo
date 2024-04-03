@@ -30,7 +30,8 @@
     "react-native-svg": "*",
     "react-native-svg-transformer": "*",
     "tamagui": "*",
-    "zustand": "*"
+    "zustand": "*",
+    "react-fast-compare": "*"
   },
   "devDependencies": {
     "@testing-library/react": "^14.2.2"

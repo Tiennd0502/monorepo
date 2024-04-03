@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import isEqual from 'react-fast-compare';
 
 // Types
 import { Product } from '@monorepo/types';
@@ -41,4 +42,4 @@ const ProductCard = ({
   );
 };
 
-export default memo(ProductCard);
+export default memo(ProductCard, isEqual);

@@ -1,4 +1,4 @@
-import { memo, useMemo, useCallback } from 'react';
+import { useMemo, useCallback } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Stack } from 'tamagui';
 
@@ -123,4 +123,4 @@ const Profile = ({ navigation }: ProfileProps) => {
   );
 };
 
-export default memo(Profile);
+export default Profile;

@@ -1,5 +1,6 @@
 import { memo, useCallback } from 'react';
 import { Stack, XStack } from 'tamagui';
+import isEqual from 'react-fast-compare';
 
 // Types
 import { Shipping } from '@monorepo/types';
@@ -38,7 +39,7 @@ const ShippingCard = ({
         <Text color="$textPrimary" size="large" bold>
           {name}
         </Text>
-        {onEdit && <EditIcon testID='edit-icon' onPress={handleEditClick} />}
+        {onEdit && <EditIcon testID="edit-icon" onPress={handleEditClick} />}
       </XStack>
       <Divider height={onEdit ? '$px' : '$0.5'} color="$backgroundTertiary" />
       <Text
@@ -53,4 +54,4 @@ const ShippingCard = ({
   );
 };
 
-export default memo(ShippingCard);
+export default memo(ShippingCard, isEqual);

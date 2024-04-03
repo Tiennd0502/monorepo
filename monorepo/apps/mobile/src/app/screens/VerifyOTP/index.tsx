@@ -146,18 +146,14 @@ const VerifyOTP = ({ navigation }) => {
               >
                 Submit
               </Button>
-              <Stack>
-                <Text textAlign="center">
-                  Already have account?&nbsp;
-                  <Text
-                    onPress={handleSignIn}
-                    color="$primary"
-                    fontWeight="bold"
-                  >
+              <XStack alignItems="center" justifyContent="center">
+                <Text textAlign="center">Already have account?&nbsp;</Text>
+                <Button chromeless onPress={handleSignIn}>
+                  <Text size="medium" color="$primary" bold>
                     SIGN IN
                   </Text>
-                </Text>
-              </Stack>
+                </Button>
+              </XStack>
             </Stack>
           </Stack>
         </Stack>

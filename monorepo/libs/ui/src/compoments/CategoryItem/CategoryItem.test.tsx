@@ -1,7 +1,7 @@
 import {fireEvent, render, waitFor} from '@testing-library/react-native';
 
 import { TamaguiProvider } from '@monorepo/provider';
-import {CATEGORIES} from '@monorepo/constants';
+import {CATEGORIES} from '@monorepo/mocks';
 import CategoryItem from '.';
 
 const onPress = jest.fn();

@@ -1,7 +1,7 @@
 import {fireEvent, render, waitFor} from '@testing-library/react-native';
 
 import { TamaguiProvider } from '@monorepo/provider';
-import { PRODUCTS } from '@monorepo/constants';
+import { PRODUCTS } from '@monorepo/mocks';
 import ProductCard from '.';
 
 const onPress = jest.fn();

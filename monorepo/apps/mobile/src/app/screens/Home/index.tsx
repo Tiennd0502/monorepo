@@ -6,7 +6,8 @@ import { Product, ProductResponse } from '@monorepo/types';
 import { SCREENS, StackScreenProps } from '../../types';
 
 // Constants
-import { CATEGORIES, INIT_PAGE } from '@monorepo/constants';
+import { INIT_PAGE } from '@monorepo/constants';
+import { CATEGORIES } from '@monorepo/mocks';
 
 // Utils
 import { formatProducts, getData } from '@monorepo/utils';

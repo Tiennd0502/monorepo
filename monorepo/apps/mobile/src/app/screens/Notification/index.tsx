@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { ScrollView, Stack } from 'tamagui';
 
 // Constants
-import { NOTIFICATIONS } from '@monorepo/constants';
+import { NOTIFICATIONS } from '@monorepo/mocks';
 
 // Types
 import { NEW_STATUS } from '@monorepo/types';

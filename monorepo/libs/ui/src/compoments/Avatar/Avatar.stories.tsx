@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { USER } from '@monorepo/constants';
+import { USER } from '@monorepo/mocks';
 
 import Avatar from '.';
 

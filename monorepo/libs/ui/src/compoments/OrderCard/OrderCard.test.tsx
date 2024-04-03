@@ -1,7 +1,7 @@
 import {fireEvent, render, waitFor} from '@testing-library/react-native';
 
 import { TamaguiProvider } from '@monorepo/provider';
-import { ORDERS } from '@monorepo/constants';
+import { ORDERS } from '@monorepo/mocks';
 import OrderCard from '.';
 
 const onViewDetail = jest.fn();

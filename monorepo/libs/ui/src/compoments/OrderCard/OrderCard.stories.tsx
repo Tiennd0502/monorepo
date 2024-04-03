@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Stack } from 'tamagui';
 
-import { ORDERS } from '@monorepo/constants';
+import { ORDERS } from '@monorepo/mocks';
 
 import OrderCard from '.';
 

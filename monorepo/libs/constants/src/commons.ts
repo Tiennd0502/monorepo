@@ -10,3 +10,5 @@ export const REGEX = {
 };
 
 export const INIT_PAGE = 1;
+
+export const AVATAR_DEFAULT = 'https://i.ibb.co/zJrdJfJ/Ellipse-30.png';

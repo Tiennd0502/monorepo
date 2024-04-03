@@ -7,11 +7,11 @@ import { ConfirmOrderPayload } from '@monorepo/types';
 
 // Constants
 import {
-  PAYMENT_CARDS,
   CURRENCY_UNIT,
   EXTRA_MASTER_IMAGE,
   DELIVERY_IMAGE,
 } from '@monorepo/constants';
+import {PAYMENT_CARDS } from '@monorepo/mocks';
 
 // Utils
 import { formatShippingAddress } from '@monorepo/utils';

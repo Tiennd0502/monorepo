@@ -6,7 +6,7 @@ import { Stack, XStack, ScrollView } from 'tamagui';
 import { AddPaymentFrom, LAYER_TYPE, Layer } from '@monorepo/types';
 
 // Constants
-import { PAYMENT_CARDS } from '@monorepo/constants';
+import { PAYMENT_CARDS } from '@monorepo/mocks';
 
 // Hooks | Stories
 import { usePayment } from '@monorepo/hooks';

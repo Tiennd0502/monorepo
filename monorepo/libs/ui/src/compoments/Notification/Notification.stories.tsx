@@ -1,7 +1,7 @@
 import { Stack } from 'tamagui';
 import { Meta, StoryObj } from '@storybook/react';
 
-import { NOTIFICATIONS } from '@monorepo/constants';
+import { NOTIFICATIONS } from '@monorepo/mocks';
 
 import Notification from '.';
 

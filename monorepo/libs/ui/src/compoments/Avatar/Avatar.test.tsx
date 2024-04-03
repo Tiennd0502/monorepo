@@ -1,7 +1,8 @@
 import {render} from '@testing-library/react-native';
 
 import { TamaguiProvider } from '@monorepo/provider';
-import {USER, AVATAR_DEFAULT} from '@monorepo/constants';
+import { AVATAR_DEFAULT} from '@monorepo/constants';
+import { USER } from '@monorepo/mocks';
 
 import Avatar from '.';
 

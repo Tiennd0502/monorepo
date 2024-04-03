@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Stack } from 'tamagui';
 
-import { PRODUCTS } from '@monorepo/constants';
+import { PRODUCTS } from '@monorepo/mocks';
 import CartItem from '.';
 
 const meta: Meta<typeof CartItem> = {

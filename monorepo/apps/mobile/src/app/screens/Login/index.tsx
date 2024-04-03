@@ -8,7 +8,7 @@ import {
   LoginForm,
   LoginPayLoad,
 } from '@monorepo/types';
-import { SCREENS } from '../../types';
+import { SCREENS, StackScreenProps } from '../../types';
 
 // Constants
 import { SCHEMA } from '@monorepo/constants';
@@ -34,7 +34,13 @@ import {
   Text,
 } from '@monorepo/ui';
 
-const Login = ({ navigation }) => {
+interface LoginScreenProps {
+  navigation: StackScreenProps;
+}
+
+type KeyForm = Exclude<keyof LoginForm, ''>;
+
+const Login = ({ navigation }: LoginScreenProps) => {
   const [isDisclosure, setIsDisclosure] = useState(true);
   const [setAuthKey] = authStore((state) => [state.setAuthKey]);
   const [setUser] = userStore((state) => [state.setUser]);
@@ -98,7 +104,6 @@ const Login = ({ navigation }) => {
           const { key } = user;
           key && setAuthKey(key);
           user && setUser(user);
-          status && navigation.navigate(SCREENS.MAIN_STACK);
           reset();
         },
         onError: (error: Error) => {
@@ -106,7 +111,7 @@ const Login = ({ navigation }) => {
         },
       });
     },
-    [mutate, navigation, reset, setAuthKey, setUser]
+    [mutate, reset, setAuthKey, setUser]
   );
 
   const handleSignUp = useCallback(() => {
@@ -166,7 +171,7 @@ const Login = ({ navigation }) => {
               ({ name, label, rules, rightElement, secureTextEntry }) => (
                 <>
                   <Controller
-                    name={name}
+                    name={name as KeyForm}
                     control={control}
                     rules={rules}
                     render={({

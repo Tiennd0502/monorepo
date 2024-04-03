@@ -1,9 +1,39 @@
-import { ORDER_STATUS, Order, Card, Shipping } from '@monorepo/types';
+import {
+  ORDER_STATUS,
+  Order,
+  Card,
+  Shipping,
+  StatusOrders,
+} from '@monorepo/types';
 
 export const ORDER_TABS = {
-  Delivered: ORDER_STATUS.Delivered.toString(),
-  Processing: ORDER_STATUS.Processing.toString(),
-  Cancelled: `${ORDER_STATUS['Canceled by admin']},${ORDER_STATUS['Canceled by customer']}`,
+  [ORDER_STATUS.Delivered]: 'Delivered',
+  [ORDER_STATUS.Processing]: 'Processing',
+  [ORDER_STATUS.Confirmed]: 'Confirmed',
+  [ORDER_STATUS.CanceledByAdmin]: 'Cancelled',
+};
+
+export const ORDER_STATUS_DETAILS: StatusOrders = {
+  [ORDER_STATUS.Delivered]: {
+    color: '$successPrimary',
+    label: ORDER_TABS[ORDER_STATUS.Delivered],
+  },
+  [ORDER_STATUS.Processing]: {
+    color: '$warningPrimary',
+    label: ORDER_TABS[ORDER_STATUS.Processing],
+  },
+  [ORDER_STATUS.Confirmed]: {
+    color: '$successPrimary',
+    label: ORDER_TABS[ORDER_STATUS.Confirmed],
+  },
+  [ORDER_STATUS.CanceledByAdmin]: {
+    color: '$errorPrimary',
+    label: ORDER_TABS[ORDER_STATUS.CanceledByAdmin],
+  },
+  [ORDER_STATUS.CanceledByCustomer]: {
+    color: '$errorPrimary',
+    label: ORDER_TABS[ORDER_STATUS.CanceledByAdmin],
+  },
 };
 
 export const VISA_IMAGE = 'https://i.ibb.co/4gV41yh/visa.png';
@@ -29,70 +59,21 @@ export const ORDERS: Order[] = [
     quantity: 1,
     totalAmount: 100,
     createdAt: '20/03/2020',
-    status: ORDER_STATUS.Delivered.toString(),
+    status: ORDER_STATUS.Delivered,
   },
   {
     id: '02',
     quantity: 2,
     totalAmount: 100,
     createdAt: '20/03/2020',
-    status: ORDER_STATUS.Delivered.toString(),
+    status: ORDER_STATUS.Processing,
   },
   {
     id: '03',
     quantity: 3,
     totalAmount: 100,
     createdAt: '20/03/2020',
-    status: ORDER_STATUS.Delivered.toString(),
-  },
-  {
-    id: '04',
-    quantity: 4,
-    totalAmount: 1000,
-    createdAt: '20/03/2020',
-    status: ORDER_STATUS.Delivered.toString(),
-  },
-  {
-    id: '05',
-    quantity: 1,
-    totalAmount: 600,
-    createdAt: '21/03/2024',
-    status: ORDER_STATUS.Processing.toString(),
-  },
-  {
-    id: '06',
-    quantity: 4,
-    totalAmount: 1000,
-    createdAt: '21/03/2024',
-    status: ORDER_STATUS.Processing.toString(),
-  },
-  {
-    id: '07',
-    quantity: 7,
-    totalAmount: 700,
-    createdAt: '21/03/2024',
-    status: ORDER_STATUS['Canceled by admin'].toString(),
-  },
-  {
-    id: '08',
-    quantity: 2,
-    totalAmount: 900,
-    createdAt: '21/03/2024',
-    status: ORDER_STATUS['Canceled by customer'].toString(),
-  },
-  {
-    id: '09',
-    quantity: 1,
-    totalAmount: 300,
-    createdAt: '21/03/2024',
-    status: ORDER_STATUS.Processing.toString(),
-  },
-  {
-    id: '10',
-    quantity: 1,
-    totalAmount: 300,
-    createdAt: '21/03/2024',
-    status: ORDER_STATUS['Canceled by admin'].toString(),
+    status: ORDER_STATUS.Delivered,
   },
 ];
 

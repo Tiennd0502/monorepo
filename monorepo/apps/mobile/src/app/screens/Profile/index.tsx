@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Stack } from 'tamagui';
 
 // Types
-import { SCREENS } from '../../types';
+import { SCREENS, ProfileScreenProps } from '../../types';
 
 // Constants
 import { AUTH_STORE_KEY } from '@monorepo/constants';
@@ -21,7 +21,11 @@ import {
   LogOutIcon,
 } from '@monorepo/ui';
 
-const Profile = ({ navigation }) => {
+interface ProfileProps {
+  navigation: ProfileScreenProps;
+}
+
+const Profile = ({ navigation }: ProfileProps) => {
   const {
     logOut: { mutate },
   } = useAuth();
@@ -87,8 +91,7 @@ const Profile = ({ navigation }) => {
           console.log(error);
         },
       });
-    navigation.navigate(SCREENS.AUTH_STACK);
-  }, [id, mutate, navigation, removeUser, removeAuth]);
+  }, [id, mutate, removeUser, removeAuth]);
 
   return (
     <Stack flex={1} gap="$6" padding="$5" backgroundColor="$secondary">

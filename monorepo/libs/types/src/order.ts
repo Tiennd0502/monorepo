@@ -1,26 +1,7 @@
 import { Cart } from './cart';
+import { User } from './user';
 import { Price } from './product';
-
-export interface Order {
-  id: string;
-  quantity: number;
-  status: string;
-  totalAmount: number;
-  createdAt: string;
-}
-
-export interface OrderPayload {
-  order: {
-    status?: string;
-    payment_method_id: string;
-    shipping_method_id: string;
-    shipping_address_id: string;
-  };
-}
-
-export interface OrderReference {
-  order_reference: string;
-}
+import { ShippingAddressResponse } from './shipping';
 
 export enum ORDER_STATUS {
   'None',
@@ -29,9 +10,77 @@ export enum ORDER_STATUS {
   'Processing',
   'Shipped',
   'Delivered',
-  'Canceled by customer',
-  'Canceled by admin',
+  'CanceledByCustomer',
+  'CanceledByAdmin',
   'Completed',
+}
+
+export interface Order {
+  id: string;
+  quantity: number;
+  status: ORDER_STATUS;
+  totalAmount: number;
+  createdAt: string;
+}
+
+export interface OrderPayload {
+  order: {
+    status?: number;
+    payment_method_id: string;
+    shipping_method_id: string;
+    shipping_address_id: string;
+  };
+}
+
+export interface OrderDetailResponse {
+  order: {
+    id: string;
+    account: User;
+    user: User;
+    builling_address: object;
+    completed: boolean;
+    order_accounts?: [];
+    order_details: [];
+    order_reference: string;
+    payment_method: object;
+    billing_address: object;
+    shipping_address: ShippingAddressResponse;
+    shipping_method: object;
+    shipping_total: object;
+    grand_total: Price;
+    status_history: [];
+    shipments: object;
+  };
+}
+
+export interface OrderItem {
+  id: string;
+  order_status: ORDER_STATUS;
+  created_at: string;
+  grand_total: Price;
+  order_details: [
+    {
+      quantity: number;
+    }
+  ];
+}
+export interface StatusOrderDetail {
+  color: string;
+  label: string;
+}
+
+export type StatusOrders = {
+  [key in ORDER_STATUS]?: StatusOrderDetail;
+};
+
+export interface OrdersResponse {
+  orders: OrderItem[];
+  totol_records: number;
+  page: number;
+}
+
+export interface OrderReference {
+  order_reference: string;
 }
 
 export interface PaymentInfo {
@@ -80,18 +129,6 @@ export type AddPaymentFrom = Omit<Card, 'isVisa' | 'isMasterCard' | 'id'>;
 
 export enum LAYER_TYPE {
   BLOG = 'blog',
-}
-
-export interface OrderItem {
-  id: string;
-  order_status: string;
-  created_at: string;
-  grand_total: Price;
-  order_details: [
-    {
-      quantity: number;
-    }
-  ];
 }
 
 export interface Shipping {

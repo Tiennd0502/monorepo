@@ -9,7 +9,7 @@ import {
   Cart,
   ConfirmOrder,
   ConfirmOrderPayload,
-  OrderResponse,
+  OrderDetailResponse,
   OrdersResponse,
 } from '@monorepo/types';
 
@@ -22,15 +22,20 @@ import { authStore } from '@monorepo/stores';
 export const useOrder = () => {
   const [authKey] = authStore((state) => [state.authKey]);
 
-  const useFetchOrders = ({ page = 1 }) =>
+  const useFetchOrders = ({ page = 1, status = 0 }) =>
     useQuery({
       queryKey: [API_PATH.ORDERS],
       queryFn: () =>
-        GET<OrdersResponse>(`${API_PATH.ORDERS}?page=${page}`, {
-          headers: {
-            'X-Auth-Key': `${authKey?.auth_key}`,
-          },
-        }),
+        GET<APIResponse<OrdersResponse>>(
+          `${API_PATH.ORDERS}?page=${page}${
+            status ? '&order_status=' + status : ''
+          }`,
+          {
+            headers: {
+              'X-Auth-Key': `${authKey?.auth_key}`,
+            },
+          }
+        ),
       retry: false,
     });
 
@@ -38,7 +43,7 @@ export const useOrder = () => {
     useQuery({
       queryKey: [`${API_PATH.ORDERS}/${id}`],
       queryFn: () =>
-        GET<APIResponse<OrderResponse>>(`${API_PATH.ORDERS}/${id}`, {
+        GET<APIResponse<OrderDetailResponse>>(`${API_PATH.ORDERS}/${id}`, {
           headers: {
             'X-Auth-Key': `${authKey?.auth_key}`,
           },

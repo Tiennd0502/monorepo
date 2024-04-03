@@ -1,8 +1,8 @@
-import { memo, useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { ScrollView, Stack } from 'tamagui';
 
 // Types
-import { SCREENS } from '../../types';
+import { SCREENS, StackScreenProps } from '../../types';
 import { ShippingAddressResponse, ADDRESS_TYPE } from '@monorepo/types';
 
 // Constants
@@ -26,7 +26,11 @@ import {
   Loading,
 } from '@monorepo/ui';
 
-const ShippingAddress = ({ navigation }) => {
+interface ShippingAddressProps {
+  navigation: StackScreenProps;
+}
+
+const ShippingAddress = ({ navigation }: ShippingAddressProps) => {
   const [selectedCard, setSelectedCard] = useState('');
 
   const { useFetchShippingAddresses } = useShippingAddress();
@@ -113,4 +117,4 @@ const ShippingAddress = ({ navigation }) => {
   );
 };
 
-export default memo(ShippingAddress);
+export default ShippingAddress;

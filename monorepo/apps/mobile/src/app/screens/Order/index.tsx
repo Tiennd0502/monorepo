@@ -1,4 +1,4 @@
-import { memo, useMemo, useState, useCallback } from 'react';
+import { useMemo, useState, useCallback } from 'react';
 import { Stack, XStack, ScrollView } from 'tamagui';
 
 // Constants
@@ -6,6 +6,7 @@ import { ORDER_TABS } from '@monorepo/constants';
 
 // Types
 import { ORDER_STATUS } from '@monorepo/types';
+import { StackScreenProps } from '../../types';
 
 // Utils
 import { formatOrders } from '@monorepo/utils';
@@ -23,7 +24,11 @@ import {
   Text,
 } from '@monorepo/ui';
 
-const Order = ({ navigation }) => {
+interface OrderProps {
+  navigation: StackScreenProps;
+}
+
+const Order = ({ navigation }: OrderProps) => {
   const [tabActive, setTabActive] = useState<ORDER_STATUS>(
     ORDER_STATUS.Confirmed
   );
@@ -95,4 +100,4 @@ const Order = ({ navigation }) => {
   );
 };
 
-export default memo(Order);
+export default Order;

@@ -6,6 +6,7 @@ import {
   ButtonProps,
 } from 'tamagui';
 import { memo, useMemo } from 'react';
+import isEqual from 'react-fast-compare';
 
 import Text from '../Text';
 import IconButton from '../IconButton';
@@ -148,7 +149,13 @@ const Input = StyledInput.styleable<InputProps>(
     return (
       <XStack position="relative" zIndex={1} alignItems="center">
         {label && <StyledLabel>{label}</StyledLabel>}
-        <StyledInput testID='input' ref={ref} size={size} {...variantObject} {...rest} />
+        <StyledInput
+          testID="input"
+          ref={ref}
+          size={size}
+          {...variantObject}
+          {...rest}
+        />
         {rightElement && (
           <IconButton
             aria-label="Icon"
@@ -173,4 +180,4 @@ const Input = StyledInput.styleable<InputProps>(
   }
 );
 
-export default memo(Input);
+export default memo(Input, isEqual);

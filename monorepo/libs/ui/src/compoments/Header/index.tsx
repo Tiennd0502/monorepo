@@ -1,4 +1,5 @@
 import { ReactNode, memo } from 'react';
+import isEqual from 'react-fast-compare';
 
 import { YStack, XStack } from 'tamagui';
 import Heading from '../Heading';
@@ -27,4 +28,4 @@ const Header = ({ startIcon, title, subTitle, endIcon }: HeaderProps) => {
   );
 };
 
-export default memo(Header);
+export default memo(Header, isEqual);

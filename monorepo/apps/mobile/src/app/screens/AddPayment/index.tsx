@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { Stack, XStack, ScrollView } from 'tamagui';
 
@@ -101,8 +101,7 @@ const AddPayment = ({ navigation }) => {
               }) => {
                 return (
                   <Input
-                    editable={false}
-                    variant="disabled"
+                    disabled
                     label="CardHolder Name"
                     placeholder={`Ex: ${'Bruno Pham'}`}
                     errorMessage={error?.message}
@@ -131,7 +130,7 @@ const AddPayment = ({ navigation }) => {
                 );
               }}
             />
-            <XStack direction="row" columnGap="$5">
+            <XStack gap="$5">
               <Stack flex={1}>
                 <Controller
                   name="cvv"
@@ -192,4 +191,4 @@ const AddPayment = ({ navigation }) => {
   );
 };
 
-export default memo(AddPayment);
+export default AddPayment;

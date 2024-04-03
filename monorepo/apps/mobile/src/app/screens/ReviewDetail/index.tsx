@@ -1,7 +1,8 @@
-import { memo, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { Image, ScrollView, Stack, XStack } from 'tamagui';
 // Types
-import { REVIEW_TYPES } from '@monorepo/types';
+import { StackScreenProps } from '../../types';
+import { REVIEW_TYPES, Blog } from '@monorepo/types';
 
 // Constants
 import { AVATAR_DEFAULT } from '@monorepo/constants';
@@ -33,7 +34,16 @@ const REVIEW_CONTENT = {
   rating: 5,
 };
 
-const ReviewDetail = ({ navigation, route }) => {
+interface ReviewDetailProps {
+  navigation: StackScreenProps;
+  route: {
+    params: {
+      item: Blog;
+    };
+  };
+}
+
+const ReviewDetail = ({ navigation, route }: ReviewDetailProps) => {
   const { item } = route?.params || {};
   const { id = '', image = '', title = '' } = item || {};
 
@@ -134,4 +144,4 @@ const ReviewDetail = ({ navigation, route }) => {
   );
 };
 
-export default memo(ReviewDetail);
+export default ReviewDetail;

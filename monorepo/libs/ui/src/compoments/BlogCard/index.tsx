@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { Stack, XStack, Image } from 'tamagui';
+import isEqual from 'react-fast-compare';
 
 // Types
 import { Blog } from '@monorepo/types';
@@ -49,7 +50,12 @@ const BlogCard = ({
           source={{ uri: image || AVATAR_DEFAULT }}
         />
         <Stack gap="$1.5">
-          <Text color="$textQuaternary" numberOfLines={2} ellipsizeMode="tail">
+          <Text
+            size="extraMedium"
+            color="$textQuaternary"
+            numberOfLines={2}
+            ellipsizeMode="tail"
+          >
             {title}
           </Text>
           {price && (
@@ -63,18 +69,13 @@ const BlogCard = ({
     <XStack justifyContent="space-between" marginBottom="$2">
       <Stack rowGap={5}>
         {isReview && (
-          <Text
-            color="$primary"
-            size="sm"
-            numberOfLines={2}
-            ellipsizeMode="tail"
-          >
+          <Text color="$primary" numberOfLines={2} ellipsizeMode="tail">
             {title}
           </Text>
         )}
         <Rating value={evaluate} />
       </Stack>
-      <Text size="xs" color="$textLabel">
+      <Text fontSize="$3" color="$textLabel">
         {createdAt}
       </Text>
     </XStack>
@@ -84,4 +85,4 @@ const BlogCard = ({
   </Stack>
 );
 
-export default memo(BlogCard);
+export default memo(BlogCard, isEqual);

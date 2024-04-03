@@ -2,7 +2,8 @@ import { useCallback, useMemo, useState } from 'react';
 import { Stack, ScrollView, Image, XStack } from 'tamagui';
 
 // Types
-import { SCREENS } from '../../types';
+import { SCREENS, StackScreenProps } from '../../types';
+import { Product } from '@monorepo/types';
 
 // Constants
 import {
@@ -27,7 +28,16 @@ import {
   shadows,
 } from '@monorepo/ui';
 
-const ProductDetail = ({ navigation, route }) => {
+interface ProductDetailProps {
+  navigation: StackScreenProps;
+  route: {
+    params: {
+      product: Product;
+    };
+  };
+}
+
+const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
   const [quantity, setQuantity] = useState(1);
   const [activeColor, setActiveColor] = useState(PRODUCT_COLORS[0]);
 

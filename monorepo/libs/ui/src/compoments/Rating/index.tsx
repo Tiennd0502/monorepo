@@ -5,7 +5,7 @@ import { XStack } from 'tamagui';
 
 interface RatingProps {
   value: number;
-  size?: number;
+  size?: number | string;
   count?: number;
 }
 

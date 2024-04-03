@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { Image, Stack, XStack } from 'tamagui';
+import isEqual from 'react-fast-compare';
 
 import { Card } from '@monorepo/types';
 import { VISA_IMAGE, MASTER_IMAGE, BG_CARD } from '@monorepo/constants';
@@ -83,4 +84,4 @@ const PaymentCard = ({
   );
 };
 
-export default memo(PaymentCard);
+export default memo(PaymentCard, isEqual);

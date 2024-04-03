@@ -1,8 +1,8 @@
-import { memo, useMemo, useCallback } from 'react';
+import { useMemo, useCallback } from 'react';
 import { Stack, ScrollView } from 'tamagui';
 
 // Types
-import { SCREENS } from '../../types';
+import { SCREENS, StackScreenProps } from '../../types';
 import { ProductResponse } from '@monorepo/types';
 
 // Constants
@@ -23,7 +23,11 @@ import {
   SearchIcon,
 } from '@monorepo/ui';
 
-const Review = ({ navigation }) => {
+interface ReviewProps {
+  navigation: StackScreenProps;
+}
+
+const Review = ({ navigation }: ReviewProps) => {
   const { useFetchProducts } = useProducts();
   const { data, isPending } = useFetchProducts(INIT_PAGE);
   const pages = useMemo(() => data?.pages || [], [data?.pages]);
@@ -71,4 +75,4 @@ const Review = ({ navigation }) => {
   );
 };
 
-export default memo(Review);
+export default Review;

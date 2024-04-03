@@ -141,7 +141,6 @@ const SignUp = ({ navigation }: SignUpProps) => {
       mutate(payload, {
         onSuccess: ({ data: { verify_id: verifyData } }: SignUpResponse) => {
           !!setVerifyId && setVerifyId(verifyData);
-          console.log('TRUE', verifyData);
           navigation.navigate(SCREENS.VERIFY_OTP);
 
           reset();
@@ -245,18 +244,14 @@ const SignUp = ({ navigation }: SignUpProps) => {
               >
                 SIGN UP
               </Button>
-              <Stack>
-                <Text textAlign="center">
-                  Already have account?&nbsp;
-                  <Text
-                    onPress={handleSignIn}
-                    color="$primary"
-                    fontWeight="bold"
-                  >
+              <XStack alignItems="center" justifyContent="center">
+                <Text textAlign="center">Already have account?&nbsp;</Text>
+                <Button chromeless onPress={handleSignIn}>
+                  <Text size="medium" color="$primary" bold>
                     SIGN IN
                   </Text>
-                </Text>
-              </Stack>
+                </Button>
+              </XStack>
             </Stack>
           </Stack>
         </Stack>

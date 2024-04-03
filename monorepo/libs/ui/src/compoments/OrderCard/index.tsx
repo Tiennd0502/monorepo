@@ -1,5 +1,6 @@
 import { memo, useCallback, useMemo } from 'react';
 import { Stack, XStack } from 'tamagui';
+import isEqual from 'react-fast-compare';
 
 // Types
 import { Order } from '@monorepo/types';
@@ -89,4 +90,4 @@ const OrderCard = ({
   );
 };
 
-export default memo(OrderCard);
+export default memo(OrderCard, isEqual);

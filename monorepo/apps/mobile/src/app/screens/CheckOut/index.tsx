@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { Stack, XStack, Image, ScrollView } from 'tamagui';
 
 // Types
@@ -220,4 +220,4 @@ const CheckOut = ({ navigation, route }) => {
   );
 };
 
-export default memo(CheckOut);
+export default CheckOut;

@@ -9,23 +9,13 @@ import { APIResponse, Product } from '@monorepo/types';
 // Services
 import { GET } from '@monorepo/utils';
 
-// Stores
-import { authStore } from '@monorepo/stores';
-
 export const useProducts = () => {
-  const [authKey] = authStore((state) => [state.authKey]);
-
   const useFetchProducts = (initPageParam: number) => {
     return useInfiniteQuery({
       queryKey: [API_PATH.PRODUCT],
       queryFn: ({ pageParam }) => {
         return GET<APIResponse<Product[]>>(
-          `${API_PATH.PRODUCT}?page=${pageParam}&per_page=6`,
-          {
-            headers: {
-              'X-Auth-Key': `${authKey?.auth_key}`,
-            },
-          }
+          `${API_PATH.PRODUCT}?page=${pageParam}&per_page=6`
         );
       },
       initialPageParam: initPageParam,

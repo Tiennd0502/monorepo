@@ -9,23 +9,13 @@ import { API_PATH } from '@monorepo/constants';
 // Utils
 import { GET, POST } from '@monorepo/utils';
 
-// Stores
-import { authStore } from '@monorepo/stores';
-
 export const usePayment = () => {
-  const [authKey] = authStore((state) => [state.authKey]);
-
   const useFetchPayments = (initPageParam: number) => {
     return useInfiniteQuery({
       queryKey: [API_PATH.LAYERS],
       queryFn: ({ pageParam }) =>
         GET<APIResponse<Layer[]>>(
-          `${API_PATH.LAYERS}?page=${pageParam}&per_page=6`,
-          {
-            headers: {
-              'X-Auth-Key': `${authKey?.auth_key}`,
-            },
-          }
+          `${API_PATH.LAYERS}?page=${pageParam}&per_page=6`
         ),
       initialPageParam: initPageParam,
       getNextPageParam: (lastPage) => {
@@ -40,11 +30,7 @@ export const usePayment = () => {
 
   const add = useMutation({
     mutationFn: (data: Layer) =>
-      POST<APIResponse<Layer>, Layer>(API_PATH.LAYERS, data, {
-        headers: {
-          'X-Auth-Key': `${authKey?.auth_key}`,
-        },
-      }),
+      POST<APIResponse<Layer>, Layer>(API_PATH.LAYERS, data),
   });
 
   return { useFetchPayments, add };

@@ -1,12 +1,12 @@
 import {fireEvent, render, waitFor} from '@testing-library/react-native';
 
 import { TamaguiProvider } from '@monorepo/provider';
-import { NOTIFICATIONS } from '@monorepo/constants';
+import { NOTIFICATIONS } from '@monorepo/mocks';
 import Notification from '.';
 
 const onPress = jest.fn();
 
-const baseProps = { onPress };
+const baseProps = { ...NOTIFICATIONS[0], onPress };
 
 const setup = (moreProps = {}) => {
   const props = {
@@ -22,11 +22,6 @@ const setup = (moreProps = {}) => {
 };
 
 describe('Notification', () => {
-
-  const props = {
-    ...NOTIFICATIONS[0],
-    onPress,
-  };
 
   it('should render Notification component', () => {
     const container = setup(NOTIFICATIONS[3]);

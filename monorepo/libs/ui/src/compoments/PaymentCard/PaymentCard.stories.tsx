@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Stack } from 'tamagui';
 
-import { PAYMENT_CARDS } from '@monorepo/constants';
+import { PAYMENT_CARDS } from '@monorepo/mocks';
 import PaymentCard from '.';
 
 const meta: Meta<typeof PaymentCard> = {

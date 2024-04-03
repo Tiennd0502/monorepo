@@ -1,7 +1,7 @@
 import {render} from '@testing-library/react-native';
 
 import { TamaguiProvider } from '@monorepo/provider';
-import { PAYMENT_CARDS } from '@monorepo/constants';
+import { PAYMENT_CARDS } from '@monorepo/mocks';
 import PaymentCard from '.';
 
 const onEdit = jest.fn();

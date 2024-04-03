@@ -2,7 +2,7 @@ import { Stack } from 'tamagui';
 import { Meta, StoryObj } from '@storybook/react';
 
 import ProductCard from '.';
-import { PRODUCTS } from '@monorepo/constants';
+import { PRODUCTS } from '@monorepo/mocks';
 
 const meta: Meta<typeof ProductCard> = {
   title: 'Components/ProductCard',

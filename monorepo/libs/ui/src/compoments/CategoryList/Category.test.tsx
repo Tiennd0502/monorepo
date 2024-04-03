@@ -1,7 +1,7 @@
 import {render} from '@testing-library/react-native';
 
 import { TamaguiProvider } from '@monorepo/provider';
-import {CATEGORIES} from '@monorepo/constants';
+import {CATEGORIES} from '@monorepo/mocks';
 import CategoryList from '.';
 
 const onChange = jest.fn();

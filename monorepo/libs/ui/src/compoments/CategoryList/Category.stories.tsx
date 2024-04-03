@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { CATEGORIES } from '@monorepo/constants';
+import { CATEGORIES } from '@monorepo/mocks';
 
 import CategoryList from '.';
 

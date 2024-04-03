@@ -16,12 +16,7 @@ import {
   VerifyResponse,
 } from '@monorepo/types';
 
-// Hooks | Stores
-import { authStore } from '@monorepo/stores';
-
 export const useAuth = () => {
-  const [authKey] = authStore((state) => [state.authKey]);
-
   const logIn = useMutation({
     mutationFn: (data: LoginPayLoad) =>
       POST<AuthResponse, LoginPayLoad>(API_PATH.LOGIN, data),
@@ -41,26 +36,12 @@ export const useAuth = () => {
     mutationFn: (data: SignUpPayload) =>
       PATCH<VerifyResponse, SignUpPayload>(
         `${API_PATH.USERS}/${data.user.uuid}`,
-        data,
-        {
-          headers: {
-            'X-Auth-Key': `${authKey?.auth_key}`,
-          },
-        }
+        data
       ),
   });
 
   const logOut = useMutation({
-    mutationFn: (uuid: string) =>
-      POST(
-        API_PATH.LOGOUT,
-        { uuid },
-        {
-          headers: {
-            'x-auth-key': `${authKey?.auth_key}`,
-          },
-        }
-      ),
+    mutationFn: (uuid: string) => POST(API_PATH.LOGOUT, { uuid }),
   });
 
   return { logIn, logOut, signUp, verifyOTP, update };

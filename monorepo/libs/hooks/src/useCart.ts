@@ -16,49 +16,32 @@ import {
 // Services
 import { GET, PATCH, POST } from '@monorepo/utils';
 
-// Stores
-import { authStore } from '@monorepo/stores';
-
 export const useCart = () => {
-  const [authKey] = authStore((state) => [state.authKey]);
-
   const useFetchCarts = () =>
     useQuery({
       queryKey: [API_PATH.CART],
       queryFn: () =>
         GET<APIResponse<CartResponse>>(API_PATH.CART, {
           headers: {
-            'X-Auth-Key': `${authKey?.auth_key}`,
             'X-Currency': 'USD',
           },
         }),
+      retry: 1,
     });
 
   const addCart = useMutation({
     mutationFn: (data: CartPayload) =>
-      POST<Cart, CartPayload>(API_PATH.CART, data, {
-        headers: {
-          'X-Auth-Key': `${authKey?.auth_key}`,
-        },
-      }),
+      POST<Cart, CartPayload>(API_PATH.CART, data),
   });
 
   const removeCartItem = useMutation({
     mutationFn: (data: CartPayload) =>
-      PATCH<Cart, CartPayload>(API_PATH.CART, data, {
-        headers: {
-          'X-Auth-Key': `${authKey?.auth_key}`,
-        },
-      }),
+      PATCH<Cart, CartPayload>(API_PATH.CART, data),
   });
 
   const checkOut = useMutation({
     mutationFn: (data: OrderPayload) =>
-      POST<APIResponse<OrderReference>, OrderPayload>(API_PATH.CHECKOUT, data, {
-        headers: {
-          'X-Auth-Key': `${authKey?.auth_key}`,
-        },
-      }),
+      POST<APIResponse<OrderReference>, OrderPayload>(API_PATH.CHECKOUT, data),
   });
 
   return { useFetchCarts, addCart, removeCartItem, checkOut };

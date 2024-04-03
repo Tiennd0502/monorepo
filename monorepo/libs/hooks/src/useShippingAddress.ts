@@ -14,12 +14,7 @@ import {
   ShippingAddress,
 } from '@monorepo/types';
 
-// Stores
-import { authStore } from '@monorepo/stores';
-
 export const useShippingAddress = () => {
-  const [authKey] = authStore((state) => [state.authKey]);
-
   const useFetchShippingAddresses = (
     initPageParam: number,
     addressType: ADDRESS_TYPE
@@ -28,12 +23,7 @@ export const useShippingAddress = () => {
       queryKey: [API_PATH.ADDRESSES],
       queryFn: ({ pageParam }) =>
         GET<APIResponse<ShippingAddress[]>>(
-          `${API_PATH.ADDRESSES}?type=${addressType}&page=${pageParam}&per_page=6`,
-          {
-            headers: {
-              'X-Auth-Key': `${authKey?.auth_key}`,
-            },
-          }
+          `${API_PATH.ADDRESSES}?type=${addressType}&page=${pageParam}&per_page=6`
         ),
       initialPageParam: initPageParam,
       getNextPageParam: (lastPage) => {
@@ -50,12 +40,7 @@ export const useShippingAddress = () => {
     mutationFn: (data: ShippingAddressPayload) =>
       POST<APIResponse<ShippingAddress>, ShippingAddressPayload>(
         API_PATH.ADDRESSES,
-        data,
-        {
-          headers: {
-            'X-Auth-Key': `${authKey?.auth_key}`,
-          },
-        }
+        data
       ),
   });
 

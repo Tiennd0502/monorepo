@@ -49,7 +49,7 @@ const Home = ({ navigation }: HomeProps) => {
   );
 
   const handleViewCart = useCallback(
-    () => navigation.navigate(SCREENS.ORDER),
+    () => navigation.navigate(SCREENS.CART),
     [navigation]
   );
 

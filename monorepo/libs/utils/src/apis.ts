@@ -1,5 +1,6 @@
 import Config from 'react-native-config';
 import axios, { AxiosRequestConfig } from 'axios';
+import { authStore } from '@monorepo/stores';
 
 const API_URL = Config.API_URL;
 const PUBLIC_KEY = Config.PUBLIC_KEY;
@@ -13,6 +14,16 @@ const defaultOptions = {
 };
 
 const instanceAxios = axios.create(defaultOptions);
+
+instanceAxios.interceptors.request.use(
+  (config) => {
+    const xAuthKey = authStore.getState().authKey?.auth_key || '';
+    config.headers['X-Auth-Key'] = xAuthKey;
+
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
 export const GET = async <T>(url: string, config?: AxiosRequestConfig) => {
   try {

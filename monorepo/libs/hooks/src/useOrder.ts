@@ -16,12 +16,7 @@ import {
 // Services
 import { GET, PATCH } from '@monorepo/utils';
 
-// Stores
-import { authStore } from '@monorepo/stores';
-
 export const useOrder = () => {
-  const [authKey] = authStore((state) => [state.authKey]);
-
   const useFetchOrders = ({ page = 1, status = 0 }) =>
     useQuery({
       queryKey: [API_PATH.ORDERS],
@@ -29,12 +24,7 @@ export const useOrder = () => {
         GET<APIResponse<OrdersResponse>>(
           `${API_PATH.ORDERS}?page=${page}${
             status ? '&order_status=' + status : ''
-          }`,
-          {
-            headers: {
-              'X-Auth-Key': `${authKey?.auth_key}`,
-            },
-          }
+          }`
         ),
       retry: false,
     });
@@ -43,26 +33,14 @@ export const useOrder = () => {
     useQuery({
       queryKey: [`${API_PATH.ORDERS}/${id}`],
       queryFn: () =>
-        GET<APIResponse<OrderDetailResponse>>(`${API_PATH.ORDERS}/${id}`, {
-          headers: {
-            'X-Auth-Key': `${authKey?.auth_key}`,
-          },
-        }),
+        GET<APIResponse<OrderDetailResponse>>(`${API_PATH.ORDERS}/${id}`),
       retry: false,
       enabled: !!id,
     });
 
   const confirmOrder = useMutation({
     mutationFn: ({ id, order }: ConfirmOrderPayload) =>
-      PATCH<Cart, ConfirmOrder>(
-        `${API_PATH.ORDERS}/${id}/confirm`,
-        { order },
-        {
-          headers: {
-            'X-Auth-Key': `${authKey?.auth_key}`,
-          },
-        }
-      ),
+      PATCH<Cart, ConfirmOrder>(`${API_PATH.ORDERS}/${id}/confirm`, { order }),
   });
 
   return { useFetchOrders, useFetchOrder, confirmOrder };

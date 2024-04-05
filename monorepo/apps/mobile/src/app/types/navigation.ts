@@ -38,6 +38,9 @@ export type TabParamList = {
 };
 
 export type StackParamList = {
+  [SCREENS.AUTH_STACK]: undefined;
+  [SCREENS.MAIN_STACK]: undefined;
+  [SCREENS.MAIN_TAB]: undefined;
   [SCREENS.LANDING]: undefined;
   [SCREENS.SIGN_UP]: undefined;
   [SCREENS.VERIFY_OTP]: undefined;

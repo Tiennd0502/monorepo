@@ -1,43 +1,23 @@
-import { useMemo, useCallback } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useMemo } from 'react';
 import { Stack } from 'tamagui';
 
 // Types
 import { SCREENS, ProfileScreenProps } from '../../types';
 
-// Constants
-import { AUTH_STORE_KEY } from '@monorepo/constants';
-
 // Hooks | Stores
-import { useAuth } from '@monorepo/hooks';
-import { authStore, userStore } from '@monorepo/stores';
+import { userStore } from '@monorepo/stores';
 
 // Components
-import {
-  Header,
-  Avatar,
-  ProfileCard,
-  SearchIcon,
-  LogOutIcon,
-} from '@monorepo/ui';
+import { Avatar, ProfileCard } from '@monorepo/ui';
 
 interface ProfileProps {
   navigation: ProfileScreenProps;
 }
 
 const Profile = ({ navigation }: ProfileProps) => {
-  const {
-    logOut: { mutate },
-  } = useAuth();
-
-  const [removeAuth] = authStore((state) => [state.removeAuth]);
-  const [user, removeUser] = userStore((state) => [
-    state.user,
-    state.removeUser,
-  ]);
+  const [user] = userStore((state) => [state.user]);
 
   const {
-    id = '',
     first_name = '',
     last_name = '',
     email = '',
@@ -80,26 +60,8 @@ const Profile = ({ navigation }: ProfileProps) => {
     []
   );
 
-  const handleLogOut = useCallback(() => {
-    AsyncStorage.removeItem(AUTH_STORE_KEY);
-    removeUser();
-    removeAuth();
-
-    id &&
-      mutate(id, {
-        onError: (error) => {
-          console.log(error);
-        },
-      });
-  }, [id, mutate, removeUser, removeAuth]);
-
   return (
     <Stack flex={1} gap="$6" padding="$5" backgroundColor="$secondary">
-      <Header
-        title="Profile"
-        startIcon={<SearchIcon />}
-        endIcon={<LogOutIcon onPress={handleLogOut} />}
-      />
       <Avatar
         name={first_name + ' ' + last_name}
         email={email}

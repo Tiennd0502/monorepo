@@ -15,13 +15,7 @@ import { formatReviews, getData } from '@monorepo/utils';
 import { useProducts } from '@monorepo/hooks';
 
 // Components
-import {
-  BlogCard,
-  ChevronLeftIcon,
-  Header,
-  Loading,
-  SearchIcon,
-} from '@monorepo/ui';
+import { BlogCard, Loading } from '@monorepo/ui';
 
 interface ReviewProps {
   navigation: StackScreenProps;
@@ -43,8 +37,6 @@ const Review = ({ navigation }: ReviewProps) => {
     [products]
   );
 
-  const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
-
   const handleViewDetail = useCallback(
     (item) => navigation.navigate(SCREENS.REVIEW_DETAIL, { item }),
     [navigation]
@@ -53,13 +45,6 @@ const Review = ({ navigation }: ReviewProps) => {
   return (
     <Stack flex={1} backgroundColor="$secondary">
       {isPending && <Loading />}
-      <Stack paddingHorizontal={20} paddingVertical={15}>
-        <Header
-          title="My reviews"
-          startIcon={<ChevronLeftIcon onPress={handleGoBack} />}
-          endIcon={<SearchIcon />}
-        />
-      </Stack>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Stack padding="$5" gap="$8">
           {reviewsFormat.map((item) => (

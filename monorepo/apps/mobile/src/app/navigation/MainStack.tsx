@@ -1,25 +1,51 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SCREENS } from '../types';
+import { CartScreen, ProductDetailScreen, CheckOutScreen } from '../screens';
 
-import { SCREENS, StackParamList } from '../types';
-import { CartScreen, CheckOutScreen, ProductDetailScreen } from '../screens';
+import { Stack } from './Stack';
+import MainTab from './MainTab';
+import { Header } from '../components';
 
-import MainTabNavigator from './MainTab';
-
-const Stack = createNativeStackNavigator<StackParamList>();
+const MAIN_STACK_SCREENS = [
+  {
+    name: SCREENS.MAIN_TAB,
+    component: MainTab,
+  },
+  {
+    name: SCREENS.PRODUCT_DETAIL,
+    component: ProductDetailScreen,
+  },
+  {
+    name: SCREENS.CART,
+    component: CartScreen,
+  },
+  {
+    name: SCREENS.CHECK_OUT,
+    component: CheckOutScreen,
+  },
+];
 
 const MainStackNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName={SCREENS.MAIN_TAB}
-      screenOptions={{ headerShown: false, animation: 'slide_from_right' }}
+      screenOptions={{
+        headerShadowVisible: false,
+        animation: 'slide_from_right',
+        headerTransparent: false,
+        header: (props) => <Header {...props} />,
+      }}
     >
-      <Stack.Screen
-        name={SCREENS.PRODUCT_DETAIL}
-        component={ProductDetailScreen}
-      />
-      <Stack.Screen name={SCREENS.CART} component={CartScreen} />
-      <Stack.Screen name={SCREENS.CHECK_OUT} component={CheckOutScreen} />
-      <Stack.Screen name={SCREENS.MAIN_TAB} component={MainTabNavigator} />
+      {MAIN_STACK_SCREENS.map(({ name, component }) => (
+        <Stack.Screen
+          key={name}
+          name={name}
+          component={component}
+          options={{
+            headerShown:
+              name !== SCREENS.MAIN_TAB && name !== SCREENS.PRODUCT_DETAIL,
+          }}
+        />
+      ))}
     </Stack.Navigator>
   );
 };

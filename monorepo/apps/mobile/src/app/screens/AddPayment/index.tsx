@@ -13,14 +13,7 @@ import { usePayment } from '@monorepo/hooks';
 import { userStore } from '@monorepo/stores';
 
 // Components
-import {
-  Button,
-  PaymentCard,
-  Input,
-  ChevronLeftIcon,
-  Header,
-  Loading,
-} from '@monorepo/ui';
+import { Button, PaymentCard, Input, Loading } from '@monorepo/ui';
 
 const AddPayment = ({ navigation }) => {
   const {
@@ -46,8 +39,6 @@ const AddPayment = ({ navigation }) => {
     mode: 'onBlur',
     reValidateMode: 'onBlur',
   });
-
-  const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
 
   const handleAddCard = useCallback(
     ({ name, number, cvv, expiryDate }: AddPaymentFrom) => {
@@ -83,10 +74,6 @@ const AddPayment = ({ navigation }) => {
       paddingTop="$3.75"
       gap="$5"
     >
-      <Header
-        title="Add payment method"
-        startIcon={<ChevronLeftIcon onPress={handleGoBack} />}
-      />
       {isPending && <Loading />}
       <ScrollView showsVerticalScrollIndicator={false}>
         <PaymentCard item={PAYMENT_CARDS[0]} specialCharacter="X" />

@@ -8,21 +8,13 @@ import { NOTIFICATIONS } from '@monorepo/mocks';
 import { NEW_STATUS } from '@monorepo/types';
 
 // Components
-import { Notification, Header, SearchIcon, Divider } from '@monorepo/ui';
+import { Notification, Divider } from '@monorepo/ui';
 
 const NotificationScreen = () => {
   const handleViewDetail = useCallback(() => null, []);
 
-  const handleSearch = useCallback(() => null, []);
-
   return (
-    <Stack flex={1} backgroundColor="$secondary">
-      <Stack padding="$5">
-        <Header
-          title="Notification"
-          startIcon={<SearchIcon onPress={handleSearch} />}
-        />
-      </Stack>
+    <Stack flex={1} backgroundColor="$secondary" paddingTop="$4">
       <ScrollView showsVerticalScrollIndicator={false}>
         {NOTIFICATIONS.map((item, index) => (
           <Stack flex={1} key={item.id}>

@@ -17,14 +17,7 @@ import { useProducts } from '@monorepo/hooks';
 
 // Components
 import { Stack } from 'tamagui';
-import {
-  Loading,
-  CategoryList,
-  ProductCard,
-  Header,
-  SearchIcon,
-  CartIcon,
-} from '@monorepo/ui';
+import { Loading, CategoryList, ProductCard } from '@monorepo/ui';
 
 interface HomeProps {
   navigation: StackScreenProps;
@@ -47,11 +40,6 @@ const Home = ({ navigation }: HomeProps) => {
       (products.length > 0 && formatProducts(products as ProductResponse[])) ||
       [],
     [products]
-  );
-
-  const handleViewCart = useCallback(
-    () => navigation.navigate(SCREENS.CART),
-    [navigation]
   );
 
   const handleChangeCategory = useCallback(() => null, []);
@@ -78,15 +66,10 @@ const Home = ({ navigation }: HomeProps) => {
       gap="$4"
       backgroundColor="$secondary"
       paddingHorizontal="$5"
+      paddingTop="$4"
     >
       <StatusBar backgroundColor="transparent" barStyle="dark-content" />
       {isPending && <Loading />}
-      <Header
-        subTitle="Make home"
-        title="BEAUTIFUL"
-        startIcon={<SearchIcon />}
-        endIcon={<CartIcon onPress={handleViewCart} />}
-      />
       <Stack>
         <CategoryList list={CATEGORIES} onChange={handleChangeCategory} />
       </Stack>

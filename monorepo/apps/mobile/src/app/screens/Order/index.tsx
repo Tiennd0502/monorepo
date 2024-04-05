@@ -15,14 +15,7 @@ import { formatOrders } from '@monorepo/utils';
 import { useOrder } from '@monorepo/hooks';
 
 // Components
-import {
-  ChevronLeftIcon,
-  Divider,
-  Header,
-  Loading,
-  OrderCard,
-  Text,
-} from '@monorepo/ui';
+import { Divider, Loading, OrderCard, Text } from '@monorepo/ui';
 
 interface OrderProps {
   navigation: StackScreenProps;
@@ -44,8 +37,6 @@ const Order = ({ navigation }: OrderProps) => {
     [orderList]
   );
 
-  const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
-
   const handleChangeTab = useCallback(
     (value: number) => setTabActive(value),
     []
@@ -59,10 +50,6 @@ const Order = ({ navigation }: OrderProps) => {
         paddingBottom="$2.5"
         gap="$5"
       >
-        <Header
-          title="My order"
-          startIcon={<ChevronLeftIcon onPress={handleGoBack} />}
-        />
         <XStack justifyContent="space-around">
           {Object.entries(ORDER_TABS).map(([key, value]) => {
             const handleChange = () => handleChangeTab(+key);

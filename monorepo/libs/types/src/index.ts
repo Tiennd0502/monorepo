@@ -5,7 +5,7 @@ export * from './auth';
 export * from './order';
 export * from './theme';
 export * from './review';
-export * from './commons';
+export * from './common';
 export * from './product';
 export * from './shipping';
 export * from './category';

@@ -19,8 +19,6 @@ import {
   AddIcon,
   Checkbox,
   IconButton,
-  ChevronLeftIcon,
-  Header,
   ShippingCard,
   shadows,
   Loading,
@@ -53,8 +51,6 @@ const ShippingAddress = ({ navigation }: ShippingAddressProps) => {
     [addresses]
   );
 
-  const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
-
   const handleAddShipping = useCallback(
     () => navigation.navigate(SCREENS.ADD_SHIPPING),
     [navigation]
@@ -86,12 +82,6 @@ const ShippingAddress = ({ navigation }: ShippingAddressProps) => {
 
   return (
     <Stack flex={1} position="relative" backgroundColor="$backgroundSecondary">
-      <Stack paddingHorizontal="$5" paddingVertical="$3.75">
-        <Header
-          title="Shipping address"
-          startIcon={<ChevronLeftIcon onPress={handleGoBack} />}
-        />
-      </Stack>
       {isPending && <Loading />}
       <Stack flex={1}>
         <ScrollView showsVerticalScrollIndicator={false}>

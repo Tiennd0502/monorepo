@@ -11,7 +11,7 @@ import {
   EXTRA_MASTER_IMAGE,
   DELIVERY_IMAGE,
 } from '@monorepo/constants';
-import {PAYMENT_CARDS } from '@monorepo/mocks';
+import { PAYMENT_CARDS } from '@monorepo/mocks';
 
 // Utils
 import { formatShippingAddress } from '@monorepo/utils';
@@ -22,10 +22,8 @@ import { useOrder } from '@monorepo/hooks';
 // Themes | Components
 import {
   Button,
-  ChevronLeftIcon,
   Text,
   EditIcon,
-  Header,
   ShippingCard,
   Loading,
   shadows,
@@ -36,7 +34,6 @@ const DELIVERY = 5.0;
 const CheckOut = ({ navigation, route }) => {
   const { id = '' } = route?.params || {};
 
-  console.log('Params', route?.params);
   const {
     useFetchOrder,
     confirmOrder: { mutate, isPending },
@@ -68,8 +65,6 @@ const CheckOut = ({ navigation, route }) => {
     [overPayment]
   );
 
-  const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
-
   const handleEditShippingAddress = useCallback(() => null, []);
 
   const handleSubmitOrder = useCallback(() => {
@@ -99,12 +94,6 @@ const CheckOut = ({ navigation, route }) => {
       backgroundColor="$backgroundSecondary"
     >
       {(isFetching || isPending) && <Loading />}
-      <Stack paddingHorizontal="$5" paddingVertical="$3.75">
-        <Header
-          title="Check out"
-          startIcon={<ChevronLeftIcon onPress={handleGoBack} />}
-        />
-      </Stack>
       <Stack flex={1}>
         <ScrollView flex={1} showsVerticalScrollIndicator={false}>
           <Stack flex={1} rowGap="$5" paddingHorizontal="$5">

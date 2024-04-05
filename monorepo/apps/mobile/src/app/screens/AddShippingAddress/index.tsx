@@ -14,7 +14,7 @@ import { useShippingAddress } from '@monorepo/hooks';
 import { userStore } from '@monorepo/stores';
 
 // Components
-import { Button, Input, ChevronLeftIcon, Header, Loading } from '@monorepo/ui';
+import { Button, Input, Loading } from '@monorepo/ui';
 
 const AddShippingAddress = ({ navigation }) => {
   const {
@@ -38,8 +38,6 @@ const AddShippingAddress = ({ navigation }) => {
     mode: 'onBlur',
     reValidateMode: 'onBlur',
   });
-
-  const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
 
   const handleAddCard = useCallback(
     ({ name, address, zipCode, city, country }: ShippingAddress) => {
@@ -77,10 +75,6 @@ const AddShippingAddress = ({ navigation }) => {
       gap="$5"
       paddingBottom="$5"
     >
-      <Header
-        title="Add Shipping address"
-        startIcon={<ChevronLeftIcon onPress={handleGoBack} />}
-      />
       {isPending && <Loading />}
       <Stack gap="$5" marginTop="$6">
         <Controller

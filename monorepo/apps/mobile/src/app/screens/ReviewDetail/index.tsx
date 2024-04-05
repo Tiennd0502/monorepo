@@ -14,17 +14,7 @@ import { formatUserReviews } from '@monorepo/utils';
 import { useReview } from '@monorepo/hooks';
 
 // Components
-import {
-  BlogCard,
-  Button,
-  ChevronLeftIcon,
-  Divider,
-  Header,
-  Loading,
-  Rating,
-  SearchIcon,
-  Text,
-} from '@monorepo/ui';
+import { BlogCard, Button, Divider, Loading, Rating, Text } from '@monorepo/ui';
 
 // TODO: Update when ui create review ready
 const REVIEW_CONTENT = {
@@ -64,8 +54,6 @@ const ReviewDetail = ({ navigation, route }: ReviewDetailProps) => {
 
   const handleViewDetail = useCallback(() => null, []);
 
-  const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
-
   const handleWriteReview = useCallback(() => {
     if (id) {
       const payload = { review: { id, ...REVIEW_CONTENT } };
@@ -82,13 +70,6 @@ const ReviewDetail = ({ navigation, route }: ReviewDetailProps) => {
   return (
     <Stack flex={1} backgroundColor="$secondary" position="relative">
       {(isPending || isFetching) && <Loading />}
-      <Stack paddingHorizontal="$5" paddingVertical="$3.75">
-        <Header
-          title="Rating & Review"
-          startIcon={<ChevronLeftIcon onPress={handleGoBack} />}
-          endIcon={<SearchIcon />}
-        />
-      </Stack>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Stack>
           <XStack paddingHorizontal="$5" paddingVertical="$4" gap="$5">

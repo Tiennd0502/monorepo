@@ -18,8 +18,6 @@ import { usePayment } from '@monorepo/hooks';
 import {
   AddIcon,
   Checkbox,
-  ChevronLeftIcon,
-  Header,
   Loading,
   PaymentCard,
   IconButton,
@@ -44,7 +42,6 @@ const PaymentMethod = ({ navigation }: PaymentMethodProps) => {
 
   const payments = useMemo(() => formatPayment(layers, true, true), [layers]);
 
-  const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
   const handleClickAddCard = useCallback(
     () => navigation.navigate(SCREENS.ADD_PAYMENT),
     [navigation]
@@ -80,13 +77,10 @@ const PaymentMethod = ({ navigation }: PaymentMethodProps) => {
       flex={1}
       gap="$5"
       backgroundColor="$secondary"
-      padding="$5"
+      paddingHorizontal="$5"
+      paddingTop="$3"
       position="relative"
     >
-      <Header
-        title="Payment method"
-        startIcon={<ChevronLeftIcon onPress={handleGoBack} />}
-      />
       {isPending && <Loading />}
       <ScrollView showsVerticalScrollIndicator={false}>
         {renderCardList}

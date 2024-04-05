@@ -11,37 +11,61 @@ import {
   ShippingAddressScreen,
   AddShippingAddressScreen,
 } from '../screens';
+import { Header } from '../components';
+
+const PROFILE_STACK_SCREENS = [
+  {
+    name: SCREENS.PROFILE,
+    component: ProfileScreen,
+  },
+  {
+    name: SCREENS.ORDER,
+    component: OrderScreen,
+  },
+  {
+    name: SCREENS.ADD_PAYMENT,
+    component: AddPaymentScreen,
+  },
+  {
+    name: SCREENS.PAYMENT_METHOD,
+    component: PaymentMethodScreen,
+  },
+  {
+    name: SCREENS.ADD_SHIPPING,
+    component: AddShippingAddressScreen,
+  },
+  {
+    name: SCREENS.SHIPPING_ADDRESS,
+    component: ShippingAddressScreen,
+  },
+  {
+    name: SCREENS.REVIEW,
+    component: ReviewScreen,
+  },
+  {
+    name: SCREENS.REVIEW_DETAIL,
+    component: ReviewDetailScreen,
+  },
+  {
+    name: SCREENS.SETTING,
+    component: SettingScreen,
+  },
+];
 
 const ProfileStack = () => {
   return (
     <Stack.Navigator
       initialRouteName={SCREENS.PROFILE}
       screenOptions={{
-        headerShown: false,
         animation: 'slide_from_right',
+        headerShadowVisible: false,
+        headerTransparent: false,
+        header: Header,
       }}
     >
-      <Stack.Screen name={SCREENS.PROFILE} component={ProfileScreen} />
-      <Stack.Screen name={SCREENS.ORDER} component={OrderScreen} />
-      <Stack.Screen
-        name={SCREENS.PAYMENT_METHOD}
-        component={PaymentMethodScreen}
-      />
-      <Stack.Screen name={SCREENS.ADD_PAYMENT} component={AddPaymentScreen} />
-      <Stack.Screen name={SCREENS.REVIEW} component={ReviewScreen} />
-      <Stack.Screen
-        name={SCREENS.REVIEW_DETAIL}
-        component={ReviewDetailScreen}
-      />
-      <Stack.Screen name={SCREENS.SETTING} component={SettingScreen} />
-      <Stack.Screen
-        name={SCREENS.SHIPPING_ADDRESS}
-        component={ShippingAddressScreen}
-      />
-      <Stack.Screen
-        name={SCREENS.ADD_SHIPPING}
-        component={AddShippingAddressScreen}
-      />
+      {PROFILE_STACK_SCREENS.map(({ name, component }) => (
+        <Stack.Screen key={name} name={name} component={component} />
+      ))}
     </Stack.Navigator>
   );
 };

@@ -5,12 +5,12 @@ import {
   HomeIcon,
   FavoriteIcon,
   NotificationIcon,
-  IconButton,
 } from '@monorepo/ui';
 
 import { SCREENS } from '../types';
 import { FavoriteScreen, HomeScreen, NotificationScreen } from '../screens';
 import ProfileStack from './ProfileStack';
+import { Header } from '../components';
 
 const Tab = createBottomTabNavigator();
 
@@ -45,8 +45,10 @@ const MainTab = () => (
   <Tab.Navigator
     initialRouteName={SCREENS.HOME}
     screenOptions={{
-      headerShown: false,
       tabBarShowLabel: false,
+      headerShadowVisible: false,
+      headerTransparent: false,
+      header: (props) => <Header {...props} />,
     }}
   >
     {BUTTON_TABS.map(({ name, label, component, Icon }) => (
@@ -54,14 +56,15 @@ const MainTab = () => (
         key={name}
         name={name}
         component={component}
-        options={{
+        options={(props) => ({
           tabBarIcon: ({ focused }) => (
             <Icon
               aria-label={label}
               color={focused ? '$primary' : '$textDefault'}
             />
           ),
-        }}
+          headerShown: name !== SCREENS.PROFILE,
+        })}
       />
     ))}
   </Tab.Navigator>

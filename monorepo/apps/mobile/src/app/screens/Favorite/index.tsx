@@ -2,7 +2,6 @@ import { Stack, ScrollView } from 'tamagui';
 import { Fragment, useCallback, useMemo, useState } from 'react';
 
 // Types
-import { SCREENS } from '../../types';
 import { ProductResponse } from '@monorepo/types';
 
 // Constants
@@ -15,17 +14,9 @@ import { formatProducts, getData } from '@monorepo/utils';
 import { useProducts } from '@monorepo/hooks';
 
 // Themes | Components
-import {
-  Button,
-  CartIcon,
-  SearchIcon,
-  CartItem,
-  Divider,
-  Header,
-  Loading,
-} from '@monorepo/ui';
+import { Button, CartItem, Divider, Loading } from '@monorepo/ui';
 
-const Favorite = ({ navigation }) => {
+const Favorite = () => {
   const { useFetchProducts } = useProducts();
   const { data, isPending } = useFetchProducts(INIT_PAGE);
   const pages = useMemo(() => data?.pages || [], [data?.pages]);
@@ -42,8 +33,6 @@ const Favorite = ({ navigation }) => {
   );
   const [carts, setCarts] = useState(productsFormat);
 
-  const handleViewCart = () => navigation.navigate(SCREENS.CART);
-
   const handleDeleteItem = useCallback((id: string) => {
     setCarts((prev) => prev.filter((item) => item.id !== id));
   }, []);
@@ -52,13 +41,6 @@ const Favorite = ({ navigation }) => {
 
   return (
     <Stack flex={1} paddingHorizontal={20} backgroundColor="$secondary">
-      <Stack paddingVertical="$3.75">
-        <Header
-          title="Favorites"
-          startIcon={<SearchIcon />}
-          endIcon={<CartIcon onPress={handleViewCart} />}
-        />
-      </Stack>
       {isPending && <Loading />}
       <ScrollView showsVerticalScrollIndicator={false}>
         {carts.map((item, index) => (

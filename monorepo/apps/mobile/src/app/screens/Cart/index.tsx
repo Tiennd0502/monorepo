@@ -3,7 +3,7 @@ import { useCallback, useMemo } from 'react';
 import { Stack, XStack } from 'tamagui';
 
 // Types
-import { SCREENS } from '../../types';
+import { SCREENS, StackScreenProps } from '../../types';
 import { OrderPayload } from '@monorepo/types';
 
 // Constants
@@ -21,13 +21,15 @@ import {
   Text,
   Button,
   CartItem,
-  ChevronLeftIcon,
   Divider,
-  Header,
   Loading,
 } from '@monorepo/ui';
 
-const Cart = ({ navigation }) => {
+interface CartProps {
+  navigation: StackScreenProps;
+}
+
+const Cart = ({ navigation }: CartProps) => {
   const {
     useFetchCarts,
     removeCartItem: { mutate: removeCartItem },
@@ -47,8 +49,6 @@ const Cart = ({ navigation }) => {
     () => (cartDetails?.length ? formatCartDetails(cartDetails) : []),
     [cartDetails]
   );
-
-  const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
 
   const handleSubmitDiscountCode = useCallback(() => null, []);
 
@@ -117,10 +117,6 @@ const Cart = ({ navigation }) => {
       rowGap="$2.5"
     >
       {isLoading && <Loading />}
-      <Header
-        title="My cart"
-        startIcon={<ChevronLeftIcon onPress={handleGoBack} />}
-      />
       <Stack flex={1}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Stack>

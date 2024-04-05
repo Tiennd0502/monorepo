@@ -9,9 +9,7 @@ import { userStore } from '@monorepo/stores';
 
 // Components
 import {
-  ChevronLeftIcon,
   EditIcon,
-  Header,
   Input,
   ProfileCard,
   Switch,
@@ -27,8 +25,6 @@ const Setting = ({ navigation }: SettingProps) => {
   const [user] = userStore((state) => [state.user]);
 
   const { first_name = '', last_name = '', email = '' } = user || {};
-
-  const handleGoBack = useCallback(() => navigation.goBack(), [navigation]);
 
   const notifications = useMemo(
     () => [
@@ -76,13 +72,7 @@ const Setting = ({ navigation }: SettingProps) => {
   );
 
   return (
-    <Stack flex={1} backgroundColor="$secondary">
-      <Stack padding="$5">
-        <Header
-          title="Setting"
-          startIcon={<ChevronLeftIcon onPress={handleGoBack} />}
-        />
-      </Stack>
+    <Stack flex={1} backgroundColor="$secondary" paddingVertical="$4">
       <ScrollView showsVerticalScrollIndicator={false}>
         <Stack flex={1} rowGap={20} paddingBottom={20}>
           {/* Personal information */}

@@ -1,4 +1,5 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import { ReturnKeyTypeOptions } from 'react-native';
 import { Controller, useForm } from 'react-hook-form';
 
 // Types
@@ -21,7 +22,7 @@ import { useAuth } from '@monorepo/hooks';
 import { authStore, userStore } from '@monorepo/stores';
 
 // Components
-import { Stack, ScrollView, XStack, YStack } from 'tamagui';
+import { Stack, ScrollView, XStack, YStack, TamaguiElement } from 'tamagui';
 import {
   Button,
   Divider,
@@ -64,29 +65,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
     reValidateMode: 'onBlur',
   });
 
-  const inputs = useMemo(
-    () => [
-      {
-        name: 'email',
-        label: 'Email',
-        rules: SCHEMA.email,
-      },
-      {
-        name: 'password',
-        label: 'Password',
-        rules: SCHEMA.password,
-        secureTextEntry: isDisclosure,
-        rightElement: {
-          icon: (
-            <IconButton onPress={() => setIsDisclosure((prev) => !prev)}>
-              {isDisclosure ? <ShowIcon /> : <HiddenIcon />}
-            </IconButton>
-          ),
-        },
-      },
-    ],
-    [isDisclosure]
-  );
+  const passwordRef = useRef<TamaguiElement>();
 
   const handleLogin = useCallback(
     ({ email, password }: LoginForm) => {
@@ -119,6 +98,35 @@ const Login = ({ navigation }: LoginScreenProps) => {
     reset();
     clearErrors();
   }, [clearErrors, navigation, reset]);
+
+  const inputs = useMemo(
+    () => [
+      {
+        name: 'email',
+        label: 'Email',
+        rules: SCHEMA.email,
+        returnKeyType: 'next',
+        onSubmitEditing: () => passwordRef?.current?.focus(),
+      },
+      {
+        name: 'password',
+        label: 'Password',
+        rules: SCHEMA.password,
+        secureTextEntry: isDisclosure,
+        returnKeyType: 'send',
+        ref: passwordRef,
+        rightElement: {
+          icon: (
+            <IconButton onPress={() => setIsDisclosure((prev) => !prev)}>
+              {isDisclosure ? <ShowIcon /> : <HiddenIcon />}
+            </IconButton>
+          ),
+        },
+        onSubmitEditing: handleSubmit(handleLogin),
+      },
+    ],
+    [handleLogin, handleSubmit, isDisclosure]
+  );
 
   return (
     <>
@@ -168,7 +176,16 @@ const Login = ({ navigation }: LoginScreenProps) => {
             paddingTop="$4"
           >
             {inputs.map(
-              ({ name, label, rules, rightElement, secureTextEntry }) => (
+              ({
+                name,
+                label,
+                rules,
+                rightElement,
+                secureTextEntry,
+                returnKeyType,
+                onSubmitEditing,
+                ref,
+              }) => (
                 <>
                   <Controller
                     name={name as KeyForm}
@@ -180,6 +197,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
                     }) => {
                       return (
                         <Input
+                          aria-label={name}
                           variant="flushed"
                           label={label}
                           placeholder={label}
@@ -187,7 +205,10 @@ const Login = ({ navigation }: LoginScreenProps) => {
                           onChangeText={onChange}
                           rightElement={rightElement}
                           secureTextEntry={secureTextEntry}
+                          returnKeyType={returnKeyType as ReturnKeyTypeOptions}
+                          onSubmitEditing={onSubmitEditing}
                           {...props}
+                          ref={ref}
                         />
                       );
                     }}

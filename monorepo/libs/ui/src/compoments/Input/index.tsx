@@ -4,8 +4,9 @@ import {
   Input as TInput,
   XStack,
   ButtonProps,
+  TamaguiElement,
 } from 'tamagui';
-import { memo, useMemo } from 'react';
+import { forwardRef, memo, useMemo } from 'react';
 import isEqual from 'react-fast-compare';
 
 import Text from '../Text';
@@ -129,7 +130,7 @@ interface InputProps extends Omit<TInputProps, 'variant' | 'size'> {
   errorMessage?: string;
 }
 
-const Input = StyledInput.styleable<InputProps>(
+const Input = forwardRef<TamaguiElement, InputProps>(
   (
     {
       size = 'md',

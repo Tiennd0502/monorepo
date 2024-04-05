@@ -1,6 +1,6 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Stack, XStack, ScrollView } from 'tamagui';
+import { Stack, XStack, ScrollView, TamaguiElement } from 'tamagui';
 
 // Types
 import { AddPaymentFrom, LAYER_TYPE, Layer } from '@monorepo/types';
@@ -39,6 +39,8 @@ const AddPayment = ({ navigation }) => {
     mode: 'onBlur',
     reValidateMode: 'onBlur',
   });
+
+  const expiryDateRef = useRef<TamaguiElement>();
 
   const handleAddCard = useCallback(
     ({ name, number, cvv, expiryDate }: AddPaymentFrom) => {
@@ -112,6 +114,8 @@ const AddPayment = ({ navigation }) => {
                     placeholder=""
                     errorMessage={error?.message}
                     onChangeText={onChange}
+                    returnKeyType="next"
+                    onSubmitEditing={() => expiryDateRef?.current?.focus()}
                     {...props}
                   />
                 );
@@ -156,7 +160,9 @@ const AddPayment = ({ navigation }) => {
                         placeholder=""
                         errorMessage={error?.message}
                         onChangeText={onChange}
+                        onSubmitEditing={handleSubmit(handleAddCard)}
                         {...props}
+                        ref={expiryDateRef}
                       />
                     );
                   }}

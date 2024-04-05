@@ -1,5 +1,9 @@
-import { useCallback, useMemo, useState } from 'react';
-import { KeyboardAvoidingView, Platform } from 'react-native';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import {
+  KeyboardAvoidingView,
+  Platform,
+  ReturnKeyTypeOptions,
+} from 'react-native';
 import { Controller, useForm } from 'react-hook-form';
 
 // Types
@@ -22,7 +26,7 @@ import { useAuth } from '@monorepo/hooks';
 import { authStore } from '@monorepo/stores';
 
 // Themes | Component
-import { Stack, XStack, YStack, ScrollView } from 'tamagui';
+import { Stack, XStack, YStack, ScrollView, TamaguiElement } from 'tamagui';
 import {
   Button,
   Divider,
@@ -38,6 +42,8 @@ import {
 interface SignUpProps {
   navigation: StackScreenProps;
 }
+
+type KeyField = Exclude<keyof SignUpForm, ''>;
 
 const SignUp = ({ navigation }: SignUpProps) => {
   const [setVerifyId] = authStore((state) => [state.setVerifyId]);
@@ -66,63 +72,9 @@ const SignUp = ({ navigation }: SignUpProps) => {
     reValidateMode: 'onBlur',
   });
 
-  const inputs = useMemo(
-    () => [
-      {
-        name: 'name',
-        label: 'Name',
-        rules: SCHEMA.name,
-      },
-      {
-        name: 'email',
-        label: 'Email',
-        rules: SCHEMA.email,
-      },
-      {
-        name: 'password',
-        label: 'Password',
-        rules: SCHEMA.password,
-        secureTextEntry: disclosures.password,
-        rightElement: {
-          icon: (
-            <IconButton
-              chromeless
-              onPress={() =>
-                setDisclosures((prev) => ({
-                  ...prev,
-                  password: !prev.password,
-                }))
-              }
-            >
-              {disclosures.password ? <ShowIcon /> : <HiddenIcon />}
-            </IconButton>
-          ),
-        },
-      },
-      {
-        name: 'confirmPassword',
-        label: 'Confirm Password',
-        rules: SCHEMA.confirmPassword,
-        secureTextEntry: disclosures.confirmPassword,
-        rightElement: {
-          icon: (
-            <IconButton
-              chromeless
-              onPress={() =>
-                setDisclosures((prev) => ({
-                  ...prev,
-                  confirmPassword: !prev.confirmPassword,
-                }))
-              }
-            >
-              {disclosures.confirmPassword ? <ShowIcon /> : <HiddenIcon />}
-            </IconButton>
-          ),
-        },
-      },
-    ],
-    [disclosures]
-  );
+  const emailRef = useRef<TamaguiElement>();
+  const passwordRef = useRef<TamaguiElement>();
+  const confirmPasswordRef = useRef<TamaguiElement>();
 
   const handleSignUp = useCallback(
     ({ name, email, password }: SignUpForm) => {
@@ -151,6 +103,80 @@ const SignUp = ({ navigation }: SignUpProps) => {
       });
     },
     [mutate, navigation, reset, setVerifyId]
+  );
+
+  const inputs = useMemo(
+    () => [
+      {
+        name: 'name',
+        label: 'Name',
+        rules: SCHEMA.name,
+        returnKeyType: 'next',
+        onSubmitEditing: () => emailRef?.current?.focus(),
+      },
+      {
+        name: 'email',
+        label: 'Email',
+        rules: SCHEMA.email,
+        returnKeyType: 'next',
+        ref: emailRef,
+        onSubmitEditing: () => passwordRef?.current?.focus(),
+      },
+      {
+        name: 'password',
+        label: 'Password',
+        rules: SCHEMA.password,
+        secureTextEntry: disclosures.password,
+        returnKeyType: 'next',
+        ref: passwordRef,
+        onSubmitEditing: () => confirmPasswordRef?.current?.focus(),
+        rightElement: {
+          icon: (
+            <IconButton
+              chromeless
+              onPress={() =>
+                setDisclosures((prev) => ({
+                  ...prev,
+                  password: !prev.password,
+                }))
+              }
+            >
+              {disclosures.password ? <ShowIcon /> : <HiddenIcon />}
+            </IconButton>
+          ),
+        },
+      },
+      {
+        name: 'confirmPassword',
+        label: 'Confirm Password',
+        rules: SCHEMA.confirmPassword,
+        secureTextEntry: disclosures.confirmPassword,
+        returnKeyType: 'send',
+        ref: confirmPasswordRef,
+        onSubmitEditing: handleSubmit(handleSignUp),
+        rightElement: {
+          icon: (
+            <IconButton
+              chromeless
+              onPress={() =>
+                setDisclosures((prev) => ({
+                  ...prev,
+                  confirmPassword: !prev.confirmPassword,
+                }))
+              }
+            >
+              {disclosures.confirmPassword ? <ShowIcon /> : <HiddenIcon />}
+            </IconButton>
+          ),
+        },
+      },
+    ],
+    [
+      disclosures.confirmPassword,
+      disclosures.password,
+      handleSignUp,
+      handleSubmit,
+    ]
   );
 
   const handleSignIn = useCallback(() => {
@@ -199,10 +225,19 @@ const SignUp = ({ navigation }: SignUpProps) => {
             paddingTop="$4"
           >
             {inputs.map(
-              ({ name, label, rules, rightElement, secureTextEntry }) => (
+              ({
+                name,
+                label,
+                rules,
+                rightElement,
+                secureTextEntry,
+                ref,
+                returnKeyType,
+                onSubmitEditing,
+              }) => (
                 <>
                   <Controller
-                    name={name}
+                    name={name as KeyField}
                     control={control}
                     rules={rules}
                     render={({
@@ -211,6 +246,7 @@ const SignUp = ({ navigation }: SignUpProps) => {
                     }) => {
                       return (
                         <Input
+                          aria-label={name}
                           variant="flushed"
                           label={label}
                           placeholder={label}
@@ -218,7 +254,10 @@ const SignUp = ({ navigation }: SignUpProps) => {
                           onChangeText={onChange}
                           rightElement={rightElement}
                           secureTextEntry={secureTextEntry}
+                          onSubmitEditing={onSubmitEditing}
+                          returnKeyType={returnKeyType as ReturnKeyTypeOptions}
                           {...props}
+                          ref={ref}
                         />
                       );
                     }}

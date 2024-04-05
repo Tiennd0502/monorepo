@@ -1,6 +1,6 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Stack } from 'tamagui';
+import { Stack, TamaguiElement } from 'tamagui';
 
 // Types
 import {
@@ -38,6 +38,8 @@ const AddShippingAddress = ({ navigation }) => {
     mode: 'onBlur',
     reValidateMode: 'onBlur',
   });
+
+  const cityRef = useRef<TamaguiElement>();
 
   const handleAddCard = useCallback(
     ({ name, address, zipCode, city, country }: ShippingAddress) => {
@@ -130,6 +132,8 @@ const AddShippingAddress = ({ navigation }) => {
                 errorMessage={error?.message}
                 value={value.toString()}
                 onChangeText={onChange}
+                returnKeyType="next"
+                onSubmitEditing={() => cityRef?.current?.focus()}
                 {...props}
               />
             );
@@ -169,6 +173,7 @@ const AddShippingAddress = ({ navigation }) => {
                 errorMessage={error?.message}
                 onChangeText={onChange}
                 {...props}
+                ref={cityRef}
               />
             );
           }}

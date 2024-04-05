@@ -1,6 +1,6 @@
 import { SignUpForm } from '@monorepo/types';
 
-import { REGEX } from './commons';
+import { REGEX } from './common';
 import { ERROR_MESSAGES } from './message';
 
 export const SCHEMA = {

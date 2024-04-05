@@ -1,5 +1,5 @@
 import { User } from './user';
-import { APIResponse } from './commons';
+import { APIResponse } from './common';
 
 export interface AuthKey {
   auth_key: string;

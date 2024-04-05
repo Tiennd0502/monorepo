@@ -1,3 +1,3 @@
 export * from './apis';
 export * from './themes';
-export * from './commons';
+export * from './common';

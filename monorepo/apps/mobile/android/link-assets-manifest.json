@@ -1,0 +1,45 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "../../libs/ui/src/assets/fonts/gelasio/Gelasio-Bold.ttf",
+      "sha1": "bc92faf84d15a25a5618b63c68c4d4d312cdbdb8"
+    },
+    {
+      "path": "../../libs/ui/src/assets/fonts/gelasio/Gelasio-Regular.ttf",
+      "sha1": "9fbbe91882df3ce403acadefe7d9be8637361da4"
+    },
+    {
+      "path": "../../libs/ui/src/assets/fonts/gelasio/Gelasio-SemiBold.ttf",
+      "sha1": "b2812e4e45593e9635cb9b46b1b94e38f2295b69"
+    },
+    {
+      "path": "../../libs/ui/src/assets/fonts/meriaweather/Merriweather-Bold.ttf",
+      "sha1": "09c7429408c624b9991c44e9975a9129fb2d2fe7"
+    },
+    {
+      "path": "../../libs/ui/src/assets/fonts/nunito-sans/NunitoSans_7pt-Bold.ttf",
+      "sha1": "9bac6650ac507968089985e02ba424a84b27ab12"
+    },
+    {
+      "path": "../../libs/ui/src/assets/fonts/nunito-sans/NunitoSans_7pt-ExtraBold.ttf",
+      "sha1": "99a4d6de5d5bf8e15d9ddcf857a2ad3e2dfde436"
+    },
+    {
+      "path": "../../libs/ui/src/assets/fonts/nunito-sans/NunitoSans_7pt-Light.ttf",
+      "sha1": "794c5e24d84a89ac9796eda2a4ba770f865598fc"
+    },
+    {
+      "path": "../../libs/ui/src/assets/fonts/nunito-sans/NunitoSans_7pt-Medium.ttf",
+      "sha1": "036f3dbc6e6088809d1b2b7bcb0939988ad07bf8"
+    },
+    {
+      "path": "../../libs/ui/src/assets/fonts/nunito-sans/NunitoSans_7pt-Regular.ttf",
+      "sha1": "466635ba024c43f741e320148a159557fd732ec0"
+    },
+    {
+      "path": "../../libs/ui/src/assets/fonts/nunito-sans/NunitoSans_7pt-SemiBold.ttf",
+      "sha1": "b711d63c786e5a61d89f8918ab36925274bd591b"
+    }
+  ]
+}

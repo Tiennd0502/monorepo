@@ -3,7 +3,7 @@ import { Heading as THeading, styled } from 'tamagui';
 const Heading = styled(THeading, {
   color: '$textBold',
   fontFamily: '$body',
-  fontWeight: 'bold',
+  fontWeight: '$7',
   allowFontScaling: false,
 
   variants: {

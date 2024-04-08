@@ -7,5 +7,6 @@ export * from './theme';
 export * from './review';
 export * from './common';
 export * from './product';
+export * from './messages';
 export * from './shipping';
 export * from './category';

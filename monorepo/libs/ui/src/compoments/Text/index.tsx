@@ -2,7 +2,7 @@ import { Text as TextBase, styled } from 'tamagui';
 
 const Text = styled(TextBase, {
   color: '$textDefault',
-  fontWeight: 'normal',
+  fontWeight: '$4',
   fontFamily: '$body',
   allowFontScaling: false,
 

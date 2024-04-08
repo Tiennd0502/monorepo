@@ -34,7 +34,7 @@ const BUTTON_TABS = [
     label: 'Notification Screen',
   },
   {
-    name: SCREENS.PROFILE,
+    name: SCREENS.PROFILES_STACK,
     component: ProfileStack,
     Icon: ProfileIcon,
     label: 'Profile Stack',
@@ -63,7 +63,7 @@ const MainTab = () => (
               color={focused ? '$primary' : '$textDefault'}
             />
           ),
-          headerShown: name !== SCREENS.PROFILE,
+          headerShown: name !== SCREENS.PROFILES_STACK,
         })}
       />
     ))}

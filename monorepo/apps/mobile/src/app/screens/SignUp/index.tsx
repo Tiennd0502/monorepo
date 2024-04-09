@@ -12,6 +12,7 @@ import {
   SignUpResponse,
   AUTH_TYPES,
   SignUpPayload,
+  ErrorResponse,
 } from '@monorepo/types';
 import { StackScreenProps, SCREENS } from '../../types';
 
@@ -37,6 +38,7 @@ import {
   LogoIcon,
   ShowIcon,
   Text,
+  Toast,
 } from '@monorepo/ui';
 
 interface SignUpProps {
@@ -47,6 +49,7 @@ type KeyField = Exclude<keyof SignUpForm, ''>;
 
 const SignUp = ({ navigation }: SignUpProps) => {
   const [setVerifyId] = authStore((state) => [state.setVerifyId]);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const [disclosures, setDisclosures] = useState({
     password: true,
@@ -97,8 +100,11 @@ const SignUp = ({ navigation }: SignUpProps) => {
 
           reset();
         },
-        onError: (error: Error) => {
-          console.log(error);
+        onError: (error: ErrorResponse) => {
+          const {
+            error: { message },
+          } = error.response.data;
+          setErrorMessage(message);
         },
       });
     },
@@ -190,6 +196,14 @@ const SignUp = ({ navigation }: SignUpProps) => {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
       {isPending && <Loading />}
+      {errorMessage && (
+        <Toast
+          variant="error"
+          message={errorMessage}
+          marginTop="$5"
+          onClose={() => setErrorMessage('')}
+        />
+      )}
       <ScrollView>
         <Stack paddingVertical={20} paddingRight={30}>
           <Stack paddingLeft={30} paddingBottom={30}>
@@ -278,7 +292,7 @@ const SignUp = ({ navigation }: SignUpProps) => {
               paddingLeft="$5"
             >
               <Button
-                disabled={!isValid || isPending}
+                disabled={!isValid || isPending || !!errorMessage}
                 onPress={handleSubmit(handleSignUp)}
               >
                 SIGN UP

@@ -1,11 +1,13 @@
 import { useCallback, useMemo } from 'react';
-import { Image, ScrollView, Stack, XStack } from 'tamagui';
+import { ScrollView, Stack, XStack } from 'tamagui';
+import FastImage from 'react-native-fast-image';
+
 // Types
 import { StackScreenProps } from '../../types';
 import { REVIEW_TYPES, Blog } from '@monorepo/types';
 
 // Constants
-import { AVATAR_DEFAULT } from '@monorepo/constants';
+import { DEFAULT_PRODUCT_IMAGE } from '@monorepo/constants';
 
 // Utils
 import { formatUserReviews } from '@monorepo/utils';
@@ -73,11 +75,17 @@ const ReviewDetail = ({ navigation, route }: ReviewDetailProps) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Stack>
           <XStack paddingHorizontal="$5" paddingVertical="$4" gap="$5">
-            <Image
-              height="$25"
-              width="$25"
-              borderRadius="$2"
-              source={{ uri: image || AVATAR_DEFAULT }}
+            <FastImage
+              style={{
+                width: 100,
+                height: 100,
+                borderRadius: 8,
+              }}
+              source={{
+                uri: image || DEFAULT_PRODUCT_IMAGE,
+                priority: FastImage.priority.high,
+              }}
+              resizeMode={FastImage.resizeMode.cover}
             />
             <Stack justifyContent="space-between">
               <Text color="$primary" numberOfLines={2} ellipsizeMode="tail">

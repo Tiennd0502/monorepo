@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
-import { Stack, XStack, Image, ScrollView } from 'tamagui';
+import { Stack, XStack, ScrollView } from 'tamagui';
+import FastImage from 'react-native-fast-image';
 
 // Types
 import { SCREENS } from '../../types';
@@ -137,7 +138,16 @@ const CheckOut = ({ navigation, route }) => {
                 backgroundColor="$backgroundSecondary"
                 style={shadows.card}
               >
-                <Image flex={1} source={{ uri: EXTRA_MASTER_IMAGE }} />
+                <FastImage
+                  style={{
+                    flex: 1,
+                  }}
+                  source={{
+                    uri: EXTRA_MASTER_IMAGE,
+                    priority: FastImage.priority.high,
+                  }}
+                  resizeMode={FastImage.resizeMode.contain}
+                />
                 <Text alignSelf="center" flex={5} color="$textPrimary">
                   {PAYMENT_CARDS[0].id}
                 </Text>
@@ -166,10 +176,16 @@ const CheckOut = ({ navigation, route }) => {
                 backgroundColor="$backgroundSecondary"
                 style={shadows.card}
               >
-                <Image
-                  width="$22"
-                  height="$5"
-                  source={{ uri: DELIVERY_IMAGE }}
+                <FastImage
+                  style={{
+                    width: 88,
+                    height: 20,
+                  }}
+                  source={{
+                    uri: DELIVERY_IMAGE,
+                    priority: FastImage.priority.normal,
+                  }}
+                  resizeMode={FastImage.resizeMode.contain}
                 />
                 <Text flex={1} color="$textPrimary" bold>
                   Fast (2-3days)

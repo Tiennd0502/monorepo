@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
-import { Stack, ScrollView, Image, XStack } from 'tamagui';
+import { Stack, ScrollView, XStack } from 'tamagui';
+import FastImage from 'react-native-fast-image';
 
 // Types
 import { SCREENS, StackScreenProps } from '../../types';
@@ -131,13 +132,7 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
   );
 
   return (
-    <ScrollView
-      flex={1}
-      position="relative"
-      backgroundColor="$secondary"
-      showsVerticalScrollIndicator={false}
-    >
-      {isPending && <Loading />}
+    <Stack flex={1} position="relative">
       <IconButton
         position="absolute"
         top="$9"
@@ -150,57 +145,70 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
       >
         <ChevronLeftIcon />
       </IconButton>
-      <Stack paddingLeft="$11.5">
-        <Image
-          resizeMode="cover"
-          width="100%"
-          borderBottomLeftRadius="$15"
-          height={445}
-          source={{ uri: image || DEFAULT_PRODUCT_IMAGE }}
-        />
-        {renderSelectColor}
-      </Stack>
-      <Stack padding="$7.5" gap="$4">
-        <Text size="extraLarge" color="$primary">
-          {name}
-        </Text>
-        <XStack justifyContent="space-between">
-          <Text size="huge" color="$primary">
-            {CURRENCY_UNIT} {amount}
+      <ScrollView
+        flex={1}
+        position="relative"
+        backgroundColor="$secondary"
+        showsVerticalScrollIndicator={false}
+      >
+        {isPending && <Loading />}
+        <Stack paddingLeft="$11.5">
+          <FastImage
+            style={{
+              width: '100%',
+              height: 445,
+              borderBottomLeftRadius: 60,
+            }}
+            source={{
+              uri: image || DEFAULT_PRODUCT_IMAGE,
+              priority: FastImage.priority.high,
+            }}
+            resizeMode={FastImage.resizeMode.cover}
+          />
+          {renderSelectColor}
+        </Stack>
+        <Stack padding="$7.5" gap="$4">
+          <Text size="extraLarge" color="$primary">
+            {name}
           </Text>
-          <Quantity defaultValue={1} onChangeValue={handleChangeQuantity} />
-        </XStack>
-        <XStack gap="$2" alignItems="center">
-          <Rating size={20} value={+rating} count={1} />
-          <Text size="large" fontWeight="bold" color="$primary">
-            {rating}
-          </Text>
-          <Text>(reviews)</Text>
-        </XStack>
-        <Text textAlign="justify">{description}</Text>
-        <XStack gap="$5">
-          <Button
-            height="$15"
-            width="$15"
-            variant="chromeless"
-            justifyContent="center"
-            alignItems="center"
-            backgroundColor="$backgroundTertiary"
-            onPress={handleClickFavorite}
-          >
-            <FavoriteIcon color="$primary" />
-          </Button>
-          <Button
-            flex={1}
-            testID="add-to-cart"
-            size="xl"
-            onPress={handleAddToCart}
-          >
-            Add to Cart
-          </Button>
-        </XStack>
-      </Stack>
-    </ScrollView>
+          <XStack justifyContent="space-between">
+            <Text size="huge" color="$primary">
+              {CURRENCY_UNIT} {amount}
+            </Text>
+            <Quantity defaultValue={1} onChangeValue={handleChangeQuantity} />
+          </XStack>
+          <XStack gap="$2" alignItems="center">
+            <Rating size={20} value={+rating} count={1} />
+            <Text size="large" fontWeight="bold" color="$primary">
+              {rating}
+            </Text>
+            <Text>(reviews)</Text>
+          </XStack>
+          <Text textAlign="justify">{description}</Text>
+          <XStack gap="$5">
+            <Button
+              height="$15"
+              width="$15"
+              variant="chromeless"
+              justifyContent="center"
+              alignItems="center"
+              backgroundColor="$backgroundTertiary"
+              onPress={handleClickFavorite}
+            >
+              <FavoriteIcon color="$primary" />
+            </Button>
+            <Button
+              flex={1}
+              testID="add-to-cart"
+              size="xl"
+              onPress={handleAddToCart}
+            >
+              Add to Cart
+            </Button>
+          </XStack>
+        </Stack>
+      </ScrollView>
+    </Stack>
   );
 };
 

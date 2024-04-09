@@ -1,9 +1,12 @@
 import { useCallback } from 'react';
+import FastImage from 'react-native-fast-image';
+import { Stack } from 'tamagui';
 
 import { SCREENS } from '../../types';
 
 import { Button, Text, Heading } from '@monorepo/ui';
-import { Stack, Image } from 'tamagui';
+
+const BG_LANDING = 'https://i.ibb.co/f17BcDr/bg-landing.png';
 
 const Landing = ({ navigation }) => {
   const handleGetStarted = useCallback(
@@ -13,18 +16,23 @@ const Landing = ({ navigation }) => {
 
   return (
     <Stack position="relative" flex={1} padding={0} margin={0}>
-      <Image
-        position="absolute"
-        top={0}
-        left={0}
-        flex={1}
-        resizeMode="stretch"
-        source={require('../../assets/images/bg-landing.png')}
-        width="100%"
-        height="100%"
+      <FastImage
+        style={{
+          flex: 1,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+        }}
+        source={{
+          uri: BG_LANDING,
+          priority: FastImage.priority.high,
+        }}
+        resizeMode={FastImage.resizeMode.stretch}
       />
       <Stack position="absolute" top="27%" left="$6" paddingHorizontal="$6">
-        <Heading fontSize="$7.5" color="$textPlaceholder">
+        <Heading fontSize="$7.5" color="$textPlaceholder" lineHeight={32}>
           MAKE YOUR
         </Heading>
         <Heading marginTop="$7.5" size="huge" color="$primary">

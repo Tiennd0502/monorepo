@@ -142,6 +142,7 @@ const ButtonText = styled(TButton.Text, {
       xl: {
         fontSize: '$5',
         fontWeight: '$5',
+        lineHeight: 24,
       },
     },
   } as const,
@@ -165,7 +166,7 @@ const Button = ({
 
   return (
     <ButtonFrame
-      testID='button'
+      testID="button"
       unstyled
       size={size}
       {...variantObject}

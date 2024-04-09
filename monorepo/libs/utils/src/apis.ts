@@ -1,9 +1,10 @@
 import Config from 'react-native-config';
+import { isWeb } from 'tamagui';
 import axios, { AxiosRequestConfig } from 'axios';
 import { authStore } from '@monorepo/stores';
 
-const API_URL = Config.API_URL;
-const PUBLIC_KEY = Config.PUBLIC_KEY;
+const API_URL = isWeb ? process.env.API_URL : Config.API_URL;
+const PUBLIC_KEY = isWeb ? process.env.PUBLIC_KEY : Config.PUBLIC_KEY;
 
 const defaultOptions = {
   baseURL: API_URL,

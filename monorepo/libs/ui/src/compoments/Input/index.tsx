@@ -54,7 +54,8 @@ const StyledInput = styled(TInput, {
         color: 'textPrimary',
         borderColor: 'transparent',
         focusStyle: {
-          borderColor: 'borderTertiary',
+          borderColor: 'transparent',
+          outlineColor: 'transparent',
         },
       },
     },

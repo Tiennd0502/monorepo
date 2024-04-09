@@ -122,9 +122,11 @@ const StyledErrorMessage = styled(Text, {
   } as const,
 });
 
-interface InputProps extends Omit<TInputProps, 'variant' | 'size'> {
+export type InputVariant = 'outlined' | 'solid' | 'flushed' | 'disabled';
+
+export interface InputProps extends Omit<TInputProps, 'variant' | 'size'> {
   label?: string;
-  variant?: 'outlined' | 'solid' | 'flushed' | 'disabled';
+  variant?: InputVariant;
   size?: 'sm' | 'md';
   rightElement?: ButtonProps;
   errorMessage?: string;

@@ -4,15 +4,15 @@ import {
   Platform,
   ReturnKeyTypeOptions,
 } from 'react-native';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 // Types
 import {
-  SignUpForm,
   SignUpResponse,
   AUTH_TYPES,
   SignUpPayload,
   ErrorResponse,
+  SignUpForm,
 } from '@monorepo/types';
 import { StackScreenProps, SCREENS } from '../../types';
 
@@ -30,10 +30,10 @@ import { authStore } from '@monorepo/stores';
 import { Stack, XStack, YStack, ScrollView, TamaguiElement } from 'tamagui';
 import {
   Button,
+  ControllerInput,
   Divider,
   HiddenIcon,
   IconButton,
-  Input,
   Loading,
   LogoIcon,
   ShowIcon,
@@ -250,31 +250,18 @@ const SignUp = ({ navigation }: SignUpProps) => {
                 onSubmitEditing,
               }) => (
                 <>
-                  <Controller
-                    name={name as KeyField}
-                    control={control}
+                  <ControllerInput<SignUpForm>
+                    variant="flushed"
+                    name={name}
                     rules={rules}
-                    render={({
-                      field: { onChange, ...props },
-                      fieldState: { error },
-                    }) => {
-                      return (
-                        <Input
-                          aria-label={name}
-                          variant="flushed"
-                          label={label}
-                          placeholder={label}
-                          errorMessage={error?.message}
-                          onChangeText={onChange}
-                          rightElement={rightElement}
-                          secureTextEntry={secureTextEntry}
-                          onSubmitEditing={onSubmitEditing}
-                          returnKeyType={returnKeyType as ReturnKeyTypeOptions}
-                          {...props}
-                          ref={ref}
-                        />
-                      );
-                    }}
+                    label={label}
+                    control={control}
+                    placeholder={label}
+                    rightElement={rightElement}
+                    secureTextEntry={secureTextEntry}
+                    onSubmitEditing={onSubmitEditing}
+                    returnKeyType={returnKeyType as ReturnKeyTypeOptions}
+                    ref={ref}
                   />
                   <Divider
                     color="$borderSecondary"
@@ -292,7 +279,7 @@ const SignUp = ({ navigation }: SignUpProps) => {
               paddingLeft="$5"
             >
               <Button
-                disabled={!isValid || isPending || !!errorMessage}
+                disabled={!isValid || isPending}
                 onPress={handleSubmit(handleSignUp)}
               >
                 SIGN UP

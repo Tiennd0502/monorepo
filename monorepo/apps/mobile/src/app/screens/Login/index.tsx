@@ -26,10 +26,10 @@ import { authStore, userStore } from '@monorepo/stores';
 import { Stack, ScrollView, XStack, YStack, TamaguiElement } from 'tamagui';
 import {
   Button,
+  ControllerInput,
   Divider,
   HiddenIcon,
   IconButton,
-  Input,
   Loading,
   LogoIcon,
   ShowIcon,
@@ -40,8 +40,6 @@ import {
 interface LoginScreenProps {
   navigation: StackScreenProps;
 }
-
-type KeyForm = Exclude<keyof LoginForm, ''>;
 
 const Login = ({ navigation }: LoginScreenProps) => {
   const [isDisclosure, setIsDisclosure] = useState(true);
@@ -201,31 +199,18 @@ const Login = ({ navigation }: LoginScreenProps) => {
                 ref,
               }) => (
                 <>
-                  <Controller
-                    name={name as KeyForm}
-                    control={control}
+                  <ControllerInput<LoginForm>
+                    variant="flushed"
+                    name={name}
                     rules={rules}
-                    render={({
-                      field: { onChange, ...props },
-                      fieldState: { error },
-                    }) => {
-                      return (
-                        <Input
-                          aria-label={name}
-                          variant="flushed"
-                          label={label}
-                          placeholder={label}
-                          errorMessage={error?.message}
-                          onChangeText={onChange}
-                          rightElement={rightElement}
-                          secureTextEntry={secureTextEntry}
-                          returnKeyType={returnKeyType as ReturnKeyTypeOptions}
-                          onSubmitEditing={onSubmitEditing}
-                          {...props}
-                          ref={ref}
-                        />
-                      );
-                    }}
+                    label={label}
+                    control={control}
+                    placeholder={label}
+                    rightElement={rightElement}
+                    secureTextEntry={secureTextEntry}
+                    onSubmitEditing={onSubmitEditing}
+                    returnKeyType={returnKeyType as ReturnKeyTypeOptions}
+                    ref={ref}
                   />
                   <Divider
                     color="$borderSecondary"
@@ -245,7 +230,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
             >
               <Button variant="chromeless">Forgot Password</Button>
               <Button
-                disabled={!isValid || isPending || !!errorMessage}
+                disabled={!isValid || isPending}
                 onPress={handleSubmit(handleLogin)}
               >
                 Log in

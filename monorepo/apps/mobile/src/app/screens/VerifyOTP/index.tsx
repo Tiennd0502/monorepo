@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 // Types
-import { VerifyPayload } from '@monorepo/types';
+import { ErrorResponse, VerifyPayload } from '@monorepo/types';
 import { SCREENS } from '../../types';
 
 // Hooks | Stores
@@ -19,9 +19,12 @@ import {
   Loading,
   LogoIcon,
   Text,
+  Toast,
 } from '@monorepo/ui';
 
 const VerifyOTP = ({ navigation }) => {
+  const [errorMessage, setErrorMessage] = useState('');
+
   const {
     verifyOTP: { mutate, isPending },
   } = useAuth();
@@ -52,8 +55,11 @@ const VerifyOTP = ({ navigation }) => {
           reset();
           clearErrors();
         },
-        onError: (error: Error) => {
-          console.log(error);
+        onError: (error: ErrorResponse) => {
+          const {
+            error: { message },
+          } = error.response.data;
+          setErrorMessage(message);
         },
       });
     },
@@ -70,6 +76,14 @@ const VerifyOTP = ({ navigation }) => {
 
   return (
     <>
+      {errorMessage && (
+        <Toast
+          variant="error"
+          message={errorMessage}
+          marginTop="$5"
+          onClose={() => setErrorMessage('')}
+        />
+      )}
       {isPending && <Loading />}
       <ScrollView showsVerticalScrollIndicator={false}>
         <Stack paddingVertical={40} paddingRight={30}>
@@ -141,7 +155,7 @@ const VerifyOTP = ({ navigation }) => {
                 Go back
               </Button>
               <Button
-                disabled={!isValid || isPending}
+                disabled={!isValid || isPending || !!errorMessage}
                 onPress={handleSubmit(handleVerifyOTP)}
               >
                 Submit

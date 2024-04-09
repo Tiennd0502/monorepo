@@ -6,6 +6,7 @@ import { Controller, useForm } from 'react-hook-form';
 import {
   AUTH_TYPES,
   AuthResponse,
+  ErrorResponse,
   LoginForm,
   LoginPayLoad,
 } from '@monorepo/types';
@@ -33,6 +34,7 @@ import {
   LogoIcon,
   ShowIcon,
   Text,
+  Toast,
 } from '@monorepo/ui';
 
 interface LoginScreenProps {
@@ -45,6 +47,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
   const [isDisclosure, setIsDisclosure] = useState(true);
   const [setAuthKey] = authStore((state) => [state.setAuthKey]);
   const [setUser] = userStore((state) => [state.setUser]);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const {
     logIn: { mutate, isPending },
@@ -79,14 +82,17 @@ const Login = ({ navigation }: LoginScreenProps) => {
       };
 
       mutate(payload, {
-        onSuccess: ({ status, data: { user } }: AuthResponse) => {
+        onSuccess: ({ data: { user } }: AuthResponse) => {
           const { key } = user;
           key && setAuthKey(key);
           user && setUser(user);
           reset();
         },
-        onError: (error: Error) => {
-          console.log(error);
+        onError: (error: ErrorResponse) => {
+          const {
+            error: { message },
+          } = error.response.data;
+          setErrorMessage(message);
         },
       });
     },
@@ -130,6 +136,14 @@ const Login = ({ navigation }: LoginScreenProps) => {
 
   return (
     <>
+      {errorMessage && (
+        <Toast
+          variant="error"
+          message={errorMessage}
+          marginTop="$5"
+          onClose={() => setErrorMessage('')}
+        />
+      )}
       {isPending && <Loading />}
       <ScrollView showsVerticalScrollIndicator={false}>
         <Stack paddingVertical={30} paddingRight={30}>
@@ -231,7 +245,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
             >
               <Button variant="chromeless">Forgot Password</Button>
               <Button
-                disabled={!isValid || isPending}
+                disabled={!isValid || isPending || !!errorMessage}
                 onPress={handleSubmit(handleLogin)}
               >
                 Log in

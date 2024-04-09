@@ -1,34 +1,32 @@
-import { useState, useCallback, useEffect } from 'react';
-import { XStack } from 'tamagui';
+import { memo, useEffect } from 'react';
+import { XStack, StackProps } from 'tamagui';
+import isEqual from 'react-fast-compare';
 
 import { CloseIcon } from '../icons';
 import Text from '../Text';
 
-interface ToastProps {
+interface ToastProps extends StackProps {
   variant: 'success' | 'error';
   message: string;
   timeOut?: number;
+  onClose: () => void;
 }
 
 export const Toast = ({
   variant = 'success',
   message,
   timeOut = 3000,
+  onClose,
+  ...props
 }: ToastProps) => {
-  const [isVisible, setIsVisible] = useState(!!message);
-
   useEffect(() => {
-    if (isVisible) {
-      const timer = setTimeout(() => {
-        setIsVisible(false);
-        clearTimeout(timer);
-      }, timeOut);
-    }
-  }, [isVisible, timeOut]);
+    const timer = setTimeout(() => {
+      onClose();
+      clearTimeout(timer);
+    }, timeOut);
+  }, [timeOut, onClose]);
 
-  const closeToast = useCallback(() => setIsVisible(false), []);
-
-  return isVisible ? (
+  return (
     <XStack
       position="absolute"
       zIndex="$5"
@@ -40,11 +38,12 @@ export const Toast = ({
       paddingHorizontal="$3"
       borderRadius="$2"
       gap="$3"
+      {...props}
     >
       <Text color="$textSecondary">{message}</Text>
-      <CloseIcon color="$textSecondary" onPress={closeToast} />
+      <CloseIcon color="$textSecondary" onPress={onClose} />
     </XStack>
-  ) : null;
+  );
 };
 
-export default Toast;
+export default memo(Toast, isEqual);

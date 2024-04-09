@@ -40,6 +40,7 @@ const InputBase = <T,>(
         return (
           <Input
             aria-label={name.toString()}
+            label={label}
             variant={variant}
             errorMessage={error?.message}
             onChangeText={onChange}

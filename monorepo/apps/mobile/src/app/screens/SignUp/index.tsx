@@ -45,8 +45,6 @@ interface SignUpProps {
   navigation: StackScreenProps;
 }
 
-type KeyField = Exclude<keyof SignUpForm, ''>;
-
 const SignUp = ({ navigation }: SignUpProps) => {
   const [setVerifyId] = authStore((state) => [state.setVerifyId]);
   const [errorMessage, setErrorMessage] = useState('');

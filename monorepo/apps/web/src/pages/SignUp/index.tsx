@@ -1,6 +1,7 @@
 import { useState, useRef, useMemo, useCallback, Fragment } from 'react';
 import { Stack, XStack, YStack, TamaguiElement } from 'tamagui';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 // Types
 import {
@@ -32,10 +33,12 @@ import {
   LogoIcon,
   ShowIcon,
   Text,
-  Toast,
 } from '@monorepo/ui';
+import { ROUTES } from '../../constants';
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
   const [disclosures, setDisclosures] = useState({
     password: true,
     confirmPassword: true,
@@ -86,8 +89,8 @@ const SignUp = () => {
       mutate(payload, {
         onSuccess: ({ data: { verify_id: verifyData } }: SignUpResponse) => {
           !!setVerifyId && setVerifyId(verifyData);
-
           reset();
+          navigate(ROUTES.VERIFY_OTP);
         },
         onError: (error: ErrorResponse) => {
           const {
@@ -97,7 +100,7 @@ const SignUp = () => {
         },
       });
     },
-    [mutate, reset, setVerifyId]
+    [mutate, navigate, reset, setVerifyId]
   );
 
   const inputs = useMemo(
@@ -173,7 +176,8 @@ const SignUp = () => {
   const handleSignIn = useCallback(() => {
     reset();
     clearErrors();
-  }, [clearErrors, reset]);
+    navigate(ROUTES.LOGIN);
+  }, [clearErrors, navigate, reset]);
 
   return (
     <Stack
@@ -252,7 +256,7 @@ const SignUp = () => {
         {errorMessage && <Text error>{errorMessage}</Text>}
         <Button
           marginTop="$9"
-          disabled={!isValid || isPending || !!errorMessage}
+          disabled={!isValid || isPending}
           onPress={handleSubmit(handleSignUp)}
         >
           SIGN UP

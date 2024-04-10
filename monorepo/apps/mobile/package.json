@@ -27,6 +27,7 @@
     "react-native-gesture-handler": "*",
     "react-native-safe-area-context": "*",
     "react-native-screens": "*",
+    "react-native-splash-screen": "*",
     "react-native-svg": "*",
     "react-native-svg-transformer": "*",
     "tamagui": "*",

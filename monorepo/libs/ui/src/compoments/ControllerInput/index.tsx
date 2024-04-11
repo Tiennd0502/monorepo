@@ -7,6 +7,7 @@ import {
 } from 'react-hook-form';
 import isEqual from 'react-fast-compare';
 
+import { removeSpaces } from '@monorepo/utils';
 import Input, { InputProps, InputVariant } from '../Input';
 
 interface ControllerInputProps<T> extends InputProps {
@@ -36,13 +37,17 @@ const InputBase = <T,>(
       name={name.toString()}
       control={control as Control<FieldValues>}
       rules={rules}
-      render={({ field: { onChange, ...props }, fieldState: { error } }) => {
+      render={({
+        field: { value, onChange, ...props },
+        fieldState: { error },
+      }) => {
         return (
           <Input
             aria-label={name.toString()}
             label={label}
             variant={variant}
             errorMessage={error?.message}
+            value={removeSpaces(value)}
             onChangeText={onChange}
             {...props}
             {...rest}

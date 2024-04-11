@@ -20,7 +20,7 @@ import { StackScreenProps, SCREENS } from '../../types';
 import { SCHEMA } from '@monorepo/constants';
 
 // Utils
-import { getRandomId } from '@monorepo/utils';
+import { getRandomId, removeSpaces } from '@monorepo/utils';
 
 // Hooks | Stores
 import { useAuth } from '@monorepo/hooks';
@@ -82,8 +82,8 @@ const SignUp = ({ navigation }: SignUpProps) => {
       const payload: SignUpPayload = {
         user: {
           uuid: getRandomId(),
-          name,
-          email,
+          name: removeSpaces(name, true),
+          email: removeSpaces(email, true),
           password,
           type: AUTH_TYPES.CUSTOMER,
           first_name: name.substring(0, name.indexOf(' ')),

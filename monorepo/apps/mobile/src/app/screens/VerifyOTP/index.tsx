@@ -5,6 +5,9 @@ import { Controller, useForm } from 'react-hook-form';
 import { ErrorResponse, VerifyPayload } from '@monorepo/types';
 import { SCREENS } from '../../types';
 
+// Utils
+import { removeSpaces } from '@monorepo/utils';
+
 // Hooks | Stores
 import { useAuth } from '@monorepo/hooks';
 import { authStore } from '@monorepo/stores';
@@ -44,7 +47,7 @@ const VerifyOTP = ({ navigation }) => {
   const handleVerifyOTP = useCallback(
     ({ code }: VerifyPayload) => {
       const payload: VerifyPayload = {
-        code,
+        code: removeSpaces(code, true),
         verify_id,
       };
 

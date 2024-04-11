@@ -84,7 +84,7 @@ const CheckOut = ({ navigation, route }) => {
           console.log(error);
         },
       });
-      navigation.navigate(SCREENS.HOME);
+      navigation.navigate(SCREENS.CONGRATS);
     }
   }, [id, mutate, navigation]);
 

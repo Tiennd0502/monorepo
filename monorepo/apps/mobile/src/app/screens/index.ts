@@ -8,6 +8,7 @@ export { default as ProfileScreen } from './Profile';
 export { default as SettingScreen } from './Setting';
 export { default as LandingScreen } from './Landing';
 export { default as CheckOutScreen } from './CheckOut';
+export { default as CongratsScreen } from './Congrats';
 export { default as FavoriteScreen } from './Favorite';
 export { default as VerifyOTPScreen } from './VerifyOTP';
 export { default as AddPaymentScreen } from './AddPayment';

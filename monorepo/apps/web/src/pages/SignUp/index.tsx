@@ -16,7 +16,7 @@ import {
 import { SCHEMA } from '@monorepo/constants';
 
 // Utils
-import { getRandomId } from '@monorepo/utils';
+import { getRandomId, removeSpaces } from '@monorepo/utils';
 
 // Stores | Hooks
 import { authStore } from '@monorepo/stores';
@@ -77,8 +77,8 @@ const SignUp = () => {
       const payload: SignUpPayload = {
         user: {
           uuid: getRandomId(),
-          name,
-          email,
+          name: removeSpaces(name, true),
+          email: removeSpaces(email, true),
           password,
           type: AUTH_TYPES.CUSTOMER,
           first_name: name.substring(0, name.indexOf(' ')),

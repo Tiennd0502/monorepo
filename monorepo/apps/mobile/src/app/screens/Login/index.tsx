@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { ReturnKeyTypeOptions } from 'react-native';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 // Types
 import {
@@ -16,7 +16,7 @@ import { SCREENS, StackScreenProps } from '../../types';
 import { SCHEMA } from '@monorepo/constants';
 
 // Utils
-import { getRandomId } from '@monorepo/utils';
+import { getRandomId, removeSpaces } from '@monorepo/utils';
 
 // Hooks | Stores
 import { useAuth } from '@monorepo/hooks';
@@ -73,7 +73,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
       const payload: LoginPayLoad = {
         user: {
           uuid: getRandomId(),
-          email,
+          email: removeSpaces(email, true),
           password,
           type: AUTH_TYPES.CUSTOMER,
         },

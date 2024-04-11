@@ -9,6 +9,9 @@ import { ErrorResponse, VerifyPayload } from '@monorepo/types';
 // Constants
 import { ROUTES } from '../../constants';
 
+// Utils
+import { removeSpaces } from '@monorepo/utils';
+
 // Hooks | Stores
 import { useAuth } from '@monorepo/hooks';
 import { authStore } from '@monorepo/stores';
@@ -52,7 +55,7 @@ const VerifyOTP = () => {
   const handleVerifyOTP = useCallback(
     ({ code }: FormType) => {
       const payload: VerifyPayload = {
-        code,
+        code: removeSpaces(code, true),
         verify_id,
       };
 

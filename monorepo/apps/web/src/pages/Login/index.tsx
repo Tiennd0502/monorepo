@@ -17,7 +17,7 @@ import { ROUTES } from '../../constants';
 import { SCHEMA } from '@monorepo/constants';
 
 // Utils
-import { getRandomId } from '@monorepo/utils';
+import { getRandomId, removeSpaces } from '@monorepo/utils';
 
 // Hooks | Stores
 import { useAuth } from '@monorepo/hooks';
@@ -69,8 +69,8 @@ const Login = () => {
       const payload: LoginPayLoad = {
         user: {
           uuid: getRandomId(),
-          email,
-          password,
+          email: removeSpaces(email, true),
+          password: removeSpaces(password, true),
           type: AUTH_TYPES.CUSTOMER,
         },
       };

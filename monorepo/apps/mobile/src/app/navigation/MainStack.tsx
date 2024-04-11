@@ -1,5 +1,10 @@
 import { SCREENS } from '../types';
-import { CartScreen, ProductDetailScreen, CheckOutScreen } from '../screens';
+import {
+  CartScreen,
+  ProductDetailScreen,
+  CheckOutScreen,
+  CongratsScreen,
+} from '../screens';
 
 import { Stack } from './Stack';
 import MainTab from './MainTab';
@@ -22,6 +27,10 @@ const MAIN_STACK_SCREENS = [
     name: SCREENS.CHECK_OUT,
     component: CheckOutScreen,
   },
+  {
+    name: SCREENS.CONGRATS,
+    component: CongratsScreen,
+  },
 ];
 
 const MainStackNavigator = () => {
@@ -42,7 +51,9 @@ const MainStackNavigator = () => {
           component={component}
           options={{
             headerShown:
-              name !== SCREENS.MAIN_TAB && name !== SCREENS.PRODUCT_DETAIL,
+              name !== SCREENS.MAIN_TAB &&
+              name !== SCREENS.PRODUCT_DETAIL &&
+              name !== SCREENS.CONGRATS,
           }}
         />
       ))}

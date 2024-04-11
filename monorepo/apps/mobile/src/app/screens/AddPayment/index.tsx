@@ -1,9 +1,9 @@
-import { useCallback, useMemo, useRef } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { useCallback, useRef } from 'react';
+import { useForm } from 'react-hook-form';
 import { Stack, XStack, ScrollView, TamaguiElement } from 'tamagui';
 
 // Types
-import { AddPaymentFrom, LAYER_TYPE, Layer } from '@monorepo/types';
+import { LAYER_TYPE, Layer } from '@monorepo/types';
 
 // Constants
 import { PAYMENT_CARDS } from '@monorepo/mocks';
@@ -13,37 +13,46 @@ import { usePayment } from '@monorepo/hooks';
 import { userStore } from '@monorepo/stores';
 
 // Components
-import { Button, PaymentCard, Input, Loading } from '@monorepo/ui';
+import { Button, PaymentCard, Loading, ControllerInput } from '@monorepo/ui';
+
+interface FormType {
+  name: string;
+  number: string;
+  cvv: string;
+  expiryDate: string;
+}
 
 const AddPayment = ({ navigation }) => {
   const {
     add: { mutate, isPending },
   } = usePayment();
-  const [user] = userStore((state) => [state.user]);
+  const username = userStore((state) =>
+    state.user ? state.user.first_name + ' ' + state.user.last_name : ''
+  );
 
   const {
     control,
     handleSubmit,
     reset,
     formState: { isValid },
-  } = useForm<AddPaymentFrom>({
-    defaultValues: useMemo(
-      () => ({
-        name: user ? user.first_name + ' ' + user.last_name : '',
-        number: '',
-        cvv: 123,
-        expiryDate: '',
-      }),
-      [user]
-    ),
+  } = useForm<FormType>({
+    defaultValues: {
+      name: username,
+      number: '',
+      cvv: '123',
+      expiryDate: '',
+    },
     mode: 'onBlur',
     reValidateMode: 'onBlur',
   });
 
+  const nameRef = useRef<TamaguiElement>();
+  const cardNumberRef = useRef<TamaguiElement>();
+  const ccvRef = useRef<TamaguiElement>();
   const expiryDateRef = useRef<TamaguiElement>();
 
   const handleAddCard = useCallback(
-    ({ name, number, cvv, expiryDate }: AddPaymentFrom) => {
+    ({ name, number, cvv, expiryDate }: FormType) => {
       const payload: Layer = {
         layer: {
           title: name,
@@ -81,91 +90,47 @@ const AddPayment = ({ navigation }) => {
         <PaymentCard item={PAYMENT_CARDS[0]} specialCharacter="X" />
         <Stack flex={1} paddingVertical="$5">
           <Stack rowGap="$5">
-            <Controller
+            <ControllerInput<FormType>
+              disabled
               name="name"
+              label="CardHolder Name"
+              placeholder="Ex: Bruno Pham"
+              returnKeyType="next"
+              ref={nameRef}
               control={control}
-              render={({
-                field: { onChange, ...props },
-                fieldState: { error },
-              }) => {
-                return (
-                  <Input
-                    disabled
-                    label="CardHolder Name"
-                    placeholder={`Ex: ${'Bruno Pham'}`}
-                    errorMessage={error?.message}
-                    onChangeText={onChange}
-                    {...props}
-                  />
-                );
-              }}
             />
-            <Controller
+            <ControllerInput<FormType>
               name="number"
+              variant="outlined"
+              label="Card Number"
+              returnKeyType="next"
+              ref={cardNumberRef}
               control={control}
-              render={({
-                field: { onChange, ...props },
-                fieldState: { error },
-              }) => {
-                return (
-                  <Input
-                    variant="outlined"
-                    label="Card Number"
-                    placeholder=""
-                    errorMessage={error?.message}
-                    onChangeText={onChange}
-                    returnKeyType="next"
-                    onSubmitEditing={() => expiryDateRef?.current?.focus()}
-                    {...props}
-                  />
-                );
-              }}
+              onSubmitEditing={() => expiryDateRef?.current?.focus()}
             />
+
             <XStack gap="$5">
               <Stack flex={1}>
-                <Controller
+                <ControllerInput<FormType>
                   name="cvv"
+                  variant="disabled"
+                  label="cvv"
+                  returnKeyType="next"
+                  editable={false}
                   control={control}
-                  render={({
-                    field: { onChange, value, ...props },
-                    fieldState: { error },
-                  }) => {
-                    return (
-                      <Input
-                        editable={false}
-                        variant="disabled"
-                        label="cvv"
-                        placeholder="ccv"
-                        errorMessage={error?.message}
-                        value={value.toString()}
-                        onChangeText={onChange}
-                        {...props}
-                      />
-                    );
-                  }}
+                  ref={ccvRef}
+                  onSubmitEditing={() => expiryDateRef?.current?.focus()}
                 />
               </Stack>
               <Stack flex={1}>
-                <Controller
+                <ControllerInput<FormType>
                   name="expiryDate"
+                  variant="outlined"
+                  label="Expiration Date"
+                  returnKeyType="send"
                   control={control}
-                  render={({
-                    field: { onChange, ...props },
-                    fieldState: { error },
-                  }) => {
-                    return (
-                      <Input
-                        variant="outlined"
-                        label="Expiration Date"
-                        placeholder=""
-                        errorMessage={error?.message}
-                        onChangeText={onChange}
-                        onSubmitEditing={handleSubmit(handleAddCard)}
-                        {...props}
-                        ref={expiryDateRef}
-                      />
-                    );
-                  }}
+                  ref={expiryDateRef}
+                  onSubmitEditing={handleSubmit(handleAddCard)}
                 />
               </Stack>
             </XStack>

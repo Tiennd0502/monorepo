@@ -6,6 +6,7 @@ import { SCREENS, StackParamList } from '../types';
 import MainStack from './MainStack';
 import AuthStack from './AuthStack';
 import { authStore } from '@monorepo/stores';
+import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
@@ -13,7 +14,11 @@ const AppNavigator = () => {
   const [authKey] = authStore((state) => [state.authKey]);
 
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      onReady={() => {
+        SplashScreen.hide();
+      }}
+    >
       <Stack.Navigator
         initialRouteName={SCREENS.MAIN_STACK}
         screenOptions={{

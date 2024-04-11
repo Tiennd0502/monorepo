@@ -4,7 +4,7 @@ import FastImage from 'react-native-fast-image';
 
 // Types
 import { SCREENS, StackScreenProps } from '../../types';
-import { Product } from '@monorepo/types';
+import { ErrorResponse, Product } from '@monorepo/types';
 
 // Constants
 import {
@@ -26,6 +26,7 @@ import {
   Quantity,
   Rating,
   Text,
+  Toast,
   shadows,
 } from '@monorepo/ui';
 
@@ -39,6 +40,8 @@ interface ProductDetailProps {
 }
 
 const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
+  const [errorMessage, setErrorMessage] = useState('');
+
   const [quantity, setQuantity] = useState(1);
   const [activeColor, setActiveColor] = useState(PRODUCT_COLORS[0]);
 
@@ -72,8 +75,11 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
         onSuccess: () => {
           navigation.navigate(SCREENS.CART);
         },
-        onError: (error) => {
-          console.log(error);
+        onError: (error: ErrorResponse) => {
+          const {
+            error: { message },
+          } = error.response.data;
+          setErrorMessage(message);
         },
       });
     }
@@ -133,6 +139,15 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
 
   return (
     <Stack flex={1} position="relative">
+      {isPending && <Loading />}
+      {errorMessage && (
+        <Toast
+          variant="error"
+          message={errorMessage}
+          marginTop="$5"
+          onClose={() => setErrorMessage('')}
+        />
+      )}
       <IconButton
         position="absolute"
         top="$9"
@@ -151,7 +166,6 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
         backgroundColor="$secondary"
         showsVerticalScrollIndicator={false}
       >
-        {isPending && <Loading />}
         <Stack paddingLeft="$11.5">
           <FastImage
             style={{

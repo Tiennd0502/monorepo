@@ -1,10 +1,10 @@
 import { ScrollView } from 'react-native';
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Stack, XStack } from 'tamagui';
 
 // Types
 import { SCREENS, StackScreenProps } from '../../types';
-import { OrderPayload } from '@monorepo/types';
+import { ErrorResponse, OrderPayload } from '@monorepo/types';
 
 // Constants
 import { CHECK_OUT, CURRENCY_UNIT } from '@monorepo/constants';
@@ -23,6 +23,7 @@ import {
   CartItem,
   Divider,
   Loading,
+  Toast,
 } from '@monorepo/ui';
 
 interface CartProps {
@@ -30,6 +31,8 @@ interface CartProps {
 }
 
 const Cart = ({ navigation }: CartProps) => {
+  const [errorMessage, setErrorMessage] = useState('');
+
   const {
     useFetchCarts,
     removeCartItem: { mutate: removeCartItem },
@@ -62,8 +65,11 @@ const Cart = ({ navigation }: CartProps) => {
 
       removeCartItem(payload, {
         onSuccess: () => refetch(),
-        onError: (error) => {
-          console.log(error);
+        onError: (error: ErrorResponse) => {
+          const {
+            error: { message },
+          } = error.response.data;
+          setErrorMessage(message);
         },
       });
     },
@@ -78,8 +84,11 @@ const Cart = ({ navigation }: CartProps) => {
         const { order_reference } = data;
         navigation.navigate(SCREENS.CHECK_OUT, { id: order_reference });
       },
-      onError: (error) => {
-        console.log(error);
+      onError: (error: ErrorResponse) => {
+        const {
+          error: { message },
+        } = error.response.data;
+        setErrorMessage(message);
       },
     });
   }, [checkOut, navigation]);
@@ -97,8 +106,11 @@ const Cart = ({ navigation }: CartProps) => {
         onSuccess: () => {
           refetch();
         },
-        onError: (error) => {
-          console.log(error);
+        onError: (error: ErrorResponse) => {
+          const {
+            error: { message },
+          } = error.response.data;
+          setErrorMessage(message);
         },
       });
     },
@@ -108,57 +120,70 @@ const Cart = ({ navigation }: CartProps) => {
   const isLoading = isFetching || isPending || isPendingCheckOut;
 
   return (
-    <Stack
-      flex={1}
-      backgroundColor="$secondary"
-      paddingHorizontal="$5"
-      paddingTop="$2.5"
-      paddingBottom="$5"
-      rowGap="$2.5"
-    >
+    <>
       {isLoading && <Loading />}
-      <Stack flex={1}>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <Stack>
-            {carts?.map(({ item, quantity }, index) => {
-              const handleChangeQuantity = (amount: number) =>
-                handleUpdateCartItem(item.id, amount);
+      <Stack
+        flex={1}
+        backgroundColor="$secondary"
+        paddingHorizontal="$5"
+        paddingTop="$2.5"
+        paddingBottom="$5"
+        rowGap="$2.5"
+        justifyContent="space-between"
+      >
+        {errorMessage && (
+          <Toast
+            variant="error"
+            message={errorMessage}
+            marginTop="$5"
+            onClose={() => setErrorMessage('')}
+          />
+        )}
+        <Stack flex={1}>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <Stack>
+              {carts?.map(({ item, quantity }, index) => {
+                const handleChangeQuantity = (amount: number) =>
+                  handleUpdateCartItem(item.id, amount);
 
-              return (
-                <Stack key={index}>
-                  <CartItem
-                    item={item}
-                    quantity={quantity}
-                    onDelete={handleRemoveCartItem}
-                    onChangeQuantity={handleChangeQuantity}
-                  />
-                  {index < carts.length - 1 && (
-                    <Divider color="$backgroundTertiary" />
-                  )}
-                </Stack>
-              );
-            })}
-          </Stack>
-        </ScrollView>
+                return (
+                  <Stack key={index}>
+                    <CartItem
+                      item={item}
+                      quantity={quantity}
+                      onDelete={handleRemoveCartItem}
+                      onChangeQuantity={handleChangeQuantity}
+                    />
+                    {index < carts.length - 1 && (
+                      <Divider color="$backgroundTertiary" />
+                    )}
+                  </Stack>
+                );
+              })}
+            </Stack>
+          </ScrollView>
+        </Stack>
+        <Stack gap="$2.5" paddingTop="$2.5">
+          <DiscountCode onSubmit={handleSubmitDiscountCode} />
+          <XStack
+            paddingTop="$15"
+            paddingBottom="$5"
+            justifyContent="space-between"
+            backgroundColor="$secondary"
+          >
+            <Text fontSize="$5" color="$textLabel" fontWeight="bold">
+              Total:
+            </Text>
+            <Text fontSize="$5" color="$primary" fontWeight="bold">
+              {CURRENCY_UNIT} {totalPayment.toString()}
+            </Text>
+          </XStack>
+          <Button disabled={!carts?.length} onPress={handleCheckout}>
+            Check out
+          </Button>
+        </Stack>
       </Stack>
-      <Stack gap="$2.5" paddingTop="$2.5">
-        <DiscountCode onSubmit={handleSubmitDiscountCode} />
-        <XStack
-          paddingTop="$15"
-          paddingBottom="$5"
-          justifyContent="space-between"
-          backgroundColor="$secondary"
-        >
-          <Text fontSize="$5" color="$textLabel" fontWeight="bold">
-            Total:
-          </Text>
-          <Text fontSize="$5" color="$primary" fontWeight="bold">
-            {CURRENCY_UNIT} {totalPayment.toString()}
-          </Text>
-        </XStack>
-        <Button onPress={handleCheckout}>Check out</Button>
-      </Stack>
-    </Stack>
+    </>
   );
 };
 

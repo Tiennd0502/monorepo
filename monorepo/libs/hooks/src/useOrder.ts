@@ -20,11 +20,12 @@ export const useOrder = () => {
   const useFetchOrders = ({ page = 1, status = 0 }) =>
     useQuery({
       queryKey: [API_PATH.ORDERS],
-      queryFn: () =>
+      queryFn: ({ signal }) =>
         GET<APIResponse<OrdersResponse>>(
           `${API_PATH.ORDERS}?page=${page}${
             status ? '&order_status=' + status : ''
-          }`
+          }`,
+          { signal }
         ),
       retry: false,
     });
@@ -32,8 +33,10 @@ export const useOrder = () => {
   const useFetchOrder = (id: string) =>
     useQuery({
       queryKey: [`${API_PATH.ORDERS}/${id}`],
-      queryFn: () =>
-        GET<APIResponse<OrderDetailResponse>>(`${API_PATH.ORDERS}/${id}`),
+      queryFn: ({ signal }) =>
+        GET<APIResponse<OrderDetailResponse>>(`${API_PATH.ORDERS}/${id}`, {
+          signal,
+        }),
       retry: false,
       enabled: !!id,
     });

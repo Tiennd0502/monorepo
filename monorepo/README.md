@@ -64,6 +64,7 @@
 | `cd monorepo`                                                                 | Move to the folder containing the source code  |
 | `npm install`                                                                 | Installs dependencies                          |
 | `npm run start:app`                                                           | Start app                                      |
+| `npm run start:web`                                                           | Start web                                      |
 | `npm run test:app`                                                            | Run test                                       |
 | `npm run storybook`                                                           | Start Storybook                                |
 

@@ -20,13 +20,14 @@ export const useCart = () => {
   const useFetchCarts = () =>
     useQuery({
       queryKey: [API_PATH.CART],
-      queryFn: () =>
+      queryFn: ({ signal }) =>
         GET<APIResponse<CartResponse>>(API_PATH.CART, {
           headers: {
             'X-Currency': 'USD',
           },
+          signal,
         }),
-      retry: 1,
+      retry: false,
     });
 
   const addCart = useMutation({

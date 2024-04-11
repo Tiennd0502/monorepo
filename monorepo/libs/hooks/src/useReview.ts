@@ -13,11 +13,13 @@ export const useReview = () => {
   const useFetchReview = (type: string, id: string) =>
     useQuery({
       queryKey: [API_PATH.CART],
-      queryFn: () =>
+      queryFn: ({ signal }) =>
         GET<APIResponse<ReviewResponse>>(
-          `${API_PATH.REVIEWS}?type=${type}&id=${id}&page=1&has_images=false`
+          `${API_PATH.REVIEWS}?type=${type}&id=${id}&page=1&has_images=false`,
+          { signal }
         ),
       enabled: !!id,
+      retry: false,
     });
 
   const addReview = useMutation({

@@ -52,7 +52,7 @@ const Favorite = () => {
           </Fragment>
         ))}
       </ScrollView>
-      <Button marginBottom="$5" onPress={handleAddToCart}>
+      <Button marginBottom="$5" disabled onPress={handleAddToCart}>
         Add all to my cart
       </Button>
     </Stack>

@@ -35,8 +35,8 @@ const Cart = ({ navigation }: CartProps) => {
 
   const {
     useFetchCarts,
-    removeCartItem: { mutate: removeCartItem },
-    addCart: { mutate: updateCart },
+    removeCartItem: { mutate: removeCartItem, isPending: isRemoving },
+    addCart: { mutate: updateCart, isPending: isAddingCard },
     checkOut: { mutate: checkOut, isPending: isPendingCheckOut },
   } = useCart();
 
@@ -127,7 +127,8 @@ const Cart = ({ navigation }: CartProps) => {
     [refetch, showToast, updateCart]
   );
 
-  const isLoading = isFetching || isPending || isPendingCheckOut;
+  const isLoading =
+    isFetching || isPending || isAddingCard || isRemoving || isPendingCheckOut;
 
   return (
     <>

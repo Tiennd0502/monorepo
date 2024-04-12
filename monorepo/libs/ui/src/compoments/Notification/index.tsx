@@ -22,7 +22,7 @@ const Notification = ({
 
   return (
     <XStack
-      testID='notification'
+      testID="notification"
       onPress={handleClick}
       padding="$5"
       columnGap="$3"
@@ -61,7 +61,7 @@ const Notification = ({
           <Text
             position="absolute"
             right={0}
-            bottom={-12}
+            bottom={-16}
             fontWeight="bold"
             color={
               status === NEW_STATUS.NEW ? '$successPrimary' : '$errorPrimary'

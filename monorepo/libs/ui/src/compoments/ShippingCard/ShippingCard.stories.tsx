@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Stack } from 'tamagui';
 
 import ShippingCard from '.';
-import { SHIPPING_ADDRESS } from '@monorepo/constants';
+import { SHIPPING_ADDRESS } from '@monorepo/mocks';
 
 const meta: Meta<typeof ShippingCard> = {
   title: 'Components/ShippingCard',

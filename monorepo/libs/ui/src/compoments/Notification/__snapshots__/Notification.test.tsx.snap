@@ -48,7 +48,7 @@ exports[`Notification should render Notification component 1`] = `
       style={
         {
           "color": "#242424",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
           "fontSize": 12,
           "fontWeight": "bold",
           "lineHeight": 20,
@@ -65,9 +65,8 @@ exports[`Notification should render Notification component 1`] = `
       style={
         {
           "color": "#808080",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans_7pt-Medium",
           "fontSize": 10,
-          "fontWeight": "normal",
           "lineHeight": 15,
           "textAlign": "justify",
         }
@@ -128,7 +127,7 @@ exports[`Notification should render Notification component status new 1`] = `
       style={
         {
           "color": "#242424",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
           "fontSize": 12,
           "fontWeight": "bold",
           "lineHeight": 20,
@@ -145,9 +144,8 @@ exports[`Notification should render Notification component status new 1`] = `
       style={
         {
           "color": "#808080",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans_7pt-Medium",
           "fontSize": 10,
-          "fontWeight": "normal",
           "lineHeight": 15,
           "textAlign": "justify",
         }
@@ -162,7 +160,7 @@ exports[`Notification should render Notification component status new 1`] = `
         {
           "bottom": -12,
           "color": "#27ae60",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
           "fontSize": 14,
           "fontWeight": "bold",
           "lineHeight": 20,
@@ -194,6 +192,23 @@ exports[`Notification should render Notification component with status hot 1`] =
   }
   testID="notification"
 >
+  <Image
+    source={
+      {
+        "uri": "https://i.ibb.co/m8nVWx2/sarah-dorweiler-fr0-J5-GIVyg-unsplash-1.png",
+      }
+    }
+    style={
+      {
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "height": 70,
+        "width": 70,
+      }
+    }
+  />
   <View
     style={
       {
@@ -209,8 +224,8 @@ exports[`Notification should render Notification component with status hot 1`] =
       style={
         {
           "color": "#242424",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
-          "fontSize": 14,
+          "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
+          "fontSize": 12,
           "fontWeight": "bold",
           "lineHeight": 20,
         }
@@ -226,9 +241,8 @@ exports[`Notification should render Notification component with status hot 1`] =
       style={
         {
           "color": "#808080",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans_7pt-Medium",
           "fontSize": 10,
-          "fontWeight": "normal",
           "lineHeight": 15,
           "textAlign": "justify",
         }
@@ -243,7 +257,7 @@ exports[`Notification should render Notification component with status hot 1`] =
         {
           "bottom": -12,
           "color": "#eb5757",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
           "fontSize": 14,
           "fontWeight": "bold",
           "lineHeight": 20,

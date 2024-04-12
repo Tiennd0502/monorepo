@@ -51,9 +51,8 @@ exports[`CartItem should render CartItem component has quantity prop 1`] = `
         style={
           {
             "color": "#606060",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans_7pt-Medium",
             "fontSize": 14,
-            "fontWeight": "normal",
             "lineHeight": 20,
           }
         }
@@ -66,7 +65,7 @@ exports[`CartItem should render CartItem component has quantity prop 1`] = `
         style={
           {
             "color": "#242424",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
             "fontSize": 16,
             "fontWeight": "bold",
             "lineHeight": 20,
@@ -190,9 +189,8 @@ exports[`CartItem should render CartItem component has quantity prop 1`] = `
         style={
           {
             "color": "#242424",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans_7pt-SemiBold",
             "fontSize": 18,
-            "fontWeight": "600",
             "lineHeight": 20,
           }
         }
@@ -405,9 +403,8 @@ exports[`CartItem should render CartItem component with default props 1`] = `
         style={
           {
             "color": "#606060",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans_7pt-Medium",
             "fontSize": 14,
-            "fontWeight": "normal",
             "lineHeight": 20,
           }
         }
@@ -420,7 +417,7 @@ exports[`CartItem should render CartItem component with default props 1`] = `
         style={
           {
             "color": "#242424",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
             "fontSize": 16,
             "fontWeight": "bold",
             "lineHeight": 20,
@@ -559,9 +556,8 @@ exports[`CartItem should render CartItem component with isFavorites true 1`] = `
         style={
           {
             "color": "#606060",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans_7pt-Medium",
             "fontSize": 14,
-            "fontWeight": "normal",
             "lineHeight": 20,
           }
         }
@@ -574,7 +570,7 @@ exports[`CartItem should render CartItem component with isFavorites true 1`] = `
         style={
           {
             "color": "#242424",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
             "fontSize": 16,
             "fontWeight": "bold",
             "lineHeight": 20,

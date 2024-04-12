@@ -6,9 +6,8 @@ exports[`Text should render Text component 1`] = `
   style={
     {
       "color": "#999",
-      "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+      "fontFamily": "NunitoSans_7pt-Medium",
       "fontSize": 14,
-      "fontWeight": "normal",
       "lineHeight": 20,
     }
   }
@@ -24,9 +23,8 @@ exports[`Text should render Text component with prop error true 1`] = `
   style={
     {
       "color": "#eb5757",
-      "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+      "fontFamily": "NunitoSans_7pt-Medium",
       "fontSize": 14,
-      "fontWeight": "normal",
       "lineHeight": 20,
     }
   }
@@ -42,9 +40,8 @@ exports[`Text should render Text component with size large 1`] = `
   style={
     {
       "color": "#999",
-      "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+      "fontFamily": "NunitoSans_7pt-Medium",
       "fontSize": 18,
-      "fontWeight": "normal",
       "lineHeight": 20,
     }
   }

@@ -51,7 +51,7 @@ exports[`Avatar should render Avatar component has src props 1`] = `
       style={
         {
           "color": "#242424",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
           "fontSize": 20,
           "fontWeight": "bold",
           "lineHeight": 20,
@@ -66,9 +66,8 @@ exports[`Avatar should render Avatar component has src props 1`] = `
       style={
         {
           "color": "#808080",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans_7pt-Medium",
           "fontSize": 14,
-          "fontWeight": "normal",
           "lineHeight": 20,
         }
       }
@@ -131,7 +130,7 @@ exports[`Avatar should render Avatar component with empty image 1`] = `
       style={
         {
           "color": "#242424",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
           "fontSize": 20,
           "fontWeight": "bold",
           "lineHeight": 20,
@@ -146,9 +145,8 @@ exports[`Avatar should render Avatar component with empty image 1`] = `
       style={
         {
           "color": "#808080",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans_7pt-Medium",
           "fontSize": 14,
-          "fontWeight": "normal",
           "lineHeight": 20,
         }
       }

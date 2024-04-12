@@ -1,6 +1,6 @@
 import { fireEvent, render, waitFor } from '@testing-library/react-native';
 
-import { SHIPPING_ADDRESS } from '@monorepo/constants';
+import { SHIPPING_ADDRESS } from '@monorepo/mocks';
 import { TamaguiProvider } from '@monorepo/provider';
 import ShippingCard from '.';
 

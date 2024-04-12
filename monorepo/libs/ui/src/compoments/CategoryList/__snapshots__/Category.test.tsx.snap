@@ -82,9 +82,8 @@ exports[`CategoryList should render CategoryList component 1`] = `
         style={
           {
             "color": "#242424",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans_7pt-Medium",
             "fontSize": 14,
-            "fontWeight": "normal",
             "lineHeight": 20,
           }
         }
@@ -163,9 +162,8 @@ exports[`CategoryList should render CategoryList component 1`] = `
         style={
           {
             "color": "#999",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans_7pt-Medium",
             "fontSize": 14,
-            "fontWeight": "normal",
             "lineHeight": 20,
           }
         }
@@ -244,9 +242,8 @@ exports[`CategoryList should render CategoryList component 1`] = `
         style={
           {
             "color": "#999",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans_7pt-Medium",
             "fontSize": 14,
-            "fontWeight": "normal",
             "lineHeight": 20,
           }
         }
@@ -325,9 +322,8 @@ exports[`CategoryList should render CategoryList component 1`] = `
         style={
           {
             "color": "#999",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans_7pt-Medium",
             "fontSize": 14,
-            "fontWeight": "normal",
             "lineHeight": 20,
           }
         }
@@ -406,9 +402,8 @@ exports[`CategoryList should render CategoryList component 1`] = `
         style={
           {
             "color": "#999",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans_7pt-Medium",
             "fontSize": 14,
-            "fontWeight": "normal",
             "lineHeight": 20,
           }
         }
@@ -487,9 +482,8 @@ exports[`CategoryList should render CategoryList component 1`] = `
         style={
           {
             "color": "#999",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans_7pt-Medium",
             "fontSize": 14,
-            "fontWeight": "normal",
             "lineHeight": 20,
           }
         }

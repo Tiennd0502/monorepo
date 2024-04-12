@@ -37,7 +37,7 @@ exports[`ShippingCard should render ShippingCard component 1`] = `
       style={
         {
           "color": "#242424",
-          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontFamily": "Merriweather, Helvetica, Arial, sans-serif",
           "fontSize": 18,
           "fontWeight": "bold",
           "lineHeight": 20,
@@ -62,9 +62,8 @@ exports[`ShippingCard should render ShippingCard component 1`] = `
     style={
       {
         "color": "#808080",
-        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontFamily": "NunitoSans_7pt-Medium",
         "fontSize": 14,
-        "fontWeight": "normal",
         "lineHeight": 20,
         "paddingBottom": 18,
         "paddingLeft": 20,
@@ -116,7 +115,7 @@ exports[`ShippingCard should render ShippingCard component with onEdit props 1`]
       style={
         {
           "color": "#242424",
-          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontFamily": "Merriweather, Helvetica, Arial, sans-serif",
           "fontSize": 18,
           "fontWeight": "bold",
           "lineHeight": 20,
@@ -204,9 +203,8 @@ exports[`ShippingCard should render ShippingCard component with onEdit props 1`]
     style={
       {
         "color": "#808080",
-        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontFamily": "NunitoSans_7pt-Medium",
         "fontSize": 14,
-        "fontWeight": "normal",
         "lineHeight": 20,
         "paddingBottom": 18,
         "paddingLeft": 20,

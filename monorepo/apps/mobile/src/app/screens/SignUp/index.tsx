@@ -24,7 +24,7 @@ import { getRandomId, removeSpaces } from '@monorepo/utils';
 
 // Hooks | Stores
 import { useAuth } from '@monorepo/hooks';
-import { authStore } from '@monorepo/stores';
+import { authStore, useToastStore } from '@monorepo/stores';
 
 // Themes | Component
 import { Stack, XStack, YStack, ScrollView, TamaguiElement } from 'tamagui';
@@ -38,7 +38,6 @@ import {
   LogoIcon,
   ShowIcon,
   Text,
-  Toast,
 } from '@monorepo/ui';
 
 interface SignUpProps {
@@ -47,7 +46,7 @@ interface SignUpProps {
 
 const SignUp = ({ navigation }: SignUpProps) => {
   const [setVerifyId] = authStore((state) => [state.setVerifyId]);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [showToast] = useToastStore((state) => [state.showToast]);
 
   const [disclosures, setDisclosures] = useState({
     password: true,
@@ -102,11 +101,15 @@ const SignUp = ({ navigation }: SignUpProps) => {
           const {
             error: { message },
           } = error.response.data;
-          setErrorMessage(message);
+
+          showToast({
+            variant: 'error',
+            message,
+          });
         },
       });
     },
-    [mutate, navigation, reset, setVerifyId]
+    [mutate, navigation, reset, showToast, setVerifyId]
   );
 
   const inputs = useMemo(
@@ -194,14 +197,6 @@ const SignUp = ({ navigation }: SignUpProps) => {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
       {isPending && <Loading />}
-      {errorMessage && (
-        <Toast
-          variant="error"
-          message={errorMessage}
-          marginTop="$5"
-          onClose={() => setErrorMessage('')}
-        />
-      )}
       <ScrollView>
         <Stack paddingVertical={20} paddingRight={30}>
           <Stack paddingLeft={30} paddingBottom={30}>

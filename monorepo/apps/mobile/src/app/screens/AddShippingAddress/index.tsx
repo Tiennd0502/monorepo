@@ -14,35 +14,48 @@ import { useShippingAddress } from '@monorepo/hooks';
 import { userStore } from '@monorepo/stores';
 
 // Components
-import { Button, Input, Loading } from '@monorepo/ui';
+import { Button, ControllerInput, Input, Loading } from '@monorepo/ui';
+
+interface FormType {
+  name: string;
+  address: string;
+  zipCode: string;
+  country: string;
+  city: string;
+  district: string;
+}
 
 const AddShippingAddress = ({ navigation }) => {
   const {
     add: { mutate, isPending },
   } = useShippingAddress();
 
-  const [user] = userStore((state) => [state.user]);
+  const username = userStore((state) =>
+    state.user ? state.user.first_name + ' ' + state.user.last_name : ''
+  );
 
-  const { control, handleSubmit, reset } = useForm<ShippingAddress>({
-    defaultValues: useMemo(
-      () => ({
-        name: user ? user.first_name + ' ' + user.last_name : '',
-        address: '25 Robert Latouche Street',
-        zipCode: '94110',
-        country: 'United States',
-        city: 'New York',
-        district: '123123',
-      }),
-      [user]
-    ),
+  const { control, handleSubmit, reset } = useForm<FormType>({
+    defaultValues: {
+      name: username,
+      address: '25 Robert Latouche Street',
+      zipCode: '94110',
+      country: 'United States',
+      city: 'New York',
+      district: '123123',
+    },
     mode: 'onBlur',
     reValidateMode: 'onBlur',
   });
 
   const cityRef = useRef<TamaguiElement>();
+  const nameRef = useRef<TamaguiElement>();
+  const addressRef = useRef<TamaguiElement>();
+  const countryRef = useRef<TamaguiElement>();
+  const zipCodeRef = useRef<TamaguiElement>();
+  const districtRef = useRef<TamaguiElement>();
 
   const handleAddCard = useCallback(
-    ({ name, address, zipCode, city, country }: ShippingAddress) => {
+    ({ name, address, zipCode, city, country }: FormType) => {
       const payload: ShippingAddressPayload = {
         address: {
           name,
@@ -79,123 +92,60 @@ const AddShippingAddress = ({ navigation }) => {
     >
       {isPending && <Loading />}
       <Stack gap="$5" marginTop="$6">
-        <Controller
+        <ControllerInput<FormType>
+          disabled
           name="name"
+          label="Full name"
+          placeholder="Ex: Bruno Pham"
+          returnKeyType="next"
+          ref={nameRef}
           control={control}
-          render={({
-            field: { onChange, ...props },
-            fieldState: { error },
-          }) => {
-            return (
-              <Input
-                disabled
-                label="Full name"
-                placeholder="Ex: Bruno Pham"
-                errorMessage={error?.message}
-                onChangeText={onChange}
-                {...props}
-              />
-            );
-          }}
         />
-        <Controller
+        <ControllerInput<FormType>
+          disabled
           name="address"
+          label="Address"
+          placeholder="Ex: 25 Robert Latouche Stree"
+          returnKeyType="next"
+          ref={addressRef}
           control={control}
-          render={({
-            field: { onChange, ...props },
-            fieldState: { error },
-          }) => {
-            return (
-              <Input
-                disabled
-                label="Address"
-                placeholder="Ex: 25 Robert Latouche Stree"
-                errorMessage={error?.message}
-                onChangeText={onChange}
-                {...props}
-              />
-            );
-          }}
         />
-        <Controller
+        <ControllerInput<FormType>
           name="zipCode"
+          variant="outlined"
+          label="Zipcode (Postal Code)"
+          returnKeyType="next"
+          ref={zipCodeRef}
           control={control}
-          render={({
-            field: { onChange, value, ...props },
-            fieldState: { error },
-          }) => {
-            return (
-              <Input
-                variant="outlined"
-                label="Zipcode (Postal Code)"
-                placeholder=""
-                errorMessage={error?.message}
-                value={value.toString()}
-                onChangeText={onChange}
-                returnKeyType="next"
-                onSubmitEditing={() => cityRef?.current?.focus()}
-                {...props}
-              />
-            );
-          }}
+          onSubmitEditing={() => cityRef?.current?.focus()}
         />
-        <Controller
+        <ControllerInput<FormType>
+          disabled
           name="country"
+          label="Country"
+          placeholder="Select Country"
+          returnKeyType="next"
+          ref={countryRef}
           control={control}
-          render={({
-            field: { onChange, ...props },
-            fieldState: { error },
-          }) => {
-            return (
-              <Input
-                disabled
-                label="Country"
-                placeholder="Select Country"
-                errorMessage={error?.message}
-                onChangeText={onChange}
-                {...props}
-              />
-            );
-          }}
         />
-        <Controller
+        <ControllerInput<FormType>
           name="city"
+          label="City"
+          variant="outlined"
+          placeholder="New York"
+          returnKeyType="send"
+          ref={cityRef}
           control={control}
-          render={({
-            field: { onChange, ...props },
-            fieldState: { error },
-          }) => {
-            return (
-              <Input
-                label="City"
-                variant="outlined"
-                placeholder="New York"
-                errorMessage={error?.message}
-                onChangeText={onChange}
-                {...props}
-                ref={cityRef}
-              />
-            );
-          }}
+          onSubmitEditing={handleSubmit(handleAddCard)}
         />
-        <Controller
+        <ControllerInput<FormType>
+          disabled
           name="district"
+          label="District"
+          placeholder="Select District"
+          returnKeyType="send"
+          ref={districtRef}
           control={control}
-          render={({
-            field: { onChange, ...props },
-            fieldState: { error },
-          }) => {
-            return (
-              <Input
-                disabled
-                label="District"
-                placeholder="Select District"
-                errorMessage={error?.message}
-                onChangeText={onChange}
-                {...props}
-              />
-            );
-          }}
         />
       </Stack>
       <Button

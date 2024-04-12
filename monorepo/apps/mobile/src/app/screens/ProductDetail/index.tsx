@@ -26,9 +26,9 @@ import {
   Quantity,
   Rating,
   Text,
-  Toast,
   shadows,
 } from '@monorepo/ui';
+import { useToastStore } from '@monorepo/stores';
 
 interface ProductDetailProps {
   navigation: StackScreenProps;
@@ -40,10 +40,10 @@ interface ProductDetailProps {
 }
 
 const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
-  const [errorMessage, setErrorMessage] = useState('');
-
   const [quantity, setQuantity] = useState(1);
   const [activeColor, setActiveColor] = useState(PRODUCT_COLORS[0]);
+
+  const [showToast] = useToastStore((state) => [state.showToast]);
 
   const { product } = route.params || {};
   const { name, image, description, price, id = '', rating } = product || {};
@@ -79,11 +79,15 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
           const {
             error: { message },
           } = error.response.data;
-          setErrorMessage(message);
+
+          showToast({
+            variant: 'error',
+            message,
+          });
         },
       });
     }
-  }, [addCart, id, navigation, quantity]);
+  }, [addCart, id, navigation, showToast, quantity]);
 
   const handleClickFavorite = () => null;
 
@@ -140,14 +144,6 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
   return (
     <Stack flex={1} position="relative">
       {isPending && <Loading />}
-      {errorMessage && (
-        <Toast
-          variant="error"
-          message={errorMessage}
-          marginTop="$5"
-          onClose={() => setErrorMessage('')}
-        />
-      )}
       <IconButton
         position="absolute"
         top="$9"

@@ -1,12 +1,16 @@
 import { memo } from 'react';
-import { Spinner, Stack, ColorTokens } from 'tamagui';
+import { Spinner, Stack, ColorTokens, StackProps } from 'tamagui';
 
-interface LoadingProps {
+interface LoadingProps extends StackProps {
   size?: 'small' | 'large';
   color?: ColorTokens;
 }
 
-const Loading = ({ size = 'large', color = '$primary' }: LoadingProps) => (
+const Loading = ({
+  size = 'large',
+  color = '$primary',
+  ...props
+}: LoadingProps) => (
   <Stack
     alignSelf="center"
     zIndex="$5"
@@ -14,6 +18,7 @@ const Loading = ({ size = 'large', color = '$primary' }: LoadingProps) => (
     width="$full"
     justifyContent="center"
     position="absolute"
+    {...props}
   >
     <Spinner size={size} color={color} />
   </Stack>

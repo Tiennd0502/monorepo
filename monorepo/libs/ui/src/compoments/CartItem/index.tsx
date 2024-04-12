@@ -44,7 +44,7 @@ const CartItem = ({
         borderRadius="$2.5"
         source={{ uri: image || DEFAULT_PRODUCT_IMAGE }}
       />
-      <Stack justifyContent="space-between">
+      <Stack flex={1} justifyContent="space-between">
         <Stack gap="$1">
           <Text color="$textQuaternary" numberOfLines={2} ellipsizeMode="tail">
             {name}

@@ -143,12 +143,12 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
 
   return (
     <Stack flex={1} position="relative">
-      {isPending && <Loading />}
+      {isPending && <Loading backgroundColor="$backgroundLayer" />}
       <IconButton
         position="absolute"
         top="$9"
         left="$6"
-        zIndex="$5"
+        zIndex="$4"
         padding="$2.5"
         backgroundColor="$secondary"
         style={shadows.default}

@@ -158,7 +158,7 @@ exports[`Notification should render Notification component status new 1`] = `
       allowFontScaling={false}
       style={
         {
-          "bottom": -12,
+          "bottom": -16,
           "color": "#27ae60",
           "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
           "fontSize": 14,
@@ -255,7 +255,7 @@ exports[`Notification should render Notification component with status hot 1`] =
       allowFontScaling={false}
       style={
         {
-          "bottom": -12,
+          "bottom": -16,
           "color": "#eb5757",
           "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
           "fontSize": 14,

@@ -33,6 +33,7 @@ exports[`CartItem should render CartItem component has quantity prop 1`] = `
   <View
     style={
       {
+        "flex": 1,
         "justifyContent": "space-between",
       }
     }
@@ -385,6 +386,7 @@ exports[`CartItem should render CartItem component with default props 1`] = `
   <View
     style={
       {
+        "flex": 1,
         "justifyContent": "space-between",
       }
     }
@@ -538,6 +540,7 @@ exports[`CartItem should render CartItem component with isFavorites true 1`] = `
   <View
     style={
       {
+        "flex": 1,
         "justifyContent": "space-between",
       }
     }

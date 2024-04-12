@@ -125,7 +125,7 @@ const ReviewDetail = ({ navigation, route }: ReviewDetailProps) => {
         zIndex="$5"
         bottom={0}
       >
-        <Button disabled={isPending} size="lg" onPress={handleWriteReview}>
+        <Button disabled size="lg" onPress={handleWriteReview}>
           Write a review
         </Button>
       </Stack>

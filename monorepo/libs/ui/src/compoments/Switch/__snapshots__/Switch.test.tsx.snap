@@ -28,8 +28,9 @@ exports[`Switch should render Switch component 1`] = `
           "backgroundColor": "transparent",
           "color": "#999",
           "display": "flex",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans_7pt-Medium",
           "fontSize": 16,
+          "letterSpacing": -0.5,
           "lineHeight": 50,
         }
       }
@@ -136,8 +137,9 @@ exports[`Switch should render Switch with checked true 1`] = `
           "backgroundColor": "transparent",
           "color": "#999",
           "display": "flex",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans_7pt-Medium",
           "fontSize": 16,
+          "letterSpacing": -0.5,
           "lineHeight": 50,
         }
       }

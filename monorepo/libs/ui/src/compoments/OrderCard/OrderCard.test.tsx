@@ -33,13 +33,13 @@ describe('OrderCard', () => {
   });
 
   it('should render OrderCard component with order status processing', () => {
-    const container = setup({item: ORDERS[4]});
+    const container = setup({item: ORDERS[1]});
 
     expect(container).toMatchSnapshot();
   });
 
   it('should render OrderCard component with order status canceled', () => {
-    const container =  setup({item: ORDERS[7]});
+    const container =  setup({item: ORDERS[2]});
 
     expect(container).toMatchSnapshot();
   });

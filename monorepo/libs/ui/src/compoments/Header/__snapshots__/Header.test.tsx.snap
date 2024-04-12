@@ -33,9 +33,8 @@ exports[`Header should render Header component 1`] = `
       style={
         {
           "color": "#909090",
-          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontFamily": "Merriweather, Helvetica, Arial, sans-serif",
           "fontSize": 18,
-          "fontWeight": "600",
           "lineHeight": 28,
           "marginBottom": 0,
           "marginLeft": 0,
@@ -54,9 +53,8 @@ exports[`Header should render Header component 1`] = `
       style={
         {
           "color": "#242424",
-          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontFamily": "Merriweather-Bold",
           "fontSize": 18,
-          "fontWeight": "bold",
           "lineHeight": 28,
           "marginBottom": 0,
           "marginLeft": 0,
@@ -232,9 +230,8 @@ exports[`Header should render Header component with not end icon 1`] = `
       style={
         {
           "color": "#242424",
-          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontFamily": "Merriweather-Bold",
           "fontSize": 18,
-          "fontWeight": "bold",
           "lineHeight": 28,
           "marginBottom": 0,
           "marginLeft": 0,
@@ -346,9 +343,8 @@ exports[`Header should render Header component with only title prop 1`] = `
       style={
         {
           "color": "#242424",
-          "fontFamily": "Inter, Helvetica, Arial, sans-serif",
+          "fontFamily": "Merriweather-Bold",
           "fontSize": 18,
-          "fontWeight": "bold",
           "lineHeight": 28,
           "marginBottom": 0,
           "marginLeft": 0,

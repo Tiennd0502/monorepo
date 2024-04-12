@@ -55,8 +55,9 @@ exports[`Checkbox should render Checkbox component 1`] = `
         "backgroundColor": "transparent",
         "color": "#999",
         "display": "flex",
-        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontFamily": "NunitoSans_7pt-Medium",
         "fontSize": 18,
+        "letterSpacing": -0.5,
         "lineHeight": 50,
       }
     }
@@ -123,8 +124,9 @@ exports[`Checkbox should render Checkbox with checked true 1`] = `
         "backgroundColor": "transparent",
         "color": "#242424",
         "display": "flex",
-        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontFamily": "NunitoSans_7pt-Medium",
         "fontSize": 18,
+        "letterSpacing": -0.5,
         "lineHeight": 50,
       }
     }

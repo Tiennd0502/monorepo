@@ -19,6 +19,7 @@ const ProfileCard = ({
   ...props
 }: ProfileCardProps) => (
   <XStack
+    testID='profile-card'
     paddingVertical="$5"
     paddingLeft="$5"
     paddingRight="$2.5"

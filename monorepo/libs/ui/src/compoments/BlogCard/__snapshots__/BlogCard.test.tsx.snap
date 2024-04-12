@@ -53,6 +53,7 @@ exports[`BlogCard should render BlogCard component with default props 1`] = `
     <View
       style={
         {
+          "flex": 1,
           "gap": 6,
         }
       }
@@ -64,9 +65,8 @@ exports[`BlogCard should render BlogCard component with default props 1`] = `
         style={
           {
             "color": "#606060",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
-            "fontSize": 14,
-            "fontWeight": "normal",
+            "fontFamily": "NunitoSans_7pt-Medium",
+            "fontSize": 16,
             "lineHeight": 20,
           }
         }
@@ -79,7 +79,7 @@ exports[`BlogCard should render BlogCard component with default props 1`] = `
         style={
           {
             "color": "#242424",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+            "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
             "fontSize": 14,
             "fontWeight": "bold",
             "lineHeight": 20,
@@ -472,8 +472,9 @@ exports[`BlogCard should render BlogCard component with default props 1`] = `
       style={
         {
           "color": "#808080",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
-          "fontWeight": "normal",
+          "fontFamily": "NunitoSans_7pt-Medium",
+          "fontSize": 12,
+          "lineHeight": 20,
         }
       }
       suppressHighlighting={true}
@@ -488,10 +489,10 @@ exports[`BlogCard should render BlogCard component with default props 1`] = `
     style={
       {
         "color": "#242424",
-        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontFamily": "NunitoSans_7pt-Medium",
         "fontSize": 14,
-        "fontWeight": "normal",
         "lineHeight": 20,
+        "textAlign": "justify",
       }
     }
     suppressHighlighting={true}
@@ -568,8 +569,9 @@ exports[`BlogCard should render CartItem component with isReview true 1`] = `
         style={
           {
             "color": "#242424",
-            "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
-            "fontWeight": "normal",
+            "fontFamily": "NunitoSans_7pt-Medium",
+            "fontSize": 14,
+            "lineHeight": 20,
           }
         }
         suppressHighlighting={true}
@@ -941,8 +943,9 @@ exports[`BlogCard should render CartItem component with isReview true 1`] = `
       style={
         {
           "color": "#808080",
-          "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
-          "fontWeight": "normal",
+          "fontFamily": "NunitoSans_7pt-Medium",
+          "fontSize": 12,
+          "lineHeight": 20,
         }
       }
       suppressHighlighting={true}
@@ -957,10 +960,10 @@ exports[`BlogCard should render CartItem component with isReview true 1`] = `
     style={
       {
         "color": "#242424",
-        "fontFamily": "Tahoma, Helvetica, Arial, sans-serif",
+        "fontFamily": "NunitoSans_7pt-Medium",
         "fontSize": 14,
-        "fontWeight": "normal",
         "lineHeight": 20,
+        "textAlign": "justify",
       }
     }
     suppressHighlighting={true}

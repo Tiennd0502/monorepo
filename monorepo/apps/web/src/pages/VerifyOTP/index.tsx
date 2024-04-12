@@ -86,7 +86,7 @@ const VerifyOTP = () => {
   const handleGoBack = useCallback(() => navigate(-1), [navigate]);
 
   return (
-    <Stack flex={1} backgroundColor="$textSecondary">
+    <Stack height="100vh" backgroundColor="$textSecondary">
       {isPending && <Loading />}
       <Stack width="50%" marginTop="$5" marginHorizontal="auto">
         <XStack

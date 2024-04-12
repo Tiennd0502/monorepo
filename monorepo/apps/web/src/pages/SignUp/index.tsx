@@ -180,12 +180,7 @@ const SignUp = () => {
   }, [clearErrors, navigate, reset]);
 
   return (
-    <Stack
-      flex={1}
-      backgroundColor="$backgroundSecondary"
-      padding="$5"
-      justifyContent="center"
-    >
+    <Stack height="100vh" backgroundColor="$backgroundSecondary" padding="$5">
       {isPending && <Loading />}
 
       <XStack

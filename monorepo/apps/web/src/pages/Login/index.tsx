@@ -128,7 +128,7 @@ const Login = () => {
   );
 
   return (
-    <Stack backgroundColor="$backgroundSecondary">
+    <Stack height="100vh" backgroundColor="$backgroundSecondary">
       {isPending && <Loading />}
       <Stack padding={30}>
         <XStack

@@ -3,7 +3,7 @@ import { Heading } from '@monorepo/ui';
 
 const Home = () => {
   return (
-    <Stack>
+    <Stack height="100vh">
       <Heading color="$textSecondary">Home page</Heading>
     </Stack>
   );

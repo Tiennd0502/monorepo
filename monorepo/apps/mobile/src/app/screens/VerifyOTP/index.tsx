@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 // Types
@@ -10,23 +10,23 @@ import { removeSpaces } from '@monorepo/utils';
 
 // Hooks | Stores
 import { useAuth } from '@monorepo/hooks';
-import { authStore } from '@monorepo/stores';
+import { authStore, useToastStore } from '@monorepo/stores';
 
 // Components
-import { Stack, ScrollView, XStack, YStack } from 'tamagui';
+import { Stack, ScrollView, XStack, YStack, TamaguiElement } from 'tamagui';
 import {
   Button,
+  ControllerInput,
   Divider,
   Heading,
   Input,
   Loading,
   LogoIcon,
   Text,
-  Toast,
 } from '@monorepo/ui';
 
 const VerifyOTP = ({ navigation }) => {
-  const [errorMessage, setErrorMessage] = useState('');
+  const [showToast] = useToastStore((state) => [state.showToast]);
 
   const {
     verifyOTP: { mutate, isPending },
@@ -35,6 +35,8 @@ const VerifyOTP = ({ navigation }) => {
     state.verify_id,
     state.removeVerifyId,
   ]);
+
+  const codeRef = useRef<TamaguiElement>();
 
   const {
     control,
@@ -62,11 +64,23 @@ const VerifyOTP = ({ navigation }) => {
           const {
             error: { message },
           } = error.response.data;
-          setErrorMessage(message);
+
+          showToast({
+            variant: 'error',
+            message,
+          });
         },
       });
     },
-    [clearErrors, mutate, navigation, removeVerifyId, reset, verify_id]
+    [
+      clearErrors,
+      mutate,
+      navigation,
+      removeVerifyId,
+      reset,
+      showToast,
+      verify_id,
+    ]
   );
 
   const handleSignIn = useCallback(() => {
@@ -79,14 +93,6 @@ const VerifyOTP = ({ navigation }) => {
 
   return (
     <>
-      {errorMessage && (
-        <Toast
-          variant="error"
-          message={errorMessage}
-          marginTop="$5"
-          onClose={() => setErrorMessage('')}
-        />
-      )}
       {isPending && <Loading />}
       <ScrollView showsVerticalScrollIndicator={false}>
         <Stack paddingVertical={40} paddingRight={30}>
@@ -118,24 +124,15 @@ const VerifyOTP = ({ navigation }) => {
             backgroundColor="$secondary"
             overflow="hidden"
           >
-            <Controller
+            <ControllerInput<VerifyPayload>
+              variant="flushed"
               name="code"
+              label="Code"
+              placeholder=""
               control={control}
-              render={({
-                field: { onChange, ...props },
-                fieldState: { error },
-              }) => {
-                return (
-                  <Input
-                    variant="flushed"
-                    label="Code"
-                    placeholder=""
-                    errorMessage={error?.message}
-                    onChangeText={onChange}
-                    {...props}
-                  />
-                );
-              }}
+              onSubmitEditing={handleSubmit(handleVerifyOTP)}
+              returnKeyType="send"
+              ref={codeRef}
             />
             <Divider
               color="$borderSecondary"

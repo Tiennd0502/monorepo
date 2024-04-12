@@ -1,13 +1,13 @@
 import { memo, useEffect } from 'react';
 import { XStack, StackProps } from 'tamagui';
-import isEqual from 'react-fast-compare';
 
+import { ToastVariant } from '@monorepo/types';
 import { CloseIcon } from '../icons';
 import Text from '../Text';
 
 interface ToastProps extends StackProps {
-  variant: 'success' | 'error';
   message: string;
+  variant?: ToastVariant;
   timeOut?: number;
   onClose: () => void;
 }
@@ -22,8 +22,9 @@ export const Toast = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
-      clearTimeout(timer);
     }, timeOut);
+
+    return () => clearTimeout(timer);
   }, [timeOut, onClose]);
 
   return (
@@ -31,6 +32,7 @@ export const Toast = ({
       position="absolute"
       zIndex="$5"
       right="$4"
+      marginTop="$5"
       backgroundColor={
         variant === 'error' ? '$errorPrimary' : '$successPrimary'
       }
@@ -46,4 +48,4 @@ export const Toast = ({
   );
 };
 
-export default memo(Toast, isEqual);
+export default memo(Toast);

@@ -1,5 +1,5 @@
 import { ScrollView } from 'react-native';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 import { Stack, XStack } from 'tamagui';
 
 // Types
@@ -23,15 +23,15 @@ import {
   CartItem,
   Divider,
   Loading,
-  Toast,
 } from '@monorepo/ui';
+import { useToastStore } from '@monorepo/stores';
 
 interface CartProps {
   navigation: StackScreenProps;
 }
 
 const Cart = ({ navigation }: CartProps) => {
-  const [errorMessage, setErrorMessage] = useState('');
+  const [showToast] = useToastStore((state) => [state.showToast]);
 
   const {
     useFetchCarts,
@@ -69,11 +69,15 @@ const Cart = ({ navigation }: CartProps) => {
           const {
             error: { message },
           } = error.response.data;
-          setErrorMessage(message);
+
+          showToast({
+            variant: 'error',
+            message,
+          });
         },
       });
     },
-    [refetch, removeCartItem]
+    [refetch, removeCartItem, showToast]
   );
 
   const handleCheckout = useCallback(() => {
@@ -88,10 +92,13 @@ const Cart = ({ navigation }: CartProps) => {
         const {
           error: { message },
         } = error.response.data;
-        setErrorMessage(message);
+        showToast({
+          variant: 'error',
+          message,
+        });
       },
     });
-  }, [checkOut, navigation]);
+  }, [checkOut, showToast, navigation]);
 
   const handleUpdateCartItem = useCallback(
     (productId: string, quantity: number) => {
@@ -110,11 +117,14 @@ const Cart = ({ navigation }: CartProps) => {
           const {
             error: { message },
           } = error.response.data;
-          setErrorMessage(message);
+          showToast({
+            variant: 'error',
+            message,
+          });
         },
       });
     },
-    [refetch, updateCart]
+    [refetch, showToast, updateCart]
   );
 
   const isLoading = isFetching || isPending || isPendingCheckOut;
@@ -131,14 +141,6 @@ const Cart = ({ navigation }: CartProps) => {
         rowGap="$2.5"
         justifyContent="space-between"
       >
-        {errorMessage && (
-          <Toast
-            variant="error"
-            message={errorMessage}
-            marginTop="$5"
-            onClose={() => setErrorMessage('')}
-          />
-        )}
         <Stack flex={1}>
           <ScrollView showsVerticalScrollIndicator={false}>
             <Stack>

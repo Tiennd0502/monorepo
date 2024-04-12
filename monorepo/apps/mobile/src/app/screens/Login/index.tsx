@@ -20,7 +20,7 @@ import { getRandomId, removeSpaces } from '@monorepo/utils';
 
 // Hooks | Stores
 import { useAuth } from '@monorepo/hooks';
-import { authStore, userStore } from '@monorepo/stores';
+import { authStore, useToastStore, userStore } from '@monorepo/stores';
 
 // Components
 import { Stack, ScrollView, XStack, YStack, TamaguiElement } from 'tamagui';
@@ -34,7 +34,6 @@ import {
   LogoIcon,
   ShowIcon,
   Text,
-  Toast,
 } from '@monorepo/ui';
 
 interface LoginScreenProps {
@@ -45,7 +44,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
   const [isDisclosure, setIsDisclosure] = useState(true);
   const [setAuthKey] = authStore((state) => [state.setAuthKey]);
   const [setUser] = userStore((state) => [state.setUser]);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [showToast] = useToastStore((state) => [state.showToast]);
 
   const {
     logIn: { mutate, isPending },
@@ -90,11 +89,15 @@ const Login = ({ navigation }: LoginScreenProps) => {
           const {
             error: { message },
           } = error.response.data;
-          setErrorMessage(message);
+
+          showToast({
+            variant: 'error',
+            message,
+          });
         },
       });
     },
-    [mutate, reset, setAuthKey, setUser]
+    [mutate, reset, setAuthKey, setUser, showToast]
   );
 
   const handleSignUp = useCallback(() => {
@@ -134,14 +137,6 @@ const Login = ({ navigation }: LoginScreenProps) => {
 
   return (
     <>
-      {errorMessage && (
-        <Toast
-          variant="error"
-          message={errorMessage}
-          marginTop="$5"
-          onClose={() => setErrorMessage('')}
-        />
-      )}
       {isPending && <Loading />}
       <ScrollView showsVerticalScrollIndicator={false}>
         <Stack paddingVertical={30} paddingRight={30}>

@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Stack } from 'tamagui';
 
-import { BLOGS } from '@monorepo/constants';
+import { BLOGS } from '@monorepo/mocks';
 
 import BlogCard from '.';
 

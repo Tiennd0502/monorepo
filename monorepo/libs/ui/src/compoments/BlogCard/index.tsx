@@ -49,7 +49,7 @@ const BlogCard = ({
           borderRadius="$2"
           source={{ uri: image || AVATAR_DEFAULT }}
         />
-        <Stack gap="$1.5">
+        <Stack flex={1} gap="$1.5">
           <Text
             size="extraMedium"
             color="$textQuaternary"
@@ -79,7 +79,12 @@ const BlogCard = ({
         {createdAt}
       </Text>
     </XStack>
-    <Text color="$primary" numberOfLines={5} ellipsizeMode="tail">
+    <Text
+      color="$primary"
+      numberOfLines={5}
+      ellipsizeMode="tail"
+      textAlign="justify"
+    >
       {description}
     </Text>
   </Stack>

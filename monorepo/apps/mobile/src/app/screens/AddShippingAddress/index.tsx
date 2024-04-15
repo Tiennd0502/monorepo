@@ -1,20 +1,17 @@
-import { useCallback, useMemo, useRef } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { useCallback, useRef } from 'react';
+import { useForm } from 'react-hook-form';
 import { Stack, TamaguiElement } from 'tamagui';
 
 // Types
-import {
-  ShippingAddress,
-  ShippingAddressPayload,
-  ADDRESS_TYPE,
-} from '@monorepo/types';
+import { ShippingAddressPayload, ADDRESS_TYPE } from '@monorepo/types';
 
 // Hooks | Stores
 import { useShippingAddress } from '@monorepo/hooks';
 import { userStore } from '@monorepo/stores';
 
 // Components
-import { Button, ControllerInput, Input, Loading } from '@monorepo/ui';
+import { Button, ControllerInput } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 interface FormType {
   name: string;
@@ -82,15 +79,7 @@ const AddShippingAddress = ({ navigation }) => {
   );
 
   return (
-    <Stack
-      flex={1}
-      backgroundColor="$backgroundSecondary"
-      paddingHorizontal="$5"
-      paddingTop="$3.75"
-      gap="$5"
-      paddingBottom="$5"
-    >
-      {isPending && <Loading />}
+    <MainLayout isLoading={isPending}>
       <Stack gap="$5" marginTop="$6">
         <ControllerInput<FormType>
           disabled
@@ -157,7 +146,7 @@ const AddShippingAddress = ({ navigation }) => {
       >
         SAVE ADDRESS
       </Button>
-    </Stack>
+    </MainLayout>
   );
 };
 

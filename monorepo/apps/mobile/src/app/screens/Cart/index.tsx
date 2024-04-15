@@ -25,6 +25,7 @@ import {
   Loading,
 } from '@monorepo/ui';
 import { useToastStore } from '@monorepo/stores';
+import { MainLayout } from '../../components';
 
 interface CartProps {
   navigation: StackScreenProps;
@@ -131,62 +132,47 @@ const Cart = ({ navigation }: CartProps) => {
     isFetching || isPending || isAddingCard || isRemoving || isPendingCheckOut;
 
   return (
-    <>
-      {isLoading && <Loading />}
-      <Stack
-        flex={1}
-        backgroundColor="$secondary"
-        paddingHorizontal="$5"
-        paddingTop="$2.5"
-        paddingBottom="$5"
-        rowGap="$2.5"
-        justifyContent="space-between"
-      >
-        <Stack flex={1}>
-          <ScrollView showsVerticalScrollIndicator={false}>
-            <Stack>
-              {carts?.map(({ item, quantity }, index) => {
-                const handleChangeQuantity = (amount: number) =>
-                  handleUpdateCartItem(item.id, amount);
+    <MainLayout isLoading={isLoading}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {carts?.map(({ item, quantity }, index) => {
+          const handleChangeQuantity = (amount: number) =>
+            handleUpdateCartItem(item.id, amount);
 
-                return (
-                  <Stack key={index}>
-                    <CartItem
-                      item={item}
-                      quantity={quantity}
-                      onDelete={handleRemoveCartItem}
-                      onChangeQuantity={handleChangeQuantity}
-                    />
-                    {index < carts.length - 1 && (
-                      <Divider color="$backgroundTertiary" />
-                    )}
-                  </Stack>
-                );
-              })}
+          return (
+            <Stack key={index}>
+              <CartItem
+                item={item}
+                quantity={quantity}
+                onDelete={handleRemoveCartItem}
+                onChangeQuantity={handleChangeQuantity}
+              />
+              {index < carts.length - 1 && (
+                <Divider color="$backgroundTertiary" />
+              )}
             </Stack>
-          </ScrollView>
-        </Stack>
-        <Stack gap="$2.5" paddingTop="$2.5">
-          <DiscountCode onSubmit={handleSubmitDiscountCode} />
-          <XStack
-            paddingTop="$15"
-            paddingBottom="$5"
-            justifyContent="space-between"
-            backgroundColor="$secondary"
-          >
-            <Text fontSize="$5" color="$textLabel" fontWeight="bold">
-              Total:
-            </Text>
-            <Text fontSize="$5" color="$primary" fontWeight="bold">
-              {CURRENCY_UNIT} {totalPayment.toString()}
-            </Text>
-          </XStack>
-          <Button disabled={!carts?.length} onPress={handleCheckout}>
-            Check out
-          </Button>
-        </Stack>
+          );
+        })}
+      </ScrollView>
+      <Stack gap="$2.5">
+        <DiscountCode onSubmit={handleSubmitDiscountCode} />
+        <XStack
+          paddingTop="$15"
+          paddingBottom="$5"
+          justifyContent="space-between"
+          backgroundColor="$secondary"
+        >
+          <Text fontSize="$5" color="$textLabel" fontWeight="bold">
+            Total:
+          </Text>
+          <Text fontSize="$5" color="$primary" fontWeight="bold">
+            {CURRENCY_UNIT} {totalPayment.toString()}
+          </Text>
+        </XStack>
+        <Button disabled={!carts?.length} onPress={handleCheckout}>
+          Check out
+        </Button>
       </Stack>
-    </>
+    </MainLayout>
   );
 };
 

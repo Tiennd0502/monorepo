@@ -215,16 +215,14 @@ exports[`OrderCard should render OrderCard component 1`] = `
       allowFontScaling={false}
       style={
         {
-          "color": "#27ae60",
+          "color": "#fff",
           "fontFamily": "NunitoSans_7pt-Medium",
           "fontSize": 14,
           "lineHeight": 20,
         }
       }
       suppressHighlighting={true}
-    >
-      Delivered
-    </Text>
+    />
   </View>
 </View>
 `;
@@ -444,16 +442,14 @@ exports[`OrderCard should render OrderCard component with order status canceled 
       allowFontScaling={false}
       style={
         {
-          "color": "#27ae60",
+          "color": "#fff",
           "fontFamily": "NunitoSans_7pt-Medium",
           "fontSize": 14,
           "lineHeight": 20,
         }
       }
       suppressHighlighting={true}
-    >
-      Delivered
-    </Text>
+    />
   </View>
 </View>
 `;

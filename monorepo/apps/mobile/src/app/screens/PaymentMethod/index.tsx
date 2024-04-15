@@ -18,11 +18,11 @@ import { usePayment } from '@monorepo/hooks';
 import {
   AddIcon,
   Checkbox,
-  Loading,
   PaymentCard,
   IconButton,
   shadows,
 } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 interface PaymentMethodProps {
   navigation: StackScreenProps;
@@ -49,7 +49,7 @@ const PaymentMethod = ({ navigation }: PaymentMethodProps) => {
 
   const renderCardList = useMemo(
     () => (
-      <Stack paddingTop="$3" paddingBottom="$5" gap="$1.5">
+      <Stack paddingTop="$2" gap="$1.5">
         {payments.map((item) => {
           const cardId = item.id;
           const handleChangeCard = () => {
@@ -73,22 +73,14 @@ const PaymentMethod = ({ navigation }: PaymentMethodProps) => {
   );
 
   return (
-    <Stack
-      flex={1}
-      gap="$5"
-      backgroundColor="$secondary"
-      paddingHorizontal="$5"
-      paddingTop="$3"
-      position="relative"
-    >
-      {isPending && <Loading />}
+    <MainLayout isLoading={isPending}>
       <ScrollView showsVerticalScrollIndicator={false}>
         {renderCardList}
       </ScrollView>
       <IconButton
         position="absolute"
         right="$8"
-        bottom="10%"
+        bottom="$10"
         zIndex="$5"
         padding="$2.5"
         borderRadius="$full"
@@ -100,7 +92,7 @@ const PaymentMethod = ({ navigation }: PaymentMethodProps) => {
       >
         <AddIcon />
       </IconButton>
-    </Stack>
+    </MainLayout>
   );
 };
 

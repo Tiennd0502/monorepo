@@ -15,6 +15,7 @@ import { useProducts } from '@monorepo/hooks';
 
 // Themes | Components
 import { Button, CartItem, Divider, Loading } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 const Favorite = () => {
   const { useFetchProducts } = useProducts();
@@ -40,8 +41,7 @@ const Favorite = () => {
   const handleAddToCart = useCallback(() => null, []);
 
   return (
-    <Stack flex={1} paddingHorizontal={20} backgroundColor="$secondary">
-      {isPending && <Loading />}
+    <MainLayout isLoading={isPending}>
       <ScrollView showsVerticalScrollIndicator={false}>
         {carts.map((item, index) => (
           <Fragment key={index}>
@@ -52,10 +52,15 @@ const Favorite = () => {
           </Fragment>
         ))}
       </ScrollView>
-      <Button marginBottom="$5" disabled onPress={handleAddToCart}>
+      <Button
+        marginTop="auto"
+        marginBottom={0}
+        disabled
+        onPress={handleAddToCart}
+      >
         Add all to my cart
       </Button>
-    </Stack>
+    </MainLayout>
   );
 };
 

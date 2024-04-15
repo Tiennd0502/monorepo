@@ -9,12 +9,13 @@ import { NEW_STATUS } from '@monorepo/types';
 
 // Components
 import { Notification, Divider } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 const NotificationScreen = () => {
   const handleViewDetail = useCallback(() => null, []);
 
   return (
-    <Stack flex={1} backgroundColor="$secondary" paddingTop="$4">
+    <MainLayout padding={0} marginTop="$3">
       <ScrollView showsVerticalScrollIndicator={false}>
         {NOTIFICATIONS.map((item, index) => (
           <Stack flex={1} key={item.id}>
@@ -28,7 +29,7 @@ const NotificationScreen = () => {
           </Stack>
         ))}
       </ScrollView>
-    </Stack>
+    </MainLayout>
   );
 };
 

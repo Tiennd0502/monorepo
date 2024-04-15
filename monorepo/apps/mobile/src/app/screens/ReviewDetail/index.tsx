@@ -16,7 +16,8 @@ import { formatUserReviews } from '@monorepo/utils';
 import { useReview } from '@monorepo/hooks';
 
 // Components
-import { BlogCard, Button, Divider, Loading, Rating, Text } from '@monorepo/ui';
+import { BlogCard, Button, Divider, Rating, Text } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 // TODO: Update when ui create review ready
 const REVIEW_CONTENT = {
@@ -69,53 +70,52 @@ const ReviewDetail = ({ navigation, route }: ReviewDetailProps) => {
     }
   }, [addReview, id]);
 
+  const isLoading = isPending || isFetching;
+
   return (
-    <Stack flex={1} backgroundColor="$secondary" position="relative">
-      {(isPending || isFetching) && <Loading />}
+    <MainLayout padding={0} isLoading={isLoading}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Stack>
-          <XStack paddingHorizontal="$5" paddingVertical="$4" gap="$5">
-            <FastImage
-              style={{
-                width: 100,
-                height: 100,
-                borderRadius: 8,
-              }}
-              source={{
-                uri: image || DEFAULT_PRODUCT_IMAGE,
-                priority: FastImage.priority.high,
-              }}
-              resizeMode={FastImage.resizeMode.cover}
-            />
-            <Stack justifyContent="space-between">
-              <Text color="$primary" numberOfLines={2} ellipsizeMode="tail">
-                {title}
+        <XStack paddingHorizontal="$5" paddingVertical="$4" gap="$5">
+          <FastImage
+            style={{
+              width: 100,
+              height: 100,
+              borderRadius: 8,
+            }}
+            source={{
+              uri: image || DEFAULT_PRODUCT_IMAGE,
+              priority: FastImage.priority.high,
+            }}
+            resizeMode={FastImage.resizeMode.cover}
+          />
+          <Stack justifyContent="space-between">
+            <Text color="$primary" numberOfLines={2} ellipsizeMode="tail">
+              {title}
+            </Text>
+            <XStack alignItems="center" alignContent="center" gap="$1.5">
+              <Rating size="$6" value={rating_average} count={1} />
+              <Text color="$primary" fontWeight="bold" size="extraLarge">
+                {rating_average}
               </Text>
-              <XStack alignItems="center" alignContent="center" gap="$1.5">
-                <Rating size="$6" value={rating_average} count={1} />
-                <Text color="$primary" fontWeight="bold" size="extraLarge">
-                  {rating_average}
-                </Text>
-              </XStack>
-              <Text
-                color="$primary"
-                size="large"
-              >{`${review_count} reviews`}</Text>
-            </Stack>
-          </XStack>
-          <Stack paddingTop="$2.5">
-            <Divider color="$backgroundTertiary" />
+            </XStack>
+            <Text
+              color="$primary"
+              size="large"
+            >{`${review_count} reviews`}</Text>
           </Stack>
-          <Stack paddingHorizontal="$5" paddingVertical="$10" gap="$10">
-            {reviewList?.map((item) => (
-              <BlogCard
-                key={item.id}
-                isReview
-                item={item}
-                onPress={handleViewDetail}
-              />
-            ))}
-          </Stack>
+        </XStack>
+        <Stack paddingTop="$2.5">
+          <Divider color="$backgroundTertiary" />
+        </Stack>
+        <Stack paddingHorizontal="$5" paddingVertical="$10" gap="$10">
+          {reviewList?.map((item) => (
+            <BlogCard
+              key={item.id}
+              isReview
+              item={item}
+              onPress={handleViewDetail}
+            />
+          ))}
         </Stack>
       </ScrollView>
       <Stack
@@ -129,7 +129,7 @@ const ReviewDetail = ({ navigation, route }: ReviewDetailProps) => {
           Write a review
         </Button>
       </Stack>
-    </Stack>
+    </MainLayout>
   );
 };
 

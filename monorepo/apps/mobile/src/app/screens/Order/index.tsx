@@ -15,7 +15,8 @@ import { formatOrders } from '@monorepo/utils';
 import { useOrder } from '@monorepo/hooks';
 
 // Components
-import { Divider, Loading, OrderCard, Text } from '@monorepo/ui';
+import { Divider, OrderCard, Text } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 interface OrderProps {
   navigation: StackScreenProps;
@@ -43,13 +44,8 @@ const Order = ({ navigation }: OrderProps) => {
   );
 
   return (
-    <Stack backgroundColor="$secondary" flex={1}>
-      <Stack
-        paddingHorizontal="$5"
-        paddingTop="$3"
-        paddingBottom="$2.5"
-        gap="$5"
-      >
+    <MainLayout padding={0} isLoading={isPending}>
+      <Stack paddingTop="$3" gap="$5">
         <XStack justifyContent="space-around">
           {Object.entries(ORDER_TABS).map(([key, value]) => {
             const handleChange = () => handleChangeTab(+key);
@@ -76,14 +72,13 @@ const Order = ({ navigation }: OrderProps) => {
         </XStack>
       </Stack>
       <ScrollView showsVerticalScrollIndicator={false}>
-        {isPending && <Loading />}
         <Stack flex={1} padding="$5" gap="$5">
           {orders?.map((item) => (
             <OrderCard key={item.id} item={item} onViewDetail={() => null} />
           ))}
         </Stack>
       </ScrollView>
-    </Stack>
+    </MainLayout>
   );
 };
 

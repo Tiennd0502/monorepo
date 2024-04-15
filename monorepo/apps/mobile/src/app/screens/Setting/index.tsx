@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { ScrollView, Stack, XStack } from 'tamagui';
 
 // Types
@@ -16,6 +16,7 @@ import {
   Text,
   shadows,
 } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 interface SettingProps {
   navigation: StackScreenProps;
@@ -72,11 +73,11 @@ const Setting = ({ navigation }: SettingProps) => {
   );
 
   return (
-    <Stack flex={1} backgroundColor="$secondary" paddingVertical="$4">
+    <MainLayout padding={0}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Stack flex={1} rowGap={20} paddingBottom={20}>
+        <Stack flex={1} gap="$5" marginTop="$4" paddingBottom="$5">
           {/* Personal information */}
-          <Stack paddingHorizontal={20} rowGap={15}>
+          <Stack paddingHorizontal="$5" rowGap="$3.75">
             <XStack justifyContent="space-between">
               <Text color="$textTertiary" size="extraMedium">
                 Personal Information
@@ -104,7 +105,7 @@ const Setting = ({ navigation }: SettingProps) => {
           </Stack>
 
           {/* Password */}
-          <Stack paddingHorizontal={20} rowGap={15}>
+          <Stack paddingHorizontal="$5" rowGap="$3.75">
             <XStack justifyContent="space-between">
               <Text color="$textTertiary" size="extraMedium">
                 Password
@@ -169,7 +170,7 @@ const Setting = ({ navigation }: SettingProps) => {
           </Stack>
         </Stack>
       </ScrollView>
-    </Stack>
+    </MainLayout>
   );
 };
 

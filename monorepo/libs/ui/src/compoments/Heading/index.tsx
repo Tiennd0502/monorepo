@@ -7,12 +7,6 @@ const Heading = styled(THeading, {
   allowFontScaling: false,
 
   variants: {
-    title: {
-      true: {
-        fontFamily: '$title',
-      },
-    },
-
     header: {
       true: {
         fontFamily: '$heading',
@@ -48,7 +42,7 @@ const Heading = styled(THeading, {
   } as const,
 
   defaultVariants: {
-    title: true,
+    header: true,
     size: 'medium',
   },
 });

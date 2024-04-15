@@ -19,7 +19,6 @@ const Text = styled(TextBase, {
     bold: {
       true: {
         fontWeight: 'bold',
-        fontFamily: '$title',
       },
     },
     boldReversal: {

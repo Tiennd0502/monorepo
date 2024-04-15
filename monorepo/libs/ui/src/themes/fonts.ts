@@ -4,7 +4,6 @@ import { spacingTamagui } from './metrics';
 export const fonts = {
   body: 'NunitoSans, Helvetica, Arial, sans-serif',
   heading: 'Gelasio, Helvetica, Arial, sans-serif',
-  title: 'Merriweather, Helvetica, Arial, sans-serif',
 };
 
 export const fontSizeMapping = {
@@ -93,17 +92,5 @@ export const headingFont = createFont({
     400: { normal: 'Gelasio-Regular', italic: 'Gelasio-Regular_Italic' },
     600: { normal: 'Gelasio-SemiBold', italic: 'Gelasio-SemiBold_Italic' },
     700: { normal: 'Gelasio-Bold', italic: 'Gelasio-Bold_Italic' },
-  },
-});
-
-export const titleFont = createFont({
-  family: fonts.title,
-  ...fontConfig,
-  weight: {
-    7: '700',
-    true: '700',
-  },
-  face: {
-    700: { normal: 'Merriweather-Bold', italic: 'Merriweather-Bold_itali' },
   },
 });

@@ -37,7 +37,7 @@ exports[`ShippingCard should render ShippingCard component 1`] = `
       style={
         {
           "color": "#242424",
-          "fontFamily": "Merriweather, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
           "fontSize": 18,
           "fontWeight": "bold",
           "lineHeight": 20,
@@ -115,7 +115,7 @@ exports[`ShippingCard should render ShippingCard component with onEdit props 1`]
       style={
         {
           "color": "#242424",
-          "fontFamily": "Merriweather, Helvetica, Arial, sans-serif",
+          "fontFamily": "NunitoSans, Helvetica, Arial, sans-serif",
           "fontSize": 18,
           "fontWeight": "bold",
           "lineHeight": 20,

@@ -8,7 +8,7 @@ exports[`Heading should render Heading component 1`] = `
   style={
     {
       "color": "#303030",
-      "fontFamily": "Merriweather-Bold",
+      "fontFamily": "Gelasio-Bold",
       "fontSize": 18,
       "lineHeight": 28,
       "marginBottom": 0,
@@ -31,7 +31,7 @@ exports[`Heading should render Heading component with size large 1`] = `
   style={
     {
       "color": "#303030",
-      "fontFamily": "Merriweather-Bold",
+      "fontFamily": "Gelasio-Bold",
       "fontSize": 24,
       "lineHeight": 28,
       "marginBottom": 0,

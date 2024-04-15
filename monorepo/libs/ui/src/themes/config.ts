@@ -3,7 +3,7 @@ import { config } from '@tamagui/config/v3';
 import { themes } from '@tamagui/themes';
 
 import { radius, size, space, zIndex } from './metrics';
-import { defaultFont, headingFont, titleFont } from './fonts';
+import { defaultFont, headingFont } from './fonts';
 import { colorsMapping } from './colors';
 
 const tokens = {
@@ -20,7 +20,6 @@ export const tamaguiConfig = createTamagui({
   fonts: {
     body: defaultFont,
     heading: headingFont,
-    title: titleFont,
   },
   tokens: createTokens({
     ...tokens,

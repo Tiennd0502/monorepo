@@ -6,8 +6,7 @@ import { SCREENS } from '../../types';
 
 import { Button, Text, Heading } from '@monorepo/ui';
 import { MainLayout } from '../../components';
-
-const BG_LANDING = 'https://i.ibb.co/f17BcDr/bg-landing.png';
+import { BG_LANDING } from '../../constants';
 
 const Landing = ({ navigation }) => {
   const handleGetStarted = useCallback(
@@ -26,10 +25,7 @@ const Landing = ({ navigation }) => {
           width: '100%',
           height: '100%',
         }}
-        source={{
-          uri: BG_LANDING,
-          priority: FastImage.priority.high,
-        }}
+        source={BG_LANDING}
         resizeMode={FastImage.resizeMode.stretch}
       />
       <Stack position="absolute" top="27%" left="$6" paddingHorizontal="$6">

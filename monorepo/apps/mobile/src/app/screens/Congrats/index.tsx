@@ -3,9 +3,9 @@ import { Stack, XStack } from 'tamagui';
 import FastImage from 'react-native-fast-image';
 
 import { SCREENS } from '../../types';
-import { CONGRATS_IMAGE } from '../../constants';
 import { Heading, Text, Button, CheckIcon } from '@monorepo/ui';
 import { MainLayout } from '../../components';
+import { CONGRATS_IMAGE } from '../../constants';
 
 const Congrats = ({ navigation }) => {
   const handleTrackOrder = useCallback(() => null, []);
@@ -27,10 +27,7 @@ const Congrats = ({ navigation }) => {
               width: 270,
               height: 230,
             }}
-            source={{
-              uri: CONGRATS_IMAGE,
-              priority: FastImage.priority.high,
-            }}
+            source={CONGRATS_IMAGE}
             resizeMode={FastImage.resizeMode.contain}
           />
           <XStack

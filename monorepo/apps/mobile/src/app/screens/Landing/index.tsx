@@ -5,6 +5,7 @@ import { Stack } from 'tamagui';
 import { SCREENS } from '../../types';
 
 import { Button, Text, Heading } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 const BG_LANDING = 'https://i.ibb.co/f17BcDr/bg-landing.png';
 
@@ -15,7 +16,7 @@ const Landing = ({ navigation }) => {
   );
 
   return (
-    <Stack position="relative" flex={1} padding={0} margin={0}>
+    <MainLayout padding={0}>
       <FastImage
         style={{
           flex: 1,
@@ -60,7 +61,7 @@ const Landing = ({ navigation }) => {
           Get Started
         </Button>
       </Stack>
-    </Stack>
+    </MainLayout>
   );
 };
 

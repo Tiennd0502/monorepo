@@ -15,7 +15,8 @@ import { formatReviews, getData } from '@monorepo/utils';
 import { useProducts } from '@monorepo/hooks';
 
 // Components
-import { BlogCard, Loading } from '@monorepo/ui';
+import { BlogCard } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 interface ReviewProps {
   navigation: StackScreenProps;
@@ -43,8 +44,7 @@ const Review = ({ navigation }: ReviewProps) => {
   );
 
   return (
-    <Stack flex={1} backgroundColor="$secondary">
-      {isPending && <Loading />}
+    <MainLayout isLoading={isPending} padding={0}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Stack padding="$5" gap="$8">
           {reviewsFormat.map((item) => (
@@ -56,7 +56,7 @@ const Review = ({ navigation }: ReviewProps) => {
           ))}
         </Stack>
       </ScrollView>
-    </Stack>
+    </MainLayout>
   );
 };
 

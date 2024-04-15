@@ -1,23 +1,12 @@
-import {
-  ORDER_STATUS,
-  Order,
-  Card,
-  Shipping,
-  StatusOrders,
-} from '@monorepo/types';
+import { ORDER_STATUS, StatusOrders } from '@monorepo/types';
 
 export const ORDER_TABS = {
-  [ORDER_STATUS.Delivered]: 'Delivered',
   [ORDER_STATUS.Processing]: 'Processing',
   [ORDER_STATUS.Confirmed]: 'Confirmed',
   [ORDER_STATUS.CanceledByAdmin]: 'Cancelled',
 };
 
 export const ORDER_STATUS_DETAILS: StatusOrders = {
-  [ORDER_STATUS.Delivered]: {
-    color: '$successPrimary',
-    label: ORDER_TABS[ORDER_STATUS.Delivered],
-  },
   [ORDER_STATUS.Processing]: {
     color: '$warningPrimary',
     label: ORDER_TABS[ORDER_STATUS.Processing],

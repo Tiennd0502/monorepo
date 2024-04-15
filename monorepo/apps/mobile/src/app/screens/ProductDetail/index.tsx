@@ -22,13 +22,13 @@ import {
   ChevronLeftIcon,
   FavoriteIcon,
   IconButton,
-  Loading,
   Quantity,
   Rating,
   Text,
   shadows,
 } from '@monorepo/ui';
 import { useToastStore } from '@monorepo/stores';
+import { MainLayout } from '../../components';
 
 interface ProductDetailProps {
   navigation: StackScreenProps;
@@ -142,8 +142,7 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
   );
 
   return (
-    <Stack flex={1} position="relative">
-      {isPending && <Loading backgroundColor="$backgroundLayer" />}
+    <MainLayout isLoading={isPending} padding={0}>
       <IconButton
         position="absolute"
         top="$9"
@@ -218,7 +217,7 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
           </XStack>
         </Stack>
       </ScrollView>
-    </Stack>
+    </MainLayout>
   );
 };
 

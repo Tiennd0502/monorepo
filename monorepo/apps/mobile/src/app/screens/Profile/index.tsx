@@ -9,6 +9,7 @@ import { userStore } from '@monorepo/stores';
 
 // Components
 import { Avatar, ProfileCard } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 interface ProfileProps {
   navigation: ProfileScreenProps;
@@ -61,27 +62,29 @@ const Profile = ({ navigation }: ProfileProps) => {
   );
 
   return (
-    <Stack flex={1} gap="$6" padding="$5" backgroundColor="$secondary">
-      <Avatar
-        name={first_name + ' ' + last_name}
-        email={email}
-        avatar={profile_pic}
-      />
-      <Stack gap="$5" marginTop="$5">
-        {profiles.map(({ key, title, description, href }) => {
-          const handleChangeView = () => navigation.navigate(href);
+    <MainLayout>
+      <Stack gap="$6">
+        <Avatar
+          name={first_name + ' ' + last_name}
+          email={email}
+          avatar={profile_pic}
+        />
+        <Stack gap="$5" marginTop="$5">
+          {profiles.map(({ key, title, description, href }) => {
+            const handleChangeView = () => navigation.navigate(href);
 
-          return (
-            <ProfileCard
-              key={key}
-              title={title}
-              description={description}
-              onPress={handleChangeView}
-            />
-          );
-        })}
+            return (
+              <ProfileCard
+                key={key}
+                title={title}
+                description={description}
+                onPress={handleChangeView}
+              />
+            );
+          })}
+        </Stack>
       </Stack>
-    </Stack>
+    </MainLayout>
   );
 };
 

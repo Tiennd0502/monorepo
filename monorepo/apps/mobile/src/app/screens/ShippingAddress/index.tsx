@@ -21,8 +21,8 @@ import {
   IconButton,
   ShippingCard,
   shadows,
-  Loading,
 } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 interface ShippingAddressProps {
   navigation: StackScreenProps;
@@ -81,11 +81,10 @@ const ShippingAddress = ({ navigation }: ShippingAddressProps) => {
   );
 
   return (
-    <Stack flex={1} position="relative" backgroundColor="$backgroundSecondary">
-      {isPending && <Loading />}
+    <MainLayout isLoading={isPending} padding={0}>
       <Stack flex={1}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Stack paddingHorizontal={20}>{renderCardList}</Stack>
+          <Stack paddingHorizontal="$5">{renderCardList}</Stack>
         </ScrollView>
       </Stack>
       <IconButton
@@ -103,7 +102,7 @@ const ShippingAddress = ({ navigation }: ShippingAddressProps) => {
       >
         <AddIcon />
       </IconButton>
-    </Stack>
+    </MainLayout>
   );
 };
 

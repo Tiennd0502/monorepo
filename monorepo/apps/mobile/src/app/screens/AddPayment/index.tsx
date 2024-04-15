@@ -3,17 +3,18 @@ import { useForm } from 'react-hook-form';
 import { Stack, XStack, ScrollView, TamaguiElement } from 'tamagui';
 
 // Types
-import { LAYER_TYPE, Layer } from '@monorepo/types';
+import { ErrorResponse, LAYER_TYPE, Layer } from '@monorepo/types';
 
 // Constants
 import { PAYMENT_CARDS } from '@monorepo/mocks';
 
 // Hooks | Stories
 import { usePayment } from '@monorepo/hooks';
-import { userStore } from '@monorepo/stores';
+import { useToastStore, userStore } from '@monorepo/stores';
 
 // Components
-import { Button, PaymentCard, Loading, ControllerInput } from '@monorepo/ui';
+import { Button, PaymentCard, ControllerInput } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 interface FormType {
   name: string;
@@ -29,6 +30,7 @@ const AddPayment = ({ navigation }) => {
   const username = userStore((state) =>
     state.user ? state.user.first_name + ' ' + state.user.last_name : ''
   );
+  const [showToast] = useToastStore((state) => [state.showToast]);
 
   const {
     control,
@@ -69,27 +71,27 @@ const AddPayment = ({ navigation }) => {
           navigation.goBack();
           reset();
         },
-        onError: (error: Error) => {
-          console.log(error);
+        onError: (error: ErrorResponse) => {
+          const {
+            error: { message },
+          } = error.response.data;
+
+          showToast({
+            variant: 'error',
+            message,
+          });
         },
       });
     },
-    [mutate, navigation, reset]
+    [mutate, navigation, reset, showToast]
   );
 
   return (
-    <Stack
-      flex={1}
-      backgroundColor="$secondary"
-      paddingHorizontal="$5"
-      paddingTop="$3.75"
-      gap="$5"
-    >
-      {isPending && <Loading />}
+    <MainLayout isLoading={isPending}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <PaymentCard item={PAYMENT_CARDS[0]} specialCharacter="X" />
         <Stack flex={1} paddingVertical="$5">
-          <Stack rowGap="$5">
+          <Stack gap="$5">
             <ControllerInput<FormType>
               disabled
               name="name"
@@ -135,17 +137,18 @@ const AddPayment = ({ navigation }) => {
               </Stack>
             </XStack>
           </Stack>
-          <Button
-            disabled={!isValid || isPending}
-            size="lg"
-            marginTop="$5"
-            onPress={handleSubmit(handleAddCard)}
-          >
-            ADD NEW CARD
-          </Button>
         </Stack>
       </ScrollView>
-    </Stack>
+      <Button
+        disabled={!isValid || isPending}
+        size="lg"
+        marginTop="auto"
+        marginBottom={0}
+        onPress={handleSubmit(handleAddCard)}
+      >
+        ADD NEW CARD
+      </Button>
+    </MainLayout>
   );
 };
 

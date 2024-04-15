@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
-import { FlatList, ListRenderItemInfo, StatusBar } from 'react-native';
+import { FlatList, ListRenderItemInfo } from 'react-native';
 
 // Types
 import { Product, ProductResponse } from '@monorepo/types';
@@ -17,7 +17,8 @@ import { useProducts } from '@monorepo/hooks';
 
 // Components
 import { Stack } from 'tamagui';
-import { Loading, CategoryList, ProductCard } from '@monorepo/ui';
+import { CategoryList, ProductCard } from '@monorepo/ui';
+import { MainLayout } from '../../components';
 
 interface HomeProps {
   navigation: StackScreenProps;
@@ -61,15 +62,7 @@ const Home = ({ navigation }: HomeProps) => {
   );
 
   return (
-    <Stack
-      flex={1}
-      gap="$4"
-      backgroundColor="$secondary"
-      paddingHorizontal="$5"
-      paddingTop="$4"
-    >
-      <StatusBar backgroundColor="transparent" barStyle="dark-content" />
-      {isPending && <Loading />}
+    <MainLayout isLoading={isPending}>
       <Stack>
         <CategoryList list={CATEGORIES} onChange={handleChangeCategory} />
       </Stack>
@@ -86,7 +79,7 @@ const Home = ({ navigation }: HomeProps) => {
           paddingBottom: 30,
         }}
       />
-    </Stack>
+    </MainLayout>
   );
 };
 

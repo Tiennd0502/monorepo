@@ -1,5 +1,5 @@
 import { useMemo, useState, useCallback } from 'react';
-import { Stack, XStack, ScrollView } from 'tamagui';
+import { Stack, ScrollView } from 'tamagui';
 
 // Constants
 import { ORDER_TABS } from '@monorepo/constants';
@@ -15,7 +15,7 @@ import { formatOrders } from '@monorepo/utils';
 import { useOrder } from '@monorepo/hooks';
 
 // Components
-import { Divider, OrderCard, Text } from '@monorepo/ui';
+import { OrderCard, TabHeader } from '@monorepo/ui';
 import { MainLayout } from '../../components';
 
 interface OrderProps {
@@ -23,11 +23,9 @@ interface OrderProps {
 }
 
 const Order = ({ navigation }: OrderProps) => {
-  const [tabActive, setTabActive] = useState<ORDER_STATUS>(
-    ORDER_STATUS.Confirmed
-  );
+  const [tabActive, setTabActive] = useState(ORDER_STATUS.Confirmed.toString());
   const { useFetchOrders } = useOrder();
-  const { data, isPending } = useFetchOrders({ page: 1, status: tabActive });
+  const { data, isPending } = useFetchOrders({ page: 1, status: +tabActive });
   const orderList = useMemo(
     () => data?.data?.orders || [],
     [data?.data?.orders]
@@ -39,38 +37,17 @@ const Order = ({ navigation }: OrderProps) => {
   );
 
   const handleChangeTab = useCallback(
-    (value: number) => setTabActive(value),
+    (value: string) => setTabActive(value),
     []
   );
 
   return (
     <MainLayout padding={0} isLoading={isPending}>
-      <Stack paddingTop="$3" gap="$5">
-        <XStack justifyContent="space-around">
-          {Object.entries(ORDER_TABS).map(([key, value]) => {
-            const handleChange = () => handleChangeTab(+key);
-
-            return (
-              <Stack
-                alignItems="center"
-                gap="$2.5"
-                key={key}
-                onPress={handleChange}
-              >
-                <Text
-                  color={tabActive === +key ? '$primary' : '$textDefault'}
-                  size="large"
-                >
-                  {value}
-                </Text>
-                {tabActive === +key && (
-                  <Divider width="$10" height="$1" color="$primary" />
-                )}
-              </Stack>
-            );
-          })}
-        </XStack>
-      </Stack>
+      <TabHeader
+        tab={ORDER_TABS}
+        value={Object.entries(ORDER_TABS)[0][0]}
+        onChange={handleChangeTab}
+      />
       <ScrollView showsVerticalScrollIndicator={false}>
         <Stack flex={1} padding="$5" gap="$5">
           {orders?.map((item) => (

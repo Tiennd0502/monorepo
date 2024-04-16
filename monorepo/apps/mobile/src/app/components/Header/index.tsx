@@ -22,6 +22,7 @@ import {
   LogOutIcon,
   SearchIcon,
 } from '@monorepo/ui';
+import { hs, vs } from '../../utils';
 
 type HeaderProps = NativeStackHeaderProps | BottomTabHeaderProps;
 
@@ -210,8 +211,8 @@ const Header = ({ navigation, route }: HeaderProps) => {
       justifyContent="space-between"
       alignItems="center"
       backgroundColor="$backgroundSecondary"
-      paddingHorizontal="$5"
-      paddingTop="$2"
+      paddingHorizontal={hs('$5')}
+      paddingTop={vs('$2')}
     >
       <YStack>
         {LeftIcon && onClickLeftIcon && <LeftIcon onPress={onClickLeftIcon} />}

@@ -8,6 +8,7 @@ import { Loading } from '@monorepo/ui';
 import { TOKEN_KEYS } from '@monorepo/types';
 import { getTokenValueByKey } from '@monorepo/utils';
 import { SCREENS } from '../../types/navigation';
+import { hs, vs } from '../../utils';
 
 interface MainLayoutProps extends StackProps {
   isLoading?: boolean;
@@ -34,7 +35,13 @@ const MainLayout = ({
           })}
         />
       )}
-      <Stack flex={1} padding="$5" gap="$5" {...props}>
+      <Stack
+        flex={1}
+        paddingHorizontal={hs('$5')}
+        paddingVertical={vs('$5')}
+        gap={hs('$5')}
+        {...props}
+      >
         {children}
       </Stack>
     </Stack>

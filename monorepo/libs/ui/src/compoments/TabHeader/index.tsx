@@ -31,6 +31,7 @@ const TabHeader = ({ tab, value, onChange, ...props }: TabHeaderProps) => {
         const handleChange = () => handleChangeTab(key);
         return (
           <TabItem
+            key={key}
             label={label}
             isActive={tabActive === key}
             onChange={handleChange}

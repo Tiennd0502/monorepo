@@ -29,6 +29,7 @@ import {
 } from '@monorepo/ui';
 import { useToastStore } from '@monorepo/stores';
 import { MainLayout } from '../../components';
+import { hs, vs } from '../../utils';
 
 interface ProductDetailProps {
   navigation: StackScreenProps;
@@ -95,13 +96,13 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
     () => (
       <Stack
         position="absolute"
-        left="$4"
-        top="$34"
-        zIndex={99999}
-        width="$16"
-        padding="$3.75"
-        height="$48"
-        borderRadius="$10"
+        left={hs('$4')}
+        top={hs('$34')}
+        zIndex="$5"
+        width={hs('$16')}
+        padding={hs('$3.75')}
+        height={hs('$48')}
+        borderRadius={hs('$10')}
         backgroundColor="$secondary"
         justifyContent="center"
         alignItems="center"
@@ -120,17 +121,17 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
             <Stack
               key={color}
               backgroundColor={bgColor}
-              width="$8.5"
-              height="$8.5"
-              borderRadius="$8.5"
+              width={hs('$8.5')}
+              height={hs('$8.5')}
+              borderRadius={hs('$8.5')}
               justifyContent="center"
               alignItems="center"
               onPress={handleChangeActiveColor}
             >
               <Stack
-                width="$6"
-                height="$6"
-                borderRadius="$6"
+                width={hs('$6')}
+                height={hs('$6')}
+                borderRadius={hs('$6')}
                 backgroundColor={color}
               />
             </Stack>
@@ -165,8 +166,8 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
           <FastImage
             style={{
               width: '100%',
-              height: 445,
-              borderBottomLeftRadius: 60,
+              height: vs(445),
+              borderBottomLeftRadius: hs(60),
             }}
             source={{
               uri: image || DEFAULT_PRODUCT_IMAGE,
@@ -176,7 +177,7 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
           />
           {renderSelectColor}
         </Stack>
-        <Stack padding="$7.5" gap="$4">
+        <Stack padding={hs('$7.5')} gap="$4">
           <Text size="extraLarge" color="$primary">
             {name}
           </Text>
@@ -196,8 +197,8 @@ const ProductDetail = ({ navigation, route }: ProductDetailProps) => {
           <Text textAlign="justify">{description}</Text>
           <XStack gap="$5">
             <Button
-              height="$15"
-              width="$15"
+              height={hs('$15')}
+              width={hs('$15')}
               variant="chromeless"
               justifyContent="center"
               alignItems="center"

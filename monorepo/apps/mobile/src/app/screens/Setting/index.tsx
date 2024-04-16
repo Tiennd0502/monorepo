@@ -12,7 +12,7 @@ import {
   EditIcon,
   Input,
   ProfileCard,
-  Switch,
+  SwitchItem,
   Text,
   shadows,
 } from '@monorepo/ui';
@@ -131,21 +131,11 @@ const Setting = ({ navigation }: SettingProps) => {
             </Text>
             <Stack flex={1} gap="$5" padding={0}>
               {notifications.map(({ id, label, isActive, isDisabled }) => (
-                <XStack
-                  key={id}
-                  height="$13.5"
-                  paddingHorizontal="$4"
-                  alignItems="center"
-                  justifyContent="space-between"
-                  backgroundColor="$backgroundSecondary"
-                  borderRadius="$1"
-                  style={shadows.card}
-                >
-                  <Text color="$textPrimary" size="extraMedium">
-                    {label}
-                  </Text>
-                  <Switch disabled={isDisabled} defaultChecked={isActive} />
-                </XStack>
+                <SwitchItem
+                  label={label}
+                  disabled={isDisabled}
+                  checked={isActive}
+                />
               ))}
             </Stack>
           </Stack>

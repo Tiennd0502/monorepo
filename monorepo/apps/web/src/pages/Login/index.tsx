@@ -30,11 +30,11 @@ import {
   Divider,
   HiddenIcon,
   IconButton,
-  Loading,
   LogoIcon,
   ShowIcon,
   Text,
 } from '@monorepo/ui';
+import { MainLayout } from '../../layouts';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -128,95 +128,88 @@ const Login = () => {
   );
 
   return (
-    <Stack height="100vh" backgroundColor="$backgroundSecondary">
-      {isPending && <Loading />}
-      <Stack padding={30}>
-        <XStack
-          justifyContent="space-between"
-          alignItems="center"
-          alignContent="center"
-          gap={20}
-        >
-          <YStack flexGrow={1}>
-            <Divider color="$borderSecondary" />
-          </YStack>
-          <YStack>
-            <LogoIcon />
-          </YStack>
-          <YStack flexGrow={1}>
-            <Divider color="$borderSecondary" />
-          </YStack>
-        </XStack>
-        <Text
-          size="extraLarge"
-          fontWeight="bold"
-          color="$textTertiary"
-          marginVertical="$2"
-          textAlign="center"
-        >
-          Hello !
-        </Text>
-        <Text
-          size="extraLarge"
-          color="$primary"
-          fontWeight="bold"
-          marginBottom="$6"
-          textAlign="center"
-        >
-          WELCOME BACK
-        </Text>
-        <Stack
-          backgroundColor="$secondary"
-          width="$1/2"
-          marginHorizontal="auto"
-        >
-          {inputs.map(
-            ({
-              name,
-              label,
-              rules,
-              rightElement,
-              secureTextEntry,
-              onSubmitEditing,
-              ref,
-            }) => (
-              <>
-                <ControllerInput<LoginForm>
-                  variant="flushed"
-                  name={name}
-                  rules={rules}
-                  label={label}
-                  control={control}
-                  placeholder={label}
-                  rightElement={rightElement}
-                  secureTextEntry={secureTextEntry}
-                  onSubmitEditing={onSubmitEditing}
-                  ref={ref}
-                />
-                <Divider
-                  color="$borderSecondary"
-                  height="$0.5"
-                  marginBottom="$3"
-                />
-              </>
-            )
-          )}
-          {errorMessage && <Text error>{errorMessage}</Text>}
-          <Stack marginTop="$5" gap={25}>
-            <Button variant="chromeless">Forgot Password</Button>
-            <Button
-              disabled={!isValid || isPending}
-              onPress={handleSubmit(handleLogin)}
-            >
-              Log in
-            </Button>
-            <Button variant="chromeless" onPress={handleSignUp}>
-              SIGN UP
-            </Button>
-          </Stack>
+    <MainLayout isLoading={isPending}>
+      <XStack
+        justifyContent="space-between"
+        alignItems="center"
+        alignContent="center"
+        gap={20}
+      >
+        <YStack flexGrow={1}>
+          <Divider color="$borderSecondary" />
+        </YStack>
+        <YStack>
+          <LogoIcon />
+        </YStack>
+        <YStack flexGrow={1}>
+          <Divider color="$borderSecondary" />
+        </YStack>
+      </XStack>
+      <Text
+        size="extraLarge"
+        fontWeight="bold"
+        color="$textTertiary"
+        marginVertical="$2"
+        textAlign="center"
+      >
+        Hello !
+      </Text>
+      <Text
+        size="extraLarge"
+        color="$primary"
+        fontWeight="bold"
+        marginBottom="$6"
+        textAlign="center"
+      >
+        WELCOME BACK
+      </Text>
+      <Stack backgroundColor="$secondary" width="$1/2" marginHorizontal="auto">
+        {inputs.map(
+          ({
+            name,
+            label,
+            rules,
+            rightElement,
+            secureTextEntry,
+            onSubmitEditing,
+            ref,
+          }) => (
+            <>
+              <ControllerInput<LoginForm>
+                variant="flushed"
+                name={name}
+                rules={rules}
+                label={label}
+                control={control}
+                placeholder={label}
+                rightElement={rightElement}
+                secureTextEntry={secureTextEntry}
+                onSubmitEditing={onSubmitEditing}
+                ref={ref}
+              />
+              <Divider
+                color="$borderSecondary"
+                height="$0.5"
+                marginBottom="$3"
+              />
+            </>
+          )
+        )}
+        {errorMessage && <Text error>{errorMessage}</Text>}
+        <Stack marginTop="$5" gap={25}>
+          <Button variant="chromeless">Forgot Password</Button>
+          <Button
+            disabled={!isValid || isPending}
+            onPress={handleSubmit(handleLogin)}
+          >
+            Log in
+          </Button>
+          <Button variant="chromeless" onPress={handleSignUp}>
+            SIGN UP
+          </Button>
         </Stack>
       </Stack>
-    </Stack>
+    </MainLayout>
   );
 };
 

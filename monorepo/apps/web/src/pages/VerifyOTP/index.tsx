@@ -22,10 +22,10 @@ import {
   ControllerInput,
   Divider,
   Heading,
-  Loading,
   LogoIcon,
   Text,
 } from '@monorepo/ui';
+import { MainLayout } from '../../layouts';
 
 interface FormType {
   code: string;
@@ -86,8 +86,7 @@ const VerifyOTP = () => {
   const handleGoBack = useCallback(() => navigate(-1), [navigate]);
 
   return (
-    <Stack height="100vh" backgroundColor="$textSecondary">
-      {isPending && <Loading />}
+    <MainLayout isLoading={isPending}>
       <Stack width="50%" marginTop="$5" marginHorizontal="auto">
         <XStack
           justifyContent="space-between"
@@ -118,19 +117,9 @@ const VerifyOTP = () => {
             placeholder="Enter code"
             onSubmitEditing={handleSubmit(handleVerifyOTP)}
           />
-          <Divider
-            color="$borderSecondary"
-            height="$0.5"
-            marginLeft="$4"
-            marginBottom="$3"
-          />
+          <Divider color="$borderSecondary" height="$0.5" marginBottom="$3" />
           {errorMessage && <Text error>{errorMessage}</Text>}
-          <Stack
-            paddingVertical={40}
-            paddingRight={30}
-            paddingLeft={10}
-            rowGap={20}
-          >
+          <Stack rowGap={20}>
             <Button
               variant="chromeless"
               color="$primary"
@@ -155,7 +144,7 @@ const VerifyOTP = () => {
           </Stack>
         </Stack>
       </Stack>
-    </Stack>
+    </MainLayout>
   );
 };
 

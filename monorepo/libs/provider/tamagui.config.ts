@@ -10,7 +10,6 @@ import {
   zIndex,
   defaultFont,
   headingFont,
-  titleFont,
 } from '@monorepo/ui';
 
 const tokens = {
@@ -27,7 +26,6 @@ const tamaguiConfig = createTamagui({
   fonts: {
     body: defaultFont,
     heading: headingFont,
-    title: titleFont,
   },
   tokens: createTokens({
     ...tokens,

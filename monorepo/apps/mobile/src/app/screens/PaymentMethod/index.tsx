@@ -15,13 +15,7 @@ import { formatPayment, getData } from '@monorepo/utils';
 import { usePayment } from '@monorepo/hooks';
 
 // Themes | Components
-import {
-  AddIcon,
-  Checkbox,
-  PaymentCard,
-  IconButton,
-  shadows,
-} from '@monorepo/ui';
+import { AddIcon, IconButton, shadows, PaymentOption } from '@monorepo/ui';
 import { MainLayout } from '../../components';
 
 interface PaymentMethodProps {
@@ -57,14 +51,13 @@ const PaymentMethod = ({ navigation }: PaymentMethodProps) => {
           };
 
           return (
-            <Stack key={cardId} paddingBottom="$3">
-              <PaymentCard item={item} isDisabled={selectedCard !== cardId} />
-              <Checkbox
-                label="Use as default payment method"
-                checked={selectedCard === cardId}
-                onCheckedChange={handleChangeCard}
-              />
-            </Stack>
+            <PaymentOption
+              key={cardId}
+              label="Use as default payment method"
+              isActive={selectedCard === cardId}
+              onCheckedChange={handleChangeCard}
+              item={item}
+            />
           );
         })}
       </Stack>

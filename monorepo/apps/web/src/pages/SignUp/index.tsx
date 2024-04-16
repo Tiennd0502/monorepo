@@ -29,12 +29,12 @@ import {
   Divider,
   HiddenIcon,
   IconButton,
-  Loading,
   LogoIcon,
   ShowIcon,
   Text,
 } from '@monorepo/ui';
 import { ROUTES } from '../../constants';
+import { MainLayout } from '../../layouts';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -180,9 +180,7 @@ const SignUp = () => {
   }, [clearErrors, navigate, reset]);
 
   return (
-    <Stack height="100vh" backgroundColor="$backgroundSecondary" padding="$5">
-      {isPending && <Loading />}
-
+    <MainLayout isLoading={isPending}>
       <XStack
         justifyContent="space-between"
         alignItems="center"
@@ -265,7 +263,7 @@ const SignUp = () => {
           </Button>
         </XStack>
       </Stack>
-    </Stack>
+    </MainLayout>
   );
 };
 

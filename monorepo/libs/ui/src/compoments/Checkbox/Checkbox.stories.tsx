@@ -21,6 +21,5 @@ export const Checked: Story = {
   args: {
     label: 'Label checkbox',
     defaultChecked: true,
-    checked: true,
   },
 };

@@ -15,13 +15,7 @@ import { formatShippingAddress, getData } from '@monorepo/utils';
 import { useShippingAddress } from '@monorepo/hooks';
 
 // Themes | Components
-import {
-  AddIcon,
-  Checkbox,
-  IconButton,
-  ShippingCard,
-  shadows,
-} from '@monorepo/ui';
+import { AddIcon, IconButton, ShippingOption, shadows } from '@monorepo/ui';
 import { MainLayout } from '../../components';
 
 interface ShippingAddressProps {
@@ -64,17 +58,17 @@ const ShippingAddress = ({ navigation }: ShippingAddressProps) => {
           setSelectedCard((prev) => (cardId !== prev ? cardId : ''));
         };
 
-        const handleViewEdit = (id: string) => console.log('Edit:', id);
+        const handleViewEdit = (id: string) => null;
 
         return (
-          <Stack paddingBottom={15} key={cardId}>
-            <Checkbox
-              label="Use as the shipping address"
-              checked={selectedCard === cardId}
-              onCheckedChange={handleChangeCard}
-            />
-            <ShippingCard item={item} onEdit={handleViewEdit} />
-          </Stack>
+          <ShippingOption
+            key={item.id}
+            label="Use as the shipping address"
+            isActive={selectedCard === cardId}
+            item={item}
+            onCheckedChange={handleChangeCard}
+            onEditItem={handleViewEdit}
+          />
         );
       }),
     [selectedCard, shippingAddress]

@@ -24,4 +24,5 @@ export { default as CategoryList } from './CategoryList';
 export { default as DiscountCode } from './DiscountCode';
 export { default as Notification } from './Notification';
 export { default as ShippingCard } from './ShippingCard';
+export { default as ShippingOption } from './ShippingOption';
 export { default as ControllerInput } from './ControllerInput';

@@ -3,18 +3,22 @@ import {
   XStack,
   styled,
   CheckboxProps as TCheckboxProps,
-  Checkbox as TCheckbox,
+  createCheckbox,
+  Stack,
+  SizeTokens,
 } from 'tamagui';
+
 import { useId, memo } from 'react';
 
 import { CheckIcon } from '../icons';
 
-const CheckboxFrame = styled(TCheckbox, {
+const Frame = styled(Stack, {
   borderWidth: 1,
   borderColor: '$borderColor',
-  borderRadius: '$small',
+  borderRadius: '$1',
   alignItems: 'center',
   justifyContent: 'center',
+  backgroundColor: '$secondary',
 
   variants: {
     checked: {
@@ -26,18 +30,10 @@ const CheckboxFrame = styled(TCheckbox, {
         backgroundColor: '$secondary',
       },
     },
-
-    size: {
-      md: {
-        width: '$5',
-        height: '$5',
-      },
-    },
   } as const,
 
   defaultVariants: {
     checked: false,
-    size: 'md',
   },
 });
 
@@ -52,42 +48,40 @@ const StyledLabel = styled(Label, {
         color: '$textDefault',
       },
     },
-
-    size: {
-      md: {
-        fontSize: '$4.5',
-      },
-    },
   } as const,
-
-  defaultVariants: {
-    size: 'md',
-  },
 });
 
-interface CheckboxProps extends Omit<TCheckboxProps, 'size'> {
+interface CheckboxProps extends Omit<TCheckboxProps, ''> {
   label?: string;
-  size?: 'md';
+  size?: SizeTokens;
 }
 
+const Indicator = styled(Stack, {});
+
+export const Component = createCheckbox({
+  Frame,
+  Indicator,
+});
+
 const Checkbox = ({
-  size = 'md',
+  size = '$11',
   label = '',
-  checked = false,
+  checked,
+  value,
   ...rest
 }: CheckboxProps) => {
   const id = useId();
 
   return (
     <XStack width={300} alignItems="center" gap="$2">
-      <CheckboxFrame id={id} size={size} checked={checked} {...rest}>
-        <TCheckbox.Indicator>
+      <Component id={id} size={size} checked={checked} {...rest}>
+        <Component.Indicator backgroundColor="$transparent">
           <CheckIcon />
-        </TCheckbox.Indicator>
-      </CheckboxFrame>
+        </Component.Indicator>
+      </Component>
 
       {label && (
-        <StyledLabel checked={checked} size={size} htmlFor={id}>
+        <StyledLabel checked={checked} fontSize="$4.5" htmlFor={id}>
           {label}
         </StyledLabel>
       )}

@@ -18,28 +18,25 @@ exports[`Checkbox should render Checkbox component 1`] = `
         "checked": false,
       }
     }
-    checked={false}
-    focusVisibleStyle={{}}
-    focusable={true}
     id=":r0:"
+    size="$11"
     style={
       {
         "alignItems": "center",
         "backgroundColor": "#fff",
-        "borderBottomColor": "#424242",
-        "borderBottomLeftRadius": 6.25,
-        "borderBottomRightRadius": 6.25,
+        "borderBottomColor": "#282828",
+        "borderBottomLeftRadius": 4,
+        "borderBottomRightRadius": 4,
         "borderBottomWidth": 1,
-        "borderLeftColor": "#424242",
+        "borderLeftColor": "#282828",
         "borderLeftWidth": 1,
-        "borderRightColor": "#424242",
+        "borderRightColor": "#282828",
         "borderRightWidth": 1,
         "borderStyle": "solid",
-        "borderTopColor": "#424242",
-        "borderTopLeftRadius": 6.25,
-        "borderTopRightRadius": 6.25,
+        "borderTopColor": "#282828",
+        "borderTopLeftRadius": 4,
+        "borderTopRightRadius": 4,
         "borderTopWidth": 1,
-        "flexDirection": "column",
         "height": 20,
         "justifyContent": "center",
         "width": 20,
@@ -53,7 +50,7 @@ exports[`Checkbox should render Checkbox component 1`] = `
       {
         "alignItems": "center",
         "backgroundColor": "transparent",
-        "color": "#999",
+        "color": "#fff",
         "display": "flex",
         "fontFamily": "NunitoSans_7pt-Medium",
         "fontSize": 18,
@@ -84,37 +81,90 @@ exports[`Checkbox should render Checkbox with checked true 1`] = `
     accessibilityRole="checkbox"
     accessibilityState={
       {
-        "checked": false,
+        "checked": true,
       }
     }
-    checked={false}
-    focusVisibleStyle={{}}
-    focusable={true}
     id=":r2:"
+    size="$11"
     style={
       {
         "alignItems": "center",
         "backgroundColor": "#242424",
-        "borderBottomColor": "#424242",
-        "borderBottomLeftRadius": 6.25,
-        "borderBottomRightRadius": 6.25,
+        "borderBottomColor": "#494949",
+        "borderBottomLeftRadius": 4,
+        "borderBottomRightRadius": 4,
         "borderBottomWidth": 1,
-        "borderLeftColor": "#424242",
+        "borderLeftColor": "#494949",
         "borderLeftWidth": 1,
-        "borderRightColor": "#424242",
+        "borderRightColor": "#494949",
         "borderRightWidth": 1,
         "borderStyle": "solid",
-        "borderTopColor": "#424242",
-        "borderTopLeftRadius": 6.25,
-        "borderTopRightRadius": 6.25,
+        "borderTopColor": "#494949",
+        "borderTopLeftRadius": 4,
+        "borderTopRightRadius": 4,
         "borderTopWidth": 1,
-        "flexDirection": "column",
         "height": 20,
         "justifyContent": "center",
         "width": 20,
       }
     }
-  />
+  >
+    <View
+      pointerEvents="none"
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="12"
+        bbWidth="15"
+        fill="none"
+        focusable={false}
+        height={12}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "flex": 0,
+              "height": 12,
+              "width": 15,
+            },
+          ]
+        }
+        vbHeight={12}
+        vbWidth={15}
+        width={15}
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGPath
+            d="M4.767 9.468L1.21 5.736 0 6.998 4.767 12 15 1.262 13.798 0 4.767 9.468z"
+            fill={
+              {
+                "payload": 4294967295,
+                "type": 0,
+              }
+            }
+            propList={
+              [
+                "fill",
+              ]
+            }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+  </View>
   <Text
     htmlFor=":r2:"
     id=":r3:"

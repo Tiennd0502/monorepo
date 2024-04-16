@@ -21,7 +21,7 @@ import { formatShippingAddress } from '@monorepo/utils';
 import { useOrder } from '@monorepo/hooks';
 
 // Themes | Components
-import { Button, Text, EditIcon, ShippingCard, shadows } from '@monorepo/ui';
+import { Button, Text, ShippingCard, shadows, Title } from '@monorepo/ui';
 import { MainLayout } from '../../components';
 
 const DELIVERY = 5.0;
@@ -89,16 +89,10 @@ const CheckOut = ({ navigation, route }) => {
       <ScrollView flex={1} showsVerticalScrollIndicator={false}>
         <Stack flex={1} gap="$5" paddingHorizontal="$5">
           <Stack>
-            <XStack
-              justifyContent="space-between"
-              alignItems="center"
-              paddingVertical="$3.75"
-            >
-              <Text size="large" color="$textTertiary">
-                Shipping Address
-              </Text>
-              <EditIcon onPress={handleEditShippingAddress} />
-            </XStack>
+            <Title
+              label="Shipping Address"
+              onEdit={handleEditShippingAddress}
+            />
             {shippingAddress && (
               <ShippingCard
                 item={formatShippingAddress([shippingAddress])[0]}
@@ -106,20 +100,11 @@ const CheckOut = ({ navigation, route }) => {
             )}
           </Stack>
           <Stack>
-            <XStack
-              justifyContent="space-between"
-              alignItems="center"
-              paddingVertical="$3.75"
-            >
-              <Text size="large" color="$textTertiary">
-                Payment
-              </Text>
-              <EditIcon
-                onPress={handleEditShippingAddress}
-                disabled
-                color="$textQuaternary"
-              />
-            </XStack>
+            <Title
+              disabledIcon
+              label="Payment"
+              onEdit={handleEditShippingAddress}
+            />
             <XStack
               borderRadius="$2"
               height="$17"
@@ -145,20 +130,14 @@ const CheckOut = ({ navigation, route }) => {
           </Stack>
 
           <Stack>
-            <XStack
-              justifyContent="space-between"
-              alignItems="center"
-              paddingVertical="$3.75"
-            >
-              <Text size="extraMedium" color="$textTertiary">
-                Delivery method
-              </Text>
-              <EditIcon
-                onPress={handleEditShippingAddress}
-                disabled
-                color="$textQuaternary"
-              />
-            </XStack>
+            <Title
+              disabledIcon
+              labelProps={{
+                size: 'extraMedium',
+              }}
+              label="Delivery method"
+              onEdit={handleEditShippingAddress}
+            />
             <XStack
               borderRadius="$2"
               padding="$5"

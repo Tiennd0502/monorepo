@@ -14,6 +14,7 @@ export { default as BlogCard } from './BlogCard';
 export { default as CartItem } from './CartItem';
 export { default as Checkbox } from './Checkbox';
 export { default as Quantity } from './Quantity';
+export { default as TabHeader } from './TabHeader';
 export { default as OrderCard } from './OrderCard';
 export { default as IconButton } from './IconButton';
 export { default as PaymentCard } from './PaymentCard';

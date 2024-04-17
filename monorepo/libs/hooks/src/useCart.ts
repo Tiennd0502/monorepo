@@ -15,6 +15,7 @@ import {
 
 // Services
 import { GET, PATCH, POST } from '@monorepo/utils';
+import { queryClient } from '@monorepo/provider';
 
 export const useCart = () => {
   const useFetchCarts = () =>
@@ -28,6 +29,10 @@ export const useCart = () => {
           signal,
         }),
       retry: false,
+      refetchInterval: 3 * 1000,
+      initialData: () => queryClient.getQueryData([API_PATH.CART]),
+      initialDataUpdatedAt: () =>
+        queryClient.getQueryState([API_PATH.CART])?.dataUpdatedAt,
     });
 
   const addCart = useMutation({

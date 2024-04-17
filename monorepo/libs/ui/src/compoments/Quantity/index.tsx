@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo, useState } from 'react';
+import { memo, useCallback, useMemo, useState, useEffect } from 'react';
 
 import Text from '../Text';
 import { AddIcon, MinusIcon } from '../icons';
@@ -13,6 +13,10 @@ const Quantity = ({ defaultValue = 0, onChangeValue }: QuantityProps) => {
   const [number, setNumber] = useState<number>(defaultValue);
 
   const isDisabled = useMemo(() => number <= 1, [number]);
+
+  useEffect(() => {
+    defaultValue && setNumber(defaultValue);
+  }, [defaultValue]);
 
   const handleIncrement = useCallback(() => {
     const result = number + 1;
@@ -29,7 +33,7 @@ const Quantity = ({ defaultValue = 0, onChangeValue }: QuantityProps) => {
   return (
     <XStack gap="$3" alignItems="center">
       <YStack
-        testID='increment'
+        testID="increment"
         alignItems="center"
         justifyContent="center"
         width="$7.5"
@@ -45,7 +49,7 @@ const Quantity = ({ defaultValue = 0, onChangeValue }: QuantityProps) => {
         {number}
       </Text>
       <YStack
-        testID='decrement'
+        testID="decrement"
         alignItems="center"
         justifyContent="center"
         disabled={isDisabled}

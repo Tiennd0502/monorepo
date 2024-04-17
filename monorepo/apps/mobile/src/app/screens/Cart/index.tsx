@@ -16,14 +16,7 @@ import { formatCartDetails } from '@monorepo/utils';
 import { useCart } from '@monorepo/hooks';
 
 // Themes | Components
-import {
-  DiscountCode,
-  Text,
-  Button,
-  CartItem,
-  Divider,
-  Loading,
-} from '@monorepo/ui';
+import { DiscountCode, Text, Button, CartItem, Divider } from '@monorepo/ui';
 import { useToastStore } from '@monorepo/stores';
 import { MainLayout } from '../../components';
 
@@ -41,7 +34,7 @@ const Cart = ({ navigation }: CartProps) => {
     checkOut: { mutate: checkOut, isPending: isPendingCheckOut },
   } = useCart();
 
-  const { data, refetch, isPending, isFetching } = useFetchCarts();
+  const { data, refetch, isLoading: isLoadingCarts } = useFetchCarts();
 
   const cartDetails = useMemo(
     () => data?.data?.cart_details || [],
@@ -129,7 +122,7 @@ const Cart = ({ navigation }: CartProps) => {
   );
 
   const isLoading =
-    isFetching || isPending || isAddingCard || isRemoving || isPendingCheckOut;
+    isLoadingCarts || isAddingCard || isRemoving || isPendingCheckOut;
 
   return (
     <MainLayout isLoading={isLoading}>

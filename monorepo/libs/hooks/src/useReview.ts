@@ -8,6 +8,7 @@ import { APIResponse, Review, ReviewResponse } from '@monorepo/types';
 
 // Utils
 import { GET, POST } from '@monorepo/utils';
+import { queryClient } from '@monorepo/provider';
 
 export const useReview = () => {
   const useFetchReview = (type: string, id: string) =>
@@ -20,6 +21,8 @@ export const useReview = () => {
         ),
       enabled: !!id,
       retry: false,
+      staleTime: 1000,
+      initialData: () => queryClient.getQueryData([API_PATH.CART]),
     });
 
   const addReview = useMutation({

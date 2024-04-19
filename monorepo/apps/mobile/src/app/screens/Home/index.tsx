@@ -67,11 +67,13 @@ const Home = ({ navigation }: HomeProps) => {
         <CategoryList list={CATEGORIES} onChange={handleChangeCategory} />
       </Stack>
       <FlatList
+        removeClippedSubviews
         data={productsFormat}
         onEndReached={() => null}
         keyExtractor={getKeyExtractor}
         renderItem={renderItemProduct}
         initialNumToRender={6}
+        maxToRenderPerBatch={6}
         numColumns={2}
         showsVerticalScrollIndicator={false}
         columnWrapperStyle={{

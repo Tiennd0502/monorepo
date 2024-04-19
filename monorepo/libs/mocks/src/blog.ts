@@ -71,36 +71,4 @@ export const NOTIFICATIONS = [
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis possimus quod explicabo maiores repudiandae laudantium quam provident consectetur in dolores.',
     status: NEW_STATUS.HOT,
   },
-  {
-    id: '04',
-    title: 'Your order #123456789 has been shipped successfully',
-    description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis possimus quod explicabo maiores repudiandae laudantium quam provident consectetur in dolores.',
-    status: NEW_STATUS.NORMAL,
-    image: 'https://i.ibb.co/KwRDcc4/3968901-1.png',
-  },
-  {
-    id: '05',
-    title: 'Your order #123456789 has been confirmed',
-    description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis possimus quod explicabo maiores repudiandae laudantium quam provident consectetur in dolores.',
-    status: NEW_STATUS.NORMAL,
-    image: 'https://i.ibb.co/KwRDcc4/3968901-1.png',
-  },
-  {
-    id: '06',
-    title: 'Your order #123456789 has been canceled',
-    description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis possimus quod explicabo maiores repudiandae laudantium quam provident consectetur in dolores.',
-    status: NEW_STATUS.NORMAL,
-    image: 'https://i.ibb.co/KwRDcc4/3968901-1.png',
-  },
-  {
-    id: '07',
-    title: 'Your order #123456789 has been shipped successfully',
-    description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis possimus quod explicabo maiores repudiandae laudantium quam provident consectetur in dolores.',
-    status: NEW_STATUS.NORMAL,
-    image: 'https://i.ibb.co/KwRDcc4/3968901-1.png',
-  },
 ];

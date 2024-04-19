@@ -24,13 +24,13 @@ const setup = (moreProps = {}) => {
 describe('Notification', () => {
 
   it('should render Notification component', () => {
-    const container = setup(NOTIFICATIONS[3]);
+    const container = setup();
 
     expect(container).toMatchSnapshot();
   });
 
   it('should render Notification component status new', () => {
-    const container = setup(NOTIFICATIONS[0]);
+    const container = setup(NOTIFICATIONS[1]);
 
     expect(container).toMatchSnapshot();
   });

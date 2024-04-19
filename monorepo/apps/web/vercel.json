@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/web", "destination": "https://monorepo-phi-nine.vercel.app/" },
+    { "source": "/web/:match*", "destination": "https://monorepo-phi-nine.vercel.app/:match*" },
+    { "source": "/", "destination": "https://monorepo-phi-nine.vercel.app/" },
+    { "source": "/:match*", "destination": "https://monorepo-phi-nine.vercel.app/:match*" }
+  ]
+}
